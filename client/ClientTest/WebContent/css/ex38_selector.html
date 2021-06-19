@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="tistory.css">
+
+    <style>
+
+        /*
+        
+        전후 선택자
+        1. :before
+        2. :after
+
+        전후 선택자에서 사용하는 구성 요소(속성값)
+        1. none
+        2. 문자열
+        3. attr(속성)
+        4. open-quote
+        5. close-quote
+        
+        */
+
+        span {
+            color: sandybrown;
+        }
+
+        /* span::before {
+            content: "aaa";
+            color: cornflowerblue;
+            text-decoration: underline;
+        } */
+
+        span::before {
+            /* content: "["; */
+            content: open-quote;
+        }
+
+        span::after {
+            /* content: "]"; */
+            content: close-quote;
+        }
+
+        #list {
+            border: 10px solid gray;
+        }
+
+        #list .item {
+            border: 10px solid black;
+            width: 150px;
+            height: 150px;
+            float: left;
+        }
+
+        #list::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex38_selector.html -->
+
+    <p>Lorem ipsum, dolor sit amet consectetur <span>adipisicing elit. Sunt architecto qui, quia</span> omnis dignissimos rem vero sequi accusamus adipisci quibusdam officiis ex? Corporis dolorum blanditiis ex reiciendis sunt debitis magni id illo a <span>soluta neque deleniti</span> natus repudiandae voluptates excepturi illum doloremque voluptate ullam libero, recusandae ipsa obcaecati! <span>Enim</span> quis dolores officiis consequuntur dicta eligendi <span>itaque dolor reprehenderit</span> temporibus rerum sint, cum maxime? Enim qui deserunt saepe cum recusandae doloremque ut ullam officia iste. Voluptatibus, laborum vitae provident perferendis harum consectetur adipisci molestiae aspernatur facere temporibus nobis inventore asperiores? Inventore aperiam placeat quisquam <span>dignissimos dolore iste sint,</span> veritatis ut perspiciatis?</p>
+
+    <hr>
+
+    <blockquote class="tistory">HTML은 웹 페이지를 만드는 언어입니다. Hyper Text Markup Language 입니다.</blockquote>
+
+    <hr>
+
+    <div id="list">
+        <div class="item">아이템</div>
+        <div class="item">아이템</div>
+        <div class="item">아이템</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <!-- ex07_manipulation.html -->
+
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <hr>
+    <input type="text" id="txt1">
+    <hr>
+    <div id="list"></div>
+
+    <script>
+
+        
+        $("#btn1").click(function() {
+            
+            //태그 조작 > 컨텐츠 조작
+            //1. innerText, textContent > text()
+            //2. innerHTML > html()
+            //3. value > val()
+
+
+            // alert($("#box1").text());
+            // $("#box1").text("안녕하세요.");
+
+            // $("#box1").html("<b>안녕</b>하세요.");
+
+            // alert($("#txt1").val());
+            // $("#txt1").val(new Date());
+
+
+            //태그 조작 > 속성 조작
+            //1. BOM
+            //  - obj.prop              //읽기
+            //  - obj.prop = "값"       //쓰기
+            //2. DOM
+            //  - obj.getAttribute("prop")          //읽기
+            //  - obj.setAttribute("prop", "값")    //쓰기
+            //3. jQuery
+            //  - obj.attr("prop")          //읽기
+            //  - obj.attr("prop", "값")    //쓰기
+
+            // $("#txt1").attr("size", 50);
+            // $("#txt1").attr("maxlength", 5);
+
+            // $("#txt1")
+            //     .attr("size", 50)
+            //     .attr("title", "풍선도움말");
+
+            // $("#txt1").attr({
+            //     size: 50,
+            //     title: "풍선도움말"
+            // });
+
+            // $(".box").attr("title", "상자");
+            
+            // $("#box1")
+            //     .attr("title", "상자")
+            //     .css("color", "blue")
+            //     .text("box")
+            //     .mouseenter(function() {
+            //         alert("깜짝!!!");
+            //     });
+
+            //태그 조작 > CSS 조작
+            //1. css()
+            //2. addClass(), removeClass(), hasClass(), toggleClass()
+            //3. Box Model > width(), height(), innerWidth(), outerWidth(), outerWidth(true)
+
+            //동적으로 이미지 추가하기 > append, prepend 등...
+            // $("#list").html($("#list").html() + "<img src='../images/catty01.png'>");
+
+            //템플릿 리터럴, Template Literal
+            // - ` : 역홑따옴표, back-quote, back-tick
+            // - ${} : 표현식
+            // - String.format() 기능과 유사
+            // $("#list").append(`<img src='../images/catty0${n}.png'>`);
+            // $("#list").prepend(`<img src='../images/catty0${n}.png'>`);
+
+            // $("#list").append(`<img src='../images/catty0${n}.png'>`).css("border", "1px solid black");
+
+            //jQuery 함수 기능 : 동적으로 태그 생성
+            // var c = $(`<img src='../images/catty0${n}.png'>`).css("border", "1px solid black");
+            // $("#list").append(c);
+
+            // var c = $(`<img src='../images/catty0${n}.png'>`)
+            //             .css("opacity", ".5")
+            //             .click(function() {
+            //                 $(this).hide();
+            //             });
+            
+            // $("#list").append(c);
+                
+            // var c = $(`<img src='../images/catty0${n}.png'>`)
+            //             .css({
+            //                 opacity: .5,
+            //                 "box-shadow": "2px 2px 2px gray"
+            //             })
+            //             .mouseover(function() {
+            //                 $(this).css({
+            //                     opacity: 1,
+            //                     "box-shadow": "7px 7px 7px gray"
+            //                 });
+            //             })
+            //             .mouseout(function() {
+            //                 $(this).css({
+            //                     opacity: .5,
+            //                     "box-shadow": "2px 2px 2px gray"
+            //                 });
+            //             });
+
+
+            var c = $(`<img src='../images/catty0${n}.png'>`)
+                        .css({
+                            opacity: .5,
+                            "box-shadow": "2px 2px 2px gray"
+                        })
+                        .on({
+                            mouseenter: function() {
+                                $(this).css({
+                                opacity: 1,
+                                "box-shadow": "7px 7px 7px gray"
+                                });
+                            },
+                            mouseleave: function() {
+                                $(this).css({
+                                opacity: .5,
+                                "box-shadow": "2px 2px 2px gray"
+                                });
+                            }
+                        });
+            
+            $("#list").append(c);
+
+            n++;
+
+        });
+
+        var n = 1;
+
+    </script>
+
+</body>
+</html>

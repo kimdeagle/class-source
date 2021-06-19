@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        table td:nth-child(1), table td:nth-child(3) {
+            width: 200px;
+            height: 400px;
+        }
+
+        table td:nth-child(2) {
+            width: 150px;
+            height: 400px;
+        }
+
+        table td input[type=button] {
+            width: 120px;
+            height: 30px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        table td select {
+            width: 150px;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        table td label {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam10.html -->
+
+    <h1>셀렉트 박스 항목 관리</h1>
+
+    <table>
+        <tr>
+            <td>
+                <label>차단된 친구</label>
+                <select name="block" size="9">
+                    <option value="1">권예진</option>
+                    <option value="2">권준혁</option>
+                    <option value="3">김동식</option>
+                    <option value="4">김세진</option>
+                    <option value="5">김여정</option>
+                    <option value="6">노형준</option>
+                    <option value="7">박민선</option>
+                    <option value="8">백강현</option>
+                    <option value="9">변기현</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" value="Add ▷" name="add">
+                <input type="button" value="◁ Remove" name="remove">
+                <input type="button" value="Add All ▷ ▷" name="addAll">
+                <input type="button" value="◁ ◁ Remove All" name="removeAll">
+            </td>
+            <td>
+                <label>허용된 친구</label>
+                <select name="allow" size="9"></select>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        var block = document.all.block;
+        var add = document.all.add;
+        var remove = document.all.remove;
+        var addAll = document.all.addAll;
+        var removeAll = document.all.removeAll;
+        var allow = document.all.allow;
+
+        // var op = new Option();
+
+        // op.value = 1;
+        // op.text = "권준혁";
+
+        // block.options.add(op);
+
+        add.onclick = function() {
+            var op = block.options[block.selectedIndex];
+            allow.options.add(op);
+        };
+
+        addAll.onclick = function() {
+            count = block.options.length;
+            for (var i=0; i<count; i++) {
+                var op = block.options[0];
+                allow.options.add(op);
+            }
+        };
+        
+        remove.onclick = function() {
+            var op = allow.options[allow.selectedIndex];
+            block.options.add(op);
+        };
+
+        removeAll.onclick = function() {
+            count = allow.options.length;
+            for (var i=0; i<count; i++) {
+                var op = allow.options[0];
+                block.options.add(op);
+            }
+        };
+
+    </script>
+</body>
+</html>

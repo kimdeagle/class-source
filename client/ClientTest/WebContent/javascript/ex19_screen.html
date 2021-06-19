@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex19_screen.html -->
+
+    <script>
+
+        //screen 객체
+        // - window 객체의 자식
+        // - 유일한 객체 > 예약어로 접근
+        // - 화면에 관련된 정보를 가진다.
+
+        //해상도(1920*1080)
+        //브라우저가 사용할 수 있는 화면 크기
+        console.log(window.screen.availWidth); //1920
+        console.log(window.screen.availHeight); //1040 -> 작업표시줄 제외
+
+        console.log(window.screen.colorDepth); //24 -> bit Color
+        console.log(window.screen.orientation); //기타 정보
+
+    </script>
+
+</body>
+</html>

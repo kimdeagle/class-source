@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex09_date.html -->
+
+    <script>
+
+        //날짜 시간
+        // - Date 객체
+        // - object형
+
+        //현재 시각
+        //Calendar.getInstance()
+        var now = new Date();
+        console.log(now);
+
+        //요소 추출
+        //c.get(Calendar.HOUR)
+        console.log(now.getYear()); //121 -> 1900년도에 사용하던 함수(19XX -> XX 두자리 표시)
+        console.log(now.getFullYear()); //2021
+        console.log(now.getMonth()); //0 (1월 0 ~ 12월 11)
+        console.log(now.getDate()); //13
+        console.log(now.getDay()); //3 (일요일 0 ~ 토요일 6)
+        console.log(now.getHours()); //시
+        console.log(now.getMinutes()); //분
+        console.log(now.getSeconds()); //초
+        console.log(now.getMilliseconds()); //밀리초
+        console.log(now.getTime()); //틱 (1970년 1월 1일 00:00:00 기준)
+
+        //출력
+        console.log(now.toString());
+        console.log(now.toLocaleString()); //2021. 1. 13. 오후 3:28:43
+        
+        console.log(now.toDateString());
+        console.log(now.toTimeString());
+        
+        console.log(now.toLocaleDateString());
+        console.log(now.toLocaleTimeString());
+
+        //특정 시각
+        var christmas = new Date();
+        christmas.setFullYear(2021);
+        christmas.setMonth(11);
+        christmas.setDate(25);
+
+        console.log(christmas.toLocaleDateString());
+
+        //연산
+        console.log(christmas - now);
+        console.log((christmas-now) / 1000 / 60 / 60 / 24);
+
+        var d1 = new Date();
+        d1.setTime(now.getTime() + (100 * 24 * 60 * 60 * 1000));
+        console.log(d1.toLocaleDateString());
+
+    </script>
+
+</body>
+</html>

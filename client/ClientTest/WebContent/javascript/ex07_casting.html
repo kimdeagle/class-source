@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex07_casting.html -->
+
+    <script>
+
+        //형변환 함수
+        //1. int parseInt(인자)
+        //2. float parseFloat(인자)
+
+        var n1 = 3.14;
+        console.log(parseInt(n1));
+
+        var n2 = 100;
+        console.log(parseFloat(n2));
+
+
+        var s1 = "100";
+        console.log(parseInt(s1));
+
+        var s2 = "3.14";
+        console.log(parseFloat(s2));
+
+        console.log("100" * 2);
+        console.log("3.14" * 2);
+
+        //CSS 조작
+        //box > width: 150px -> x2배 수정
+        var width = "150px";
+        console.log(width * 2); //NaN(Not a Number)
+
+        //parseInt, parseFloat은 숫자 뒤의 문자들을 자동으로 잘라낸다.
+        console.log(parseInt(width));
+
+        var size = "1.5em";
+        console.log(parseFloat(size));
+
+        //나이 입력(텍스트 박스) -> 유효성 검사(숫자만 입력)
+        var age = "20";
+
+        console.log(isNaN(age));
+
+
+
+        
+
+
+        
+
+    </script>
+
+</body>
+</html>

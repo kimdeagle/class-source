@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_link.html -->
+
+    <!-- 
+
+        <a>, 링크, Link
+        - anchor(닻)
+        - link
+        - 쌍태그
+        - 인라인 태그
+
+        a.href
+        - 링크를 클릭하면 이동할 자원의 URL(페이지 URL)
+        - reference a hyperlink
+
+        웹 브라우저
+        - HTML 페이지 실행기(뷰어)
+        - 텍스트 뷰어
+        - 이미지 뷰어
+        - 동영상 뷰어
+
+        a.target
+        - 열거형
+            1. _blank : 새창에서 이동
+            2. _self : 현재창에서 이동(default)
+            3. _parent
+            4. _top
+            5. 프레임명
+
+     -->
+
+     <h1>링크</h1>
+
+     <a href="http://www.naver.com">네이버(외부링크)</a>
+     <br>
+     
+     <a href="ex15_table.html">15번 예제(내부링크)</a>
+     <br>
+     
+     <a href="images/dog01.jpg">강아지 오형제</a>
+     <br>
+
+     <a href="http://www.google.com" target="_self">구글1</a>
+     <a href="http://www.google.com" target="_blank">구글2</a>
+    <br>
+
+    <a href="mailto:hong@gmail.com">홍길동</a>
+    <br>
+
+    <a href="javascript:alert('안녕~');">자바 스크립트</a>
+    <br>
+
+    <!-- 
+        링크
+        1. 텍스트 링크
+        2. 이미지 링크
+     -->
+    <a href="http://www.google.com"><img src="images/cat01.jpg"></a>
+    <br>
+
+    <!-- 인라인 태그 안에 블럭 태그 사용 X -->
+    <a href="http://www.google.com">안녕하세요. <p>홍길동입니다.</p> 안녕히가세요.</a>
+
+</body>
+</html>

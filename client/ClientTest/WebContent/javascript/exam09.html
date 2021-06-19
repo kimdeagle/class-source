@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        table th {
+            width: 120px;
+            background-color: lightgray;
+        }
+
+        table td {
+            width: 500px;
+        }
+
+        table td input[type=text] {
+            outline: none;
+        }
+
+        table td #ssn1 {
+            width: 80px;
+        }
+
+        table td #ssn2 {
+            width: 100px;
+        }
+
+        table td #year {
+            width: 50px;
+        }
+
+        table td #month, table td #date {
+            width: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam09.html -->
+
+    <h1>회원가입 + 폼 컨트롤 조작</h1>
+
+    <form name="join">
+        <table>
+            <tr>
+                <th>주민번호</th>
+                <td>
+                    <input type="text" id="ssn1" name="ssn1" maxlength="6">
+                    -
+                    <input type="text" id="ssn2" name="ssn2" maxlength="7">
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td>
+                    <input type="text" id="year" name="year" maxlength="4"> 년
+                    <input type="text" id="month" name="month" maxlength="2"> 월
+                    <input type="text" id="date" name="date" maxlength="2"> 일
+                </td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <label>
+                        <input type="radio" name="gender">
+                        남자
+                    </label>
+                    <label>
+                        <input type="radio" name="gender">
+                        여자
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var ssn1 = document.join.ssn1;
+        var ssn2 = document.join.ssn2;
+        var year = document.join.year;
+        var month = document.join.month;
+        var date = document.join.date;
+        var gender = document.join.gender;
+        
+        
+        ssn1.onkeyup = function() {
+            if (ssn1.value.length == 6) {
+                year.value = "19" + ssn1.value.substring(0, 2);
+                month.value = ssn1.value.substring(2, 4);
+                date.value = ssn1.value.substring(4);
+                ssn2.focus();
+            }
+        };
+
+        ssn2.onkeyup = function() {
+            if (ssn2.value.substring(0, 1) == 1) {
+                gender[0].checked = true;
+            } else if (ssn2.value.substring(0, 1) == 2) {
+                gender[1].checked = true;
+            }
+        };
+
+    </script>
+
+</body>
+</html>

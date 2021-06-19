@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	div, span, input, th, td, fieldset {
+		font-size: 14px;
+	}
+
+	#add {
+		border: 1px solid gray;
+		padding: 10px;
+		width: 300px;
+	}
+	
+	#add > div {
+		margin-bottom: 5px;
+	}
+	
+	#add > div > label:first-child {
+		display: inline-block;
+		width: 50px;
+		text-align: right;
+		margin-right: 10px;
+	}
+	
+	#btnadd {
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+
+	#tbl1 {
+		border: 1px solid gray;
+		border-collapse: collapse;
+		width: 500px;
+		margin-top: 20px;
+	}
+	#tbl1 th {
+		background: #ddd;
+	}
+	#tbl1 th, #tbl1 td {
+		border: 1px solid gray;
+		padding: 4px;
+		text-align: center;
+	}
+	#tbl1 th:nth-child(1) { width: 50px; }
+	#tbl1 th:nth-child(2) { width: 70px; }
+	#tbl1 th:nth-child(3) { width: 50px; }
+	#tbl1 th:nth-child(4) { width: 120px; }
+	#tbl1 th:nth-child(5) { width: 210px; }
+	
+	
+	
+</style>
+<script>
+
+	
+</script>
+</head>
+<body>
+
+	<div class="main m600">
+	
+	<h1>데이터 추가하기</h1>
+	
+	<fieldset id="add">
+		<legend>입력 항목</legend>
+		<div><label for="txtname">이름 : </label><input type="text" id="txtname" autofocus></div>
+		<div><label for="selage">나이 : </label><select id="selage"></select></div>
+		<div><label for="rbgener">성별 : </label><label><input type="radio" name="rbgender" id="rbgender1" value="m" checked> 남자</label><label><input type="radio" name="rbgender" id="rbgender2" value="f"> 여자</label></div>
+		<div><label for="txtaddress">주소 : </label><input type="text" id="txtaddress"></div>
+		<div><input type="button" id="btnadd" value="추가하기"></div>
+	</fieldset>
+	
+	
+	<table id="tbl1">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>성별</th>
+				<th>주소</th>
+			</tr>
+		</thead>
+		<tbody id="tbody1">
+			<tr>
+				<td colspan="5">등록된 항목이 없습니다.</td>
+			</tr>
+		</tbody>
+	</table>
+    </div>
+    
+    <script>
+
+        var txtname = document.getElementById("txtname");
+        var selage = document.getElementById("selage");
+        var rbgender1 = document.getElementById("rbgender1");
+        var rbgender2 = document.getElementById("rbgender2");
+        var txtaddress = document.getElementById("txtaddress");
+        var btnadd = document.getElementById("btnadd");
+
+        var tbl1 = document.getElementById("tbl1");
+        var tbody1 = document.getElementById("tbody1");
+
+        var n = 1;
+
+        for (var i=20; i<=60; i++) {
+            var op = new Option();
+            op.value = i;
+            op.text = i;
+            selage.options.add(op);
+        }
+
+        btnadd.onclick = addRow;
+
+        txtaddress.onkeydown = function() {
+            if (event.keyCode == 13) {
+                addRow();
+            }
+        };
+
+        function addRow() {
+            
+            //입력X or 공백만 입력
+            if (txtname.value.trim() == "") {
+                txtname.value = "";
+                txtname.focus();
+                return;
+            }
+            
+            if (txtaddress.value.trim() == "") {
+                txtaddress.value = "";
+                txtaddress.focus();
+                return;
+            }
+
+            var gender;
+
+            //
+            if (tbody1.children[0].children.length == 1) {
+                tbody1.removeChild(tbody1.children[0]);
+            }
+
+            if (rbgender1.checked) {
+                gender = "<img src='../images/gender_m.png'>";
+            } else {
+                gender = "<img src='../images/gender_f.png'>";
+            }
+
+            tbody1.innerHTML += "<tr><td>"+ n +"</td><td>"+ txtname.value +"</td><td>"+ selage.options[selage.options.selectedIndex].value +"</td><td>"+ gender +"</td><td>"+ txtaddress.value +"</td></tr>";
+
+            n++;
+            
+            //추가 후 입력 항목 초기화
+            txtname.value = "";
+            selage.value = 20;
+            rbgender1.checked = true;
+            txtaddress.value = "";
+
+            //추가 후 포커스
+            txtname.focus();
+
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

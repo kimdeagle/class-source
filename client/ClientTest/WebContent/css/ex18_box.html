@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        
+        박스 모델
+        1. border
+        2. width
+        3. height
+        4. padding
+        5. margin
+
+        4. padding
+            - 태그의 테두리와 안쪽 내용물 사이의 간격
+            - 안쪽 여백
+            - px, %
+        
+        5. margin
+            - 태그의 테두리와 바깥쪽 다른 태그 사이의 간격
+            - 바깥쪽 여백
+            - px, %
+
+        */
+
+        .box {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        #box2 {
+            /* padding: 20px; */
+
+            /* padding-top: 20px;
+            padding-right: 100px;
+            padding-bottom: 10px;
+            padding-left: 40px; */
+
+            /* (12시 기준 시계방향)top -> right -> bottom -> left */
+            /* padding: 10px 20px 30px 40px; */
+
+            /* top -> right+(left) -> bottom */
+            /* padding: 100px 200px 300px; */
+
+            /* top+(bottom) -> right+(left) */
+            /* padding: 100px 200px; */
+
+            /* 상하좌우 동일 */
+            /* padding: 100px; */
+
+            /* margin: 20px; */
+            
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        #txt1 {
+            padding: 5px 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex18_box.html -->
+
+    <div id="box1" class="box">상자1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officia animi, ea perferendis magnam eligendi recusandae excepturi dignissimos itaque omnis ex ratione obcaecati</div>
+    <div id="box2" class="box">상자2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officia animi, ea perferendis magnam eligendi recusandae excepturi dignissimos itaque omnis ex ratione obcaecati</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <input type="text" id="txt1">
+
+</body>
+</html>

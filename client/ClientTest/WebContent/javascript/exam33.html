@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam33.html -->
+
+    <img src="../images/catty01.png" alt="" class="img">
+    <img src="../images/catty02.png" alt="" class="img">
+    <img src="../images/catty03.png" alt="" class="img">
+    <img src="../images/catty04.png" alt="" class="img">
+    <img src="../images/catty05.png" alt="" class="img">
+    <img src="../images/catty06.png" alt="" class="img">
+    <img src="../images/catty07.png" alt="" class="img">
+    <img src="../images/catty08.png" alt="" class="img">
+    <img src="../images/catty09.png" alt="" class="img">
+    <img src="../images/catty10.png" alt="" class="img">
+    <img src="../images/catty11.png" alt="" class="img">
+    <img src="../images/catty12.png" alt="" class="img">
+    <img src="../images/catty13.png" alt="" class="img">
+    <img src="../images/catty14.png" alt="" class="img">
+    <img src="../images/catty15.png" alt="" class="img">
+    <img src="../images/catty16.png" alt="" class="img">
+    <img src="../images/catty17.png" alt="" class="img">
+    <img src="../images/catty18.png" alt="" class="img">
+    <img src="../images/catty19.png" alt="" class="img">
+    <img src="../images/catty20.png" alt="" class="img">
+
+    <script>
+
+        var img = document.getElementsByClassName("img");
+
+        var pathX = [];
+        var pathY = [];
+
+        window.onmousemove = function() {
+            
+            pathX.push(event.clientX);
+            pathY.push(event.clientY);
+
+            if (pathX.length > img.length) {
+                pathX.shift();
+                pathY.shift();
+                // pathX.pop();
+                // pathY.pop();
+            }
+
+            for (var i=0; i<img.length; i++) {
+                img[i].style.zIndex = img.length - i;
+                img[i].style.left = pathX[i] - 64 + "px";
+                img[i].style.top = pathY[i] - 64 + "px";
+                if (pathX[i] != null) {
+                    img[i].style.display = "block";
+                }
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

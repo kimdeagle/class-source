@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { width: 1200px; margin: 50px auto;}
+        table th { width: 100px; height: 20px; text-align: right; padding-right: 10px; }
+        table td { border: 1px solid gray; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <!-- exam40.html -->
+
+    <h1>테이블 시계</h1>
+
+    <table id="tbl">
+        <tr>
+            <th>Hour</th>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Minute</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Second</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        var tbl = document.getElementById("tbl");
+
+        var hour = [];
+        var min = [];
+        var sec = [];
+
+        for (var i=0; i<tbl.children[0].firstElementChild.children.length - 1; i++) {
+            hour.push(tbl.children[0].firstElementChild.children[i+1]);
+        }
+
+        for (var i=0; i<tbl.children[0].children[1].children.length - 1; i++) {
+            min.push(tbl.children[0].children[1].children[i+1]);
+        }
+        
+        for (var i=0; i<tbl.children[0].children[2].children.length - 1; i++) {
+            sec.push(tbl.children[0].children[2].children[i+1]);
+        }
+
+        
+        
+        setInterval(function() {
+            var now = new Date();
+            
+            for (var i=0; i<hour.length; i++) {
+                hour[i].style.backgroundColor = "white";
+            }
+            
+            for (var i=0; i<min.length; i++) {
+                min[i].style.backgroundColor = "white";
+            }
+            
+            for (var i=0; i<sec.length; i++) {
+                sec[i].style.backgroundColor = "white";
+            }
+            
+            for (var i=24; i<hour.length; i++) {
+                hour[i].style.backgroundColor = "gray";
+            }
+
+            for (var i=0; i<now.getHours(); i++) {
+                hour[i].style.backgroundColor = "tomato";
+            }
+
+            for (var i=0; i<now.getMinutes(); i++) {
+                min[i].style.backgroundColor = "cornflowerblue";
+            }
+            
+            for (var i=0; i<now.getSeconds(); i++) {
+                sec[i].style.backgroundColor = "gold";
+            }
+
+
+        }, 1000);
+        
+
+
+
+    </script>
+
+</body>
+</html>

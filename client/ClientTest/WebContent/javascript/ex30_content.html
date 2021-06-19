@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex30_content.html -->
+
+    <h1>Content 조작</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <hr>
+    <div id="div1"></div>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        var div1 = document.getElementById("div1");
+
+        /*
+        
+        Content 조작
+        - DOM 전용
+        - <div>Content</div>
+
+        1. innerText
+        - 시작태그와 끝태그 사이의 문자열 읽기/쓰기 프로퍼티
+        - 비표준(MS), 모든 브라우저 지원
+        - 내용물을 파싱하지 않는다.(HTML 구문을 해석하지 않는다.)
+
+        2. innerHTML
+        - 시작태그와 끝태그 사이의 문자열 읽기/쓰기 프로퍼티
+        - 표준 프로퍼티
+        - 내용물을 파싱한다.(HTML 구문을 해석한다.)
+
+        3. outerText
+        - 비표준, 사용 잘안함
+
+        4. outerHTML
+        - 표준, 사용 잘안함
+
+        5. textContent
+        - innerText와 동일한 프로퍼티
+        - 표준 프로퍼티
+        
+        */
+
+        btn1.onclick = function() {
+            // div1.innerText = "홍길동";
+            // div1.innerText = "<b>아무개</b>";
+            
+            // div1.innerHTML = "호호호";
+            div1.innerHTML = "<i>호호호</i>";
+        };
+
+        btn2.onclick = function() {
+            // alert(div1.innerText);
+            alert(div1.innerHTML);
+        };
+
+        btn3.onclick = function() {
+            //단순 내용 입출력 -> innerText
+            //태그 조작 -> innerHTML
+            //div1.innerHTML = "<input type='button' value='버튼'><img src='../images/catty01.png'>";
+
+            var n = parseInt(Math.random() * 2); //0, 1
+            var m = parseInt(Math.random() * 5) + 1; //1 ~ 5
+            
+            var name = [ "cat", "dog" ];
+
+            div1.innerHTML += "<img src='../images/"+ name[n] +"0"+ m +".jpg'>";
+
+        };
+
+    </script>
+
+</body>
+</html>

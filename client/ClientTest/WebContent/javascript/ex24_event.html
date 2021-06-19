@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 1px solid gray;
+            padding: 25px;
+            margin: 20px 0px;
+            width: 300px;
+        }
+
+        .box input {
+            font-size: 1.28em;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex24_event.html -->
+
+    <h1>2개 이상의 요소에 이벤트를 매핑하는 경우(다량의 요소에 이벤트 걸기)</h1>
+
+    <!-- <div class="box">
+        <input type="button" value="red" name="btnRed">
+        <input type="button" value="yellow" name="btnYellow">
+        <input type="button" value="blue" name="btnBlue">
+    </div> -->
+
+    <div class="box">
+        <input type="button" value="red" name="btnRed" onclick="f1();">
+        <input type="button" value="yellow" name="btnYellow" onclick="f2();">
+        <input type="button" value="blue" name="btnBlue" onclick="f3();">
+    </div>
+
+    <div class="box">
+        <input type="button" value="red" name="btnRed2">
+        <input type="button" value="yellow" name="btnYellow2">
+        <input type="button" value="blue" name="btnBlue2">
+    </div>
+
+    <div class="box">
+        <input type="button" value="red" name="btnRed" onclick="f4('red');">
+        <input type="button" value="yellow" name="btnYellow" onclick="f4('yellow');">
+        <input type="button" value="blue" name="btnBlue" onclick="f4('blue');">
+    </div>
+
+    <div class="box">
+        <!-- 이벤트 핸들러 내의 this : 이벤트를 발생하는 태그 자신 -->
+        <input type="button" value="red" name="btnRed" onclick="f5(this);">
+        <input type="button" value="yellow" name="btnYellow" onclick="f5(this);">
+        <input type="button" value="blue" name="btnBlue" onclick="f5(this);">
+    </div>
+
+    <div class="box">
+        <input type="button" value="red" name="btnRed" onclick="f6();";>
+        <input type="button" value="yellow" name="btnYellow" onclick="f6();">
+        <input type="button" value="blue" name="btnBlue" onclick="f6();">
+    </div>
+
+    <div class="box">
+        <input type="button" value="빨강" color="red" name="btnRed" onclick="f7();">
+        <input type="button" value="노랑" color="yellow" name="btnYellow" onclick="f7();">
+        <input type="button" value="파랑" color="blue" name="btnBlue" onclick="f7();">
+    </div>
+    
+    <div class="box">
+        <!-- data-XXX : 사용자 정의 속성 -->
+        <input type="button" value="빨강" data-color="red" name="btnRed" onclick="f7();">
+        <input type="button" value="노랑" data-color="yellow" name="btnYellow" onclick="f7();">
+        <input type="button" value="파랑" data-color="blue" name="btnBlue" onclick="f7();">
+    </div>
+
+
+    <hr>
+
+
+    <img src="../images/catty01.png" name="cat" data-img1="catty06.png" data-img2="catty01.png">
+    <img src="../images/catty02.png" name="cat" data-img1="catty07.png" data-img2="catty02.png">
+    <img src="../images/catty03.png" name="cat" data-img1="catty08.png" data-img2="catty03.png">
+    <img src="../images/catty04.png" name="cat" data-img1="catty09.png" data-img2="catty04.png">
+    <img src="../images/catty05.png" name="cat" data-img1="catty10.png" data-img2="catty05.png">
+
+
+
+    <script>
+
+        // var cat = window.document.images["cat"];
+        var cat = window.document.all.cat; //name="cat" 모두 찾아서 배열 반환
+
+        console.log(cat);
+
+        for (var i=0; i<cat.length; i++) {
+            cat[i].onmouseover = function() {
+                //*** 이 안에서 루프 변수 i를 사용할 수 없다.(**************************)
+                //cat[i] 사용 불가 (설명 나중에..)
+                //대신 event.srcElement 사용
+                event.srcElement.src = "../images/" + event.srcElement.dataset["img1"];
+            };
+
+            cat[i].onmouseout = function() {
+                event.srcElement.src = "../images/" + event.srcElement.dataset["img2"];
+            };
+        }
+
+        //정적 모델
+        function f1() {
+            window.document.body.bgColor = "red";
+        }
+        
+        function f2() {
+            window.document.body.bgColor = "yellow";
+        }
+        
+        function f3() {
+            window.document.body.bgColor = "blue";
+        }
+        
+        //동적 모델
+        window.document.all.btnRed2.onclick = function() {
+            window.document.body.bgColor = "red";
+        };
+        
+        window.document.all.btnYellow2.onclick = function() {
+            window.document.body.bgColor = "yellow";
+        };
+        
+        window.document.all.btnBlue2.onclick = function() {
+            window.document.body.bgColor = "blue";
+        };
+        
+        //매개변수
+        function f4(color) {
+            window.document.body.bgColor = color;
+        }
+
+        //this
+        function f5(btn) {
+            // alert(btn.value);
+            window.document.body.bgColor = btn.value;
+        }
+
+        function f6() {
+            //어떤 버튼이 눌렸는지???
+            
+            //event.srcElement -> 이벤트를 발생시킨 객체(태그)
+
+            window.document.body.bgColor = event.srcElement.value;
+            
+        }
+        
+        function f7() {
+            //alert(event.srcElement.color);
+            // alert(event.srcElement.dataset["color"]);
+            
+            window.document.body.bgColor = event.srcElement.dataset["color"];
+
+        }
+
+        </script>
+
+</body>
+</html>

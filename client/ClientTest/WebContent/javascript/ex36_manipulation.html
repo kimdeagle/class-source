@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box { border: 15px solid chocolate; }
+    </style>
+
+</head>
+<body ondragstart="return false;" onselectstart="return false;">
+    <!-- ex36_manipulation.html -->
+
+    <h1>DOM을 사용한 태그(속성) 조작</h1>
+
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <input type="text" id="txt1">
+    <hr>
+    <img src="../images/catty01.png" id="img1">
+
+    <hr>
+
+    <input type="button" value="확인" id="btn2">
+    <input type="button" value="삭제" id="btn3">
+    <hr>
+    <div id="div1"></div>
+
+
+    <div id="box">
+        <img src="../images/catty01.png">
+        <img src="../images/catty02.png">
+        <img src="../images/catty03.png">
+    </div>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        var img1 = document.getElementById("img1");
+
+        var btn2 = document.getElementById("btn2");
+        var div1 = document.getElementById("div1");
+
+        var btn3 = document.getElementById("btn3");
+
+        var box = document.getElementById("box");
+
+        btn1.onclick = function() {
+            
+            //HTML 태그의 속성 조작하기
+            //1. BOM
+            // - HTML 속성의 대부분이 JavaScript에도 동일한 이름의 프로퍼티로 제공한다.
+            // img1.src = "../images/catty02.png";
+
+            //2. DOM
+            // - attributes : 속성 배열
+            // - setAttribute()
+            // - getAttribute()
+            // - hasAttribute()
+            // - removeAttribute()
+            // - toggleAttribute()
+
+            // alert(img1.getAttribute("src"));
+            // img1.setAttribute("src", "../images/catty02.png");
+
+            // alert(img1.hasAttribute("src"));
+
+            // img1.removeAttribute("src");
+
+            // alert(img1.attributes.length);
+            // alert(img1.attributes[0].nodeType);
+            // alert(img1.attributes[0].nodeName);
+            // alert(img1.attributes[0].nodeValue);
+
+            // img1.attributes[0].nodeValue = "../images/catty03.png";
+
+            document.getElementById("txt1").toggleAttribute("disabled");
+
+        }; //btn1.onclick
+
+        btn2.onclick = function() {
+
+            //태그 동적 생성하기
+            //1. 간단한 방법
+            //div1.innerHTML = "<img src='../images/catty01.png'>";
+
+            //2. 표준 방법
+            //var img = document.createElement("img"); //<img>
+            //img.setAttribute("src", "../images/catty02.png"); //<img src="">
+            //div1.appendChild(img);
+
+            // var img = document.createElement("img"); //<img>
+            // var src = document.createAttribute("src"); //src=""
+            // src.nodeValue = "../images/catty03.png"; //src="../images/catty03.png"
+            // img.setAttributeNode(src);
+            // div1.appendChild(img);
+
+            //<a href="http://google.com" target="_blank">구글</a>
+
+            var a = document.createElement("a"); //<a>
+            var href = document.createAttribute("href");
+            href.nodeValue = "http://google.com";
+            a.setAttributeNode(href);
+            var target = document.createAttribute("target");
+            target.nodeValue = "_blank";
+            a.setAttributeNode(target);
+            var txt = document.createTextNode("구글");
+            //txt.nodeValue = "구글";
+            a.appendChild(txt);
+
+            div1.appendChild(a);
+
+            var br = document.createElement("br");
+            div1.appendChild(br);
+            
+            //흔히 사용하는 방법(적당하게)
+            //********************************************************************
+            var a2 = document.createElement("a"); //태그는 create로 만든다.
+            a2.setAttribute("href", "http://naver.com"); //속성은 set/get 사용
+            a2.setAttribute("target", "_blank");
+            a2.innerText = "네이버"; //텍스트는 innerText(innerHTML) 사용
+            div1.appendChild(a2);
+            //********************************************************************
+
+        }; //btn2.onclick
+
+        btn3.onclick = function() {
+            div1.removeChild(div1.children[0]);
+        };
+
+        box.onclick = function () {
+            var n = parseInt(Math.random() * 9) + 1;
+
+            var img = document.createElement("img");
+            img.setAttribute("src", "../images/catty0" + n + ".png");
+
+            img.onclick = f1;
+
+            box.appendChild(img);
+        };
+
+        //실행 시점으로 인한 실수 주의!!
+        for (var i=0; i<box.children.length; i++) {
+            box.children[i].onclick = f1;
+        }
+
+        function f1() {
+            // alert(event.srcElement.src);
+            box.removeChild(event.srcElement);
+            event.cancelBubble = true;
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex18_form.html -->
+
+    <!-- 
+
+        <form>, 폼
+        
+        HTML Form + HTML Input Control
+        - 입력 양식
+        - 클라이언트(사용자)로부터 입력장치(키보드, 마우스 등)를 통해서 데이터를 입력받는 역할 > 서버로 전송
+        - ex) 텍스트박스, 버튼, 라디오 버튼, 체크박스, 셀렉트 등..
+
+        <form> 태그
+        - 모든 입력 양식을 담는 컨테이너
+        - 스스로 렌더링 결과를 만들지 않는다.(화면에 안보임)
+        - 입력받은 값들을 취합해서 서버로 보내는 역할(***)
+        
+        
+        form.action 속성
+		- 데이터를 수신할 서버측의 프로그램 주소(URL)
+		- 서버측 프로그래밍 언어로 작성된 프로그램의 주소가 온다.        
+        
+        form.method 속성
+        - 데이터를 전달하는 방식(클라이언트가 서버에게 자원을 요청하는 방식)
+        a. GET
+        b. POST
+
+     -->
+    
+    <h1>데이터 입력 + 전송</h1>
+
+    <form method="POST" action="ex18_ok.jsp">
+        <div>
+        이름 : <input type="text" name="name">
+        </div>
+        <div>
+        나이 : <input type="text" name="age">
+        </div>
+        <div>
+        <input type="submit">
+        </div>
+    </form>
+
+    <h1>네이버 검색</h1>
+
+    <form method="GET" action="https://search.naver.com/search.naver">
+        검색어 : <input type="text" name="query">
+        <input type="submit">
+    </form>
+
+</body>
+</html>

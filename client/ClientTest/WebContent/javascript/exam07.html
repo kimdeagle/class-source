@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            width: 800px;
+            margin: 100px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam07.html -->
+
+    <div>
+        <h1>고양이 키우기 + 마우스 이벤트</h1>
+
+        <img src="../images/catty01.png" name="cat">
+        <img src="../images/catty02.png" name="cat">
+        <img src="../images/catty03.png" name="cat">
+        <img src="../images/catty04.png" name="cat">
+        <img src="../images/catty05.png" name="cat">
+        
+    </div>
+
+    <script>
+
+        var cat = window.document.all.cat; //배열
+
+        for (var i=0; i<cat.length; i++) {
+            cat[i].onmouseover = function() {
+                event.srcElement.width += 5; //마우스 올린 요소(이미지)
+            };
+
+            cat[i].onclick = function() {
+                event.srcElement.width = 128;
+            };
+
+        }
+
+        window.onkeydown = function() {
+            if (event.keyCode == 49) {
+                cat[0].width += 5;
+            } else if (event.keyCode == 50) {
+                cat[1].width += 5;
+            } else if (event.keyCode == 51) {
+                cat[2].width += 5;
+            } else if (event.keyCode == 52) {
+                cat[3].width += 5;
+            } else if (event.keyCode == 53) {
+                cat[4].width += 5;
+            }
+        };
+
+    </script>
+
+</body>
+</html>

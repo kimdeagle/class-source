@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex46_style.html -->
+
+    <img src="../images/catty01.png" id="cat">
+
+    <script>
+
+        var cat = document.getElementById("cat");
+
+        window.onmousedown = function() {
+            cat.style.left = event.clientX + "px";
+            cat.style.top = event.clientY + "px";
+
+            console.log(event.ctrlKey); //현재 ctrl 키를 누르고 있는지 확인?
+            console.log(event.shiftKey);
+            console.log(event.altKey);
+
+        };
+
+    </script>
+
+</body>
+</html>

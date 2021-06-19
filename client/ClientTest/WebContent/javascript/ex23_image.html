@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #view {
+            border: 15px solid khaki;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex23_image.html -->
+
+    <h1>이미지</h1>
+
+    <input type="button" value="확인" name="btn1">
+    <hr>
+    <img src="../images/cat01.jpg" name="cat1">
+    <hr>
+    <img src="../images/cat02.jpg" name="cat2">
+    <hr>
+    <img src="../images/dog01.jpg" name="dog1">
+    <hr>
+    <img src="../images/switch_on.png" name="sw">
+    <hr>
+
+    <img src="../images/dog01.jpg" name="view" id="view">
+    <hr>
+
+    <img src="../images/0.png" name="num">
+
+
+    <script>
+
+        // var btn1 = window.document.all["btn1"];
+        var btn1 = window.document.all.btn1;
+        // var cat1 = window.document.images[0];
+        var cat1 = window.document.images["cat1"];
+        var cat2 = window.document.images["cat2"];
+        var dog1 = window.document.images["dog1"];
+
+        var sw = window.document.images["sw"];
+
+        var view = window.document.images["view"];
+
+        var num = window.document.images["num"];
+
+
+        btn1.onclick = function() {
+            // cat1.width = 500;
+            // cat1.height = 396; //높이 안주면 너비에 따라 종횡비 자동계산됨
+            // cat1.width += 10;
+            
+            // console.log(cat1.src);
+            cat1.src = "../images/cat02.jpg";
+        };
+
+        window.onkeydown = function() {
+            //좌(37)상(38)우(39)하(40)
+            if (event.keyCode == 38) {
+                cat1.width += 10;
+            } else if (event.keyCode == 40) {
+                cat1.width -= 10;
+            }
+
+        }
+
+        //롤오버 이미지(Roll-over image)
+        cat2.onmouseover = function() {
+            cat2.src = "../images/cat03.jpg";
+        };
+
+        cat2.onmouseout = function() {
+            cat2.src = "../images/cat02.jpg";
+        };
+
+        var n = 1;
+        dog1.onclick = function() {
+            //dog01.jpg -> dog02.jpg -> dog03.jpg -> dog04.jpg ...
+            n++;
+            dog1.src = "../images/dog0" + n + ".jpg";
+
+            if (n >= 5) n = 0;
+        };
+
+        //toggle button
+        sw.onclick = function() {
+            // alert(sw.src);
+            if (sw.src.endsWith("switch_on.png")) {
+                sw.src = "../images/switch_off.png";
+                window.document.body.bgColor = "black";
+            } else {
+                sw.src = "../images/switch_on.png";
+                window.document.body.bgColor = "white";
+            }
+        };
+
+        var m = 1;
+
+        window.onkeydown = function() {
+            if (event.keyCode == 37) { //왼쪽
+                m--;
+                if (m < 1) {
+                    alert("처음 이미지입니다.");
+                    m = 1;
+                }
+            } else if (event.keyCode == 39) { //오른쪽
+                m++;
+                if (m > 5) {
+                    alert("마지막 이미지입니다.");
+                    m = 5;
+                }
+            }
+
+            view.src = "../images/dog0" + m + ".jpg";
+
+            //0(48) ~ 9(57)
+            // console.log(event.keyCode);
+
+            num.src ="../images/" + (event.keyCode - 48) + ".png";
+            
+        };
+
+    </script>
+
+</body>
+</html>

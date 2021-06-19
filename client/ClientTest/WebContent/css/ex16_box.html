@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        
+        박스 모델
+
+        2. 너비, 높이
+        - 모든 태그의 영역 크기를 지정할 수 있다.
+        - width(px, %)
+        - height(px, %)
+        
+        */
+
+        .box {
+            border: 1px solid black;
+        }
+
+        #box2 {
+            border: 20px solid red;
+            /* width: 100%;
+            height: auto; */
+            width: 200px;
+            height: 100px;
+        }
+
+        #box3 {
+            width: 200px;
+            height: 100px;
+        }
+
+        #box4 {
+            border: 0px;
+            width: 200px;
+            height: 100px;
+            background-color: tomato;
+        }
+
+        #txt1 {
+            width: 50px;
+            height: 50px;
+        }
+
+        #btn1 {
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex16_box.html -->
+
+    <h1>CSS 박스 모델</h1>
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+
+    <hr>
+
+    <input type="text" id="txt1">
+    <input type="button" id="btn1" value="Button">
+
+</body>
+</html>

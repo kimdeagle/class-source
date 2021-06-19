@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex55.html -->
+
+    <input type="button" value="확인" id="btn1">
+
+    <script>
+
+        //이벤트 매핑할 때도 되도록 화살표 함수 사용하지 말 것!!!
+
+        // document.getElementById("btn1").onclick = function() {
+        //     console.log(event.srcElement); //버튼 자신 -> btn1
+        //     console.log(this); //btn1 or window? -> btn1(O)
+        // };
+
+        // document.getElementById("btn1").onclick = () => {
+        //     console.log(event.srcElement); //btn1
+        //     console.log(this); //최상위(window) 객체
+        // };
+
+
+    </script>
+
+</body>
+</html>

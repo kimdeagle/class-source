@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- config07.xml -->
+	
+	<bean id="dao" class="com.test.spring.di7.SpringDAO"></bean>
+	<bean id="db" class="com.test.spring.di7.DBDAO"></bean>
+	<bean id="file" class="com.test.spring.di7.FileDAO"></bean>
+	
+	<!--
+		의존 주입 -> 자바(X), XML(O)
+	-->
+	<bean id="dao2" class="com.test.spring.di7.SpringDAO">
+		<!-- 생성자 -->
+		<!-- <constructor-arg ref="file"></constructor-arg> -->
+		
+		<!-- setter -->
+		<!-- name="메서드명" 인데 set지우고 뒤에 이름을 적는다.(첫글자는 소문자로) -> setData > data -->
+		<property name="data" ref="db"></property>
+		
+	</bean>
+
+</beans>

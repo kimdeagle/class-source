@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 700px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        #box1 {
+            /*
+            배경색
+            1. solid color : 단색
+            2. gradient color : 색의 변화를 시각적으로 표현
+                a. 선형
+                b. 원형
+            */
+            /* background: linear-gradient(red, blue); */
+            /* background: linear-gradient(to right, red, blue); */
+            /* background: linear-gradient(to left, red, blue); */
+            /* background: linear-gradient(to top, red, blue); */
+            /* background: linear-gradient(to bottom right, red, blue); */
+            /* background: linear-gradient(30deg, red, blue); */
+            /* background: linear-gradient(to right, red, blue, orange); */
+            background: linear-gradient(to right, rgb(255, 0, 0), rgba(255, 0, 0, 0));
+        }
+
+        #box2 {
+            background: radial-gradient(red, blue);
+        }
+
+        #box3 {
+            background: radial-gradient(circle, red, blue);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex44_background.html -->
+
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+    <div id="box3" class="box"></div>
+
+    <input type="button" value="button">
+
+</body>
+</html>

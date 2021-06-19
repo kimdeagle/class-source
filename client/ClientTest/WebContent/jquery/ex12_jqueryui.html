@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jQuery UI 설치 -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <style>
+        #box { width: 150px; height: 150px; background-color: gold; }
+        #box2 { width: 300px; height: 300px; background-color: coral; }
+    </style>
+
+</head>
+<body>
+    <!-- ex12_jqueryui.html -->
+
+    <!--
+
+        http://jquery.com
+        http://jqueryui.com
+
+    -->
+
+    <h1>jQuery UI > Interactions > Draggable</h1>
+
+    <div id="box"></div>
+
+    <img src="../images/catty01.png" alt="" class="cat">
+    <img src="../images/catty02.png" alt="" class="cat">
+    <img src="../images/catty03.png" alt="" class="cat">
+    <img src="../images/catty04.png" alt="" class="cat">
+    <img src="../images/catty05.png" alt="" class="cat">
+    <img src="../images/catty06.png" alt="" class="cat">
+    <img src="../images/catty07.png" alt="" class="cat">
+    <img src="../images/catty08.png" alt="" class="cat">
+    <img src="../images/catty09.png" alt="" class="cat">
+
+
+    <div id="box2"><img src="../images/catty01.png" id="cat1"></div>
+
+    <script>
+
+        // $("#box").draggable();
+        // $(".cat").draggable();
+        // $("*").draggable();
+
+        $(".cat").draggable({
+            // axis: "x"
+            // grid: [128, 128]
+        });
+
+        $("#cat1").draggable({
+            // containment: "#box2"
+            // snap: "#box2"
+            snap: ".cat"
+        });
+
+    </script>
+
+</body>
+</html>

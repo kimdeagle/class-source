@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        
+        요소의 테두리
+        1. border(*** main ***)
+            - 요소의 크기에 포함된다. -> 다른 요소를 밀어낸다.
+            - 상하좌우 따로 지정 가능
+        2. outline
+            - 요소의 크기에 포함이 안된다. -> 다른 요소와 겹친다.
+            - 상하좌우 따로 지정 불가능
+
+        */
+
+
+        .box {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        #box2 {
+            /* border: 10px solid blue; */
+            outline: 10px solid red;
+        }
+
+        .txt {
+            display: block;
+            margin-bottom: 3px;
+            outline: none;
+            border: 1px solid gray;
+            background-color: white;
+        }
+
+        .txt:focus {
+            /* background-color: #EEE; */
+            /* border: 1px solid red; */
+            outline: 2px solid red;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex41_outline.html -->
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <h1>입력</h1>
+
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+    <input type="text" class="txt">
+
+</body>
+</html>

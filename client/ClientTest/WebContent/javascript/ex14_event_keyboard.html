@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt1 {
+            width: 400px;
+            height: 300px;
+            resize: none;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex14_event_keyboard.html -->
+
+    <h1>키보드 이벤트</h1>
+
+    <form name="form1">
+        <textarea name="txt1" id="txt1"></textarea>
+    </form>
+
+    <script>
+
+        /*
+        
+        키 이벤트
+        - onkeyXXX
+        - 폼 관련 태그들에게 적용(포커스를 가져야하기 때문)
+
+        1. onkeydown
+            - 키를 눌렀을 때 발생
+            - 물리키에 반응(모든 키에 반응) -> 물리적인 키 자체에 반응(a, A, ㅁ을 누르던 상관X)
+        2. onkeyup
+            - 키를 뗐을 때 발생
+        ---------------------------------------------------------------------------------------
+        3. onkeypress(거의 안씀)
+            - 키를 눌렀을 때 발생
+            - 문자키에 반응(Ctrl, Shift, Alt, 방향키 등 문자가 아닌 키에는 반응 안함)
+            - 문자를 구분하는 이벤트(ASCII 문자)
+        
+        */
+
+        // window.document.form1.txt1.onkeydown = function () {
+        //     console.log("keydown");
+        //     console.log(event.keyCode);
+        // };
+
+        // window.document.form1.txt1.onkeyup = function () {
+        //     console.log("keyup");
+        // };
+
+        window.document.form1.txt1.onkeypress = function () {
+            console.log("keypress");
+            console.log(event.keyCode);
+        };
+
+    </script>
+
+</body>
+</html>

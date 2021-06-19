@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex05_function.html -->
+
+    <script>
+
+        //변수 호이스팅, Variable Hoisting -> 사용 금지!!!
+        // - 초기화값은 끌어올리지 않고 선언부만 끌어올린다.(var s;)
+        console.log(s);
+        var s = 10; //동일한 이름의 변수를 선언해도 에러가 나지 않는다.
+        console.log(s);
+
+        //함수 호이스팅, Function Hoisting -> 종종 사용
+        // - 함수 정의 부분을 최상단으로 끌어올린다.
+        f4();
+
+        /*
+        
+        JavaScript Function
+        - 함수, 메서드, 프로시저 등..
+
+        자바 메서드
+        public [static] int m1(int num) {
+            return 100 + num;
+        }
+
+        자바스크립트 함수
+        function m1(num) {
+            return 100 + num;
+        }
+
+        */
+
+        var num; //null -> undefined //변수가 생성된 후 초기화 되지 않은 상태
+        console.log(num);
+
+        num = null; //개발자가 의도적으로 비어있는 상태로 만든 상태
+        console.log(num);
+
+        console.log(null == undefined); //true (실제로는 다른값이다.(비슷한 값))
+
+        //비교 연산자
+        // - 자료형은 비교하지 않는다.
+        console.log(100 == 100); //true
+        console.log("100" == 100); //true
+
+        //진성 비교 연산자
+        // - 자료형도 비교한다.
+        console.log(100 === 100); //true
+        console.log("100" === 100); //false
+        console.log(null === undefined); //false
+        
+
+
+        function f1() {
+            console.log("F1");
+        }
+
+        f1();
+
+        function f2() {
+            // console.log("f2", num);
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+        }
+
+        //console.clear();
+        f2(100);
+        f2(200);
+        f2(300);
+        f2();
+        //console.clear();
+        f2(100, 200, 300);
+
+        function f3() {
+            return 10;
+        }
+
+        console.log("f3", f3());
+
+        function f4() {
+            console.log("f4");
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* 북적이에게 문의하기 */
+
+#bookjeok {
+    text-align:center;
+    position: fixed;
+    padding:20px;
+    bottom: 0;
+}
+
+#chatbtn {
+    width:60px;
+}

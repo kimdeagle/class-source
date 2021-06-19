@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #parent {
+            background-color: tomato;
+            width: 300px;
+            height: 300px;
+
+            /* 자식의 position:absolute의 부모 역할을 하기 위한 처리 */
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        #child {
+            background-color: gold;
+            width: 30px;
+            height: 100px;
+            
+            /* position: relative;
+            left: 75px;
+            top: 75px; */
+
+            position: absolute;
+            left: 135px;
+            top: 50px;
+
+            transition-property: transform;
+            transition-duration: 10s;
+            transition-timing-function: linear;
+            transform-origin: center bottom;
+        }
+
+        #parent:hover #child {
+            transform: rotate(3600deg);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex54_transition.html -->
+
+    <div id="parent">
+        <div id="child">
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #timer {
+            width: 500px;
+            height: 130px;
+            border: solid 1px gray;
+        }
+
+        #timer input {
+            width: 120px;
+            height: 120px;
+            margin-left: 20px;
+            border: 0px;
+            font-size: 5em;
+            font-weight: bold;
+        }
+
+        #timer span {
+            font-size: 5em;
+            font-weight: bold;
+        }
+
+        #control {
+            width: 500px;
+            height: 100px;
+        }
+
+        #control input {
+            width: 120px;
+            height: 50px;
+            border: 1px solid gray;
+            background-color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #control #stop, #control #end {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam16.html -->
+
+    <div id="timer">
+        <input type="text" name="min" value="00">
+        <span>:</span>
+        <input type="text" name="sec" value="00">
+        <span>:</span>
+        <input type="text" name="millisec" value="00">
+    </div>
+
+    <div id="control">
+        <input type="button" value="시작" name="start" id="start">
+        <input type="button" value="멈춤" name="stop" id="stop">
+        <input type="button" value="종료" name="end" id="end">
+    </div>
+
+    <script>
+
+        var min = document.all.min;
+        var sec = document.all.sec;
+        var millisec = document.all.millisec;
+        var start = document.all.start;
+        var stop = document.all.stop;
+        var end = document.all.end;
+
+        var ms = 0;
+        var s = 0;
+        var m = 0;
+
+        var timer;
+
+        start.onclick = function() {
+
+            start.style.backgroundColor = "#eee";
+            start.style.cursor = "not-allowed";
+            stop.style.backgroundColor = "white";
+            stop.style.cursor = "pointer";
+            end.style.backgroundColor = "white";
+            end.style.cursor = "pointer";
+
+            timer = setInterval(function() {
+                
+                ms++;
+
+                if (ms == 100) {
+                    ms = 0;
+                    s++;
+                    if (s == 60) {
+                        s = 0;
+                        m++;
+                        if (m < 10) {
+                            min.value = "0" + m;
+                        } else {
+                            min.value = m;
+                        }
+                    }
+                    if (s < 10) {
+                        sec.value = "0" + s;
+                    } else {
+                        sec.value = s;
+                    }
+                }
+                if (ms < 10) {
+                    millisec.value = "0" + ms;
+                } else {
+                    millisec.value = ms;
+                }        
+
+            }, 1);
+        };
+
+        stop.onclick = function() {
+            clearInterval(timer);
+            start.style.backgroundColor = "white";
+            start.style.cursor = "pointer";
+            stop.style.backgroundColor = "#eee";
+            stop.style.cursor = "not-allowed";
+        };
+
+        end.onclick = function() {
+            end.style.backgroundColor = "#eee";
+            end.style.cursor = "not-allowed";
+            ms = 0;
+            s = 0;
+            m = 0;
+            min.value = "00";
+            sec.value = "00";
+            millisec.value = "00";
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        fieldset {
+            width: 200px;
+        }
+
+        fieldset > div {
+            margin: 5px;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex32_content.html -->
+
+    <h1>테이블</h1>
+
+    <fieldset>
+        <legend>행X열</legend>
+        <div><label>행 : <select id="selRow"></select></label></div>
+        <div><label>열 : <select id="selCol"></select></label></div>
+        <div><input type="button" value="생성하기" id="btnCreate"></div>
+    </fieldset>
+
+    <hr>
+
+    <!-- 동적으로 테이블 생성 시 tbody 작성 -->
+    <table id="tbl1">
+        <tbody id="tbody1"></tbody>
+    </table>
+
+    <script>
+
+        var selRow = document.getElementById("selRow");
+        var selCol = document.getElementById("selCol");
+        var btnCreate = document.getElementById("btnCreate");
+        var tbl1 = document.getElementById("tbl1");
+        var tbody1 = document.getElementById("tbody1");
+
+        //행 : 1 ~ 20
+        for (var i=1; i<=20; i++) {
+            //BOM 사용
+            var op = new Option();
+            op.value = i;
+            op.text = i;
+            selRow.options.add(op);
+        }
+
+        //열 : 1 ~ 10
+        for (var i=1; i<=10; i++) {
+            //DOM 사용
+            selCol.innerHTML += "<option value='"+ i +"'>"+ i +"</option>";
+        }
+
+        btnCreate.onclick = function() {
+
+            tbody1.innerHTML = ""; //초기화(이전 테이블 삭제)
+
+            for (var i=0; i<selRow.value; i++) { //행 <tr> 생성
+                var temp = ""; //행 누적 변수
+                temp = "<tr>";
+
+                for (var j=0; j<selCol.value; j++) { //열 <td> 생성
+                    temp += "<td>";
+                    temp += i + "," + j;
+                    temp += "</td>";
+                }
+
+                temp += "</tr>";
+
+                tbody1.innerHTML += temp; //테이블에 <tr> 추가
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

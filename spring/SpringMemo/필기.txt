@@ -1,0 +1,57 @@
+메모장
+
+1. 버전 바꾸기
+	- pom.xml
+		a. 1.6 * 3개 -> 1.8
+		b. spring version 3.1.1 -> 4.3.8
+		c. maven -> Update project...
+
+2. 라이브러리 추가
+	- pom.xml
+	- 프로젝트에 필요한 여러 라이브러리 추가
+	- ojdbc6.jar (직접)
+	- spring-jdbc.jar (<dependency>)
+	- lombok.jar (<dependency>)
+
+	- https://mvnrepository.com/
+	(official)
+	- https://search.maven.org/
+
+3. web.xml
+	- 스프링 요청 확장자 선언 : *.memo
+	- 인코딩 필터 추가
+	
+4. 파일 생성
+	- SpringMemo > db.sql
+	
+	- jQuery + Bootstrap
+		- webapp > resources
+		
+	- com.test.memo > MemoController.java			//메모 컨트롤러
+	- com.test.memo > IMemo.java					//DAO 인터페이스
+	- com.test.memo > MemoDAO.java					//DAO 클래스
+	- com.test.memo > MemoDTO.java					//DTO 클래스
+	
+	- views > index.jsp
+	- views > add.jsp
+	- views > addok.jsp
+	- views > template.jsp
+	- views > inc > asset.jsp
+	
+	- webapp > resources > css > main.css
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

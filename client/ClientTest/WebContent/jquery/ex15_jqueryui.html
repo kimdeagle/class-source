@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <style>
+
+        #list1 .ui-selected {
+            background-color: gold;
+        }
+
+        #list2 {
+            border: 1px solid #ccc;
+            list-style-type: none;
+            padding: 0;
+            width: 120px;
+            border-radius: 3px;
+        }
+
+        #list2 li {
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        #list2 li:last-child {
+            border-bottom: 0;
+        }
+
+        #list2 li.ui-selected {
+            background-color: coral;
+            color: white;
+            border-left: 15px solid red;
+        }
+
+        #list3 img {
+            cursor: pointer;
+            opacity: .2;
+        }
+
+        #list3 img:hover {
+            opacity: .5;
+        }
+
+        #list3 img.ui-selected {
+            opacity: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex15_jqueryui.html -->
+
+    <h1>Selectable</h1>
+
+    <h2>목록</h2>
+    <ul id="list1">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+        <li>오렌지</li>
+        <li>자두</li>
+    </ul>
+
+    <h2>목록</h2>
+    <ul id="list2">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+        <li>오렌지</li>
+        <li>자두</li>
+    </ul>
+
+    <h2>프로젝트 팀장 선택</h2>
+
+    <div id="list3">
+        <img src="../images/man_01.png">
+        <img src="../images/man_02.png">
+        <img src="../images/man_03.png">
+        <img src="../images/woman_01.png">
+        <img src="../images/woman_02.png">
+        <img src="../images/woman_03.png">
+    </div>
+
+    <script>
+
+        $("#list1").selectable();
+        $("#list2").selectable();
+        // $("#list3").selectable();
+
+        var mlist = [
+            {
+                name: "홍길동",
+                age: 30,
+                pos: "과장"
+            },
+            {
+                name: "아무개",
+                age: 32,
+                pos: "과장"
+            },
+            {
+                name: "하하하",
+                age: 40,
+                pos: "부장"
+            },
+            {
+                name: "호호호",
+                age: 29,
+                pos: "팀장"
+            },
+            {
+                name: "헤헤헤",
+                age: 32,
+                pos: "과장"
+            },
+            {
+                name: "후후후",
+                age: 35,
+                pos: "부장"
+            }
+        ];
+
+        $("#list3").selectable({
+            selected: function(event, ui) {
+                // alert();
+                // alert(ui.selected);
+                // alert($(ui.selected).index());
+                alert(
+                    "이름:" + mlist[$(ui.selected).index()].name + "\n" +
+                    "나이:" + mlist[$(ui.selected).index()].age + "\n" +
+                    "직급:" + mlist[$(ui.selected).index()].pos
+                );
+            }
+        });
+
+    </script>
+
+</body>
+</html>

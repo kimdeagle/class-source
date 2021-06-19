@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <style>
+
+        div {
+            width: 1100px;
+        }
+
+        button {
+            outline: none;
+            border: 0px;
+            background-color: lightgray;
+            display: block;
+            margin-left: 5px;
+            float: left;
+
+        }
+
+        button > i {
+            width: 70px;
+            height: 70px;
+            padding: 20px 10px 10px 10px;
+            font-size: 4em;
+            color: gray;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- exam14.html -->
+
+    <h1>버튼 클릭 + 활성화</h1>
+
+    <div>
+        <button name="btn"><i class="fas fa-dog"></i></button>
+        <button name="btn"><i class="fas fa-paw"></i></button>
+        <button name="btn"><i class="fas fa-bone"></i></button>
+        <button name="btn"><i class="fas fa-frog"></i></button>
+        <button name="btn"><i class="fas fa-cat"></i></button>
+        <button name="btn"><i class="fas fa-piggy-bank"></i></button>
+        <button name="btn"><i class="fas fa-horse"></i></button>
+        <button name="btn"><i class="fas fa-dove"></i></button>
+        <button name="btn"><i class="fas fa-drumstick-bite"></i></button>
+        <button name="btn"><i class="fas fa-fish"></i></button>
+    </div>
+
+    <script>
+
+        var btn = document.all["btn"];
+        var n = 0;
+        var stop;
+
+        stop = setInterval(function() {
+            if (n == btn.length) {
+                n = 0;
+            }
+            if (n != 0) {
+                btn[n-1].style.backgroundColor = "lightgray";
+                btn[n-1].disabled = true;
+            } else {
+                btn[btn.length-1].style.backgroundColor = "lightgray";
+                btn[btn.length-1].disabled = true;
+            }
+            btn[n].style.backgroundColor = "white";
+            btn[n].disabled = false;
+            n++;
+        }, 100);
+
+        for (var i=0; i<btn.length; i++) {
+            btn[i].onclick = function() {
+                document.body.bgColor = "cornflowerblue";
+                clearInterval(stop);
+            };
+        }
+        
+
+
+        // for (var i=0; i<btn.length; i++) {
+        //     btn[i].style.backgroundColor = "white";
+        // }
+
+    </script>
+
+</body>
+</html>

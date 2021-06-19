@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #tbl {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        #tbl .item {
+            border: 1px solid gray;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            font-size: 5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <!-- exam20.html -->
+
+    <h1>테이블 + 집합 이벤트 + innerText</h1>
+
+    <table id="tbl">
+        <tr>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+        </tr>
+        <tr>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+        </tr>
+        <tr>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+        </tr>
+        <tr>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+        </tr>
+        <tr>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+            <td class="item">0</td>
+        </tr>
+    </table>
+
+    <script>
+
+        var tbl = document.getElementById("tbl");
+        var item = document.getElementsByClassName("item");
+
+        for (var i=0; i<item.length; i++) {
+            item[i].onmousedown = function() {
+                //왼쪽 : 1, 오른쪽 : 2
+                // console.log(event.buttons);
+                if (event.srcElement.bgColor == "gray") {
+                    return;
+                } else {
+                    if (event.buttons == 1) {
+                        event.srcElement.innerText++;
+                    } else if (event.buttons == 2) {
+                        event.srcElement.innerText--;
+                        if (event.srcElement.innerText == 0) {
+                            event.srcElement.bgColor = "gray";
+                        }
+                    }
+                }
+            };
+        }
+
+    </script>
+
+</body>
+</html>

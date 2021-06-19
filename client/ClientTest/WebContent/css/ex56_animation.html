@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+
+        /* transition -> animation */
+
+        /* .box {
+            margin: 20px 0px;
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        #box1 {
+            transition-delay: 1s;
+        }
+
+        #box2 {
+            transition-delay: 1.2s;
+        }
+
+        #box3 {
+            transition-delay: 1.4s;
+        }
+
+        #box4 {
+            transition-delay: 1.6s;
+        }
+
+        #box5 {
+            transition-delay: 1.8s;
+        }
+
+        body:hover .box {
+            margin-left: 500px;
+        } */
+
+        .box {
+            margin: 20px 0px;
+        }
+
+        body:hover #box1 {
+            animation-name: key1; /* transition-property, 외부참조 */
+            animation-duration: 1s; /* transition-duration */
+            /* animation-fill-mode: forwards; */
+        }
+
+        body:hover #box2 {
+            animation-name: key1;
+            animation-duration: 3s;
+        }
+
+        @keyframes key1 {
+            /* 어떤 속성 + 값의 변화 -> 정의 */
+            from { /* 변화 초기값 */
+                /* width: 150px; */
+                margin-left: 0px;
+            }
+            to { /* 변화 최종값 */
+                /* width: 500px; */
+                margin-left: 500px;
+            }
+        }
+
+        body:hover #box3 {
+            animation-name: key2;
+            animation-duration: 3s;
+        }
+
+        @keyframes key2 {
+            
+            /*
+            
+            from {} ~ to{}
+            0% {} ~ 100%{}
+
+            */
+            
+            0% {
+                width: 150px;
+                height: 150px;
+                background-color: greenyellow;
+            }
+            25% {
+                width: 500px;
+                height: 150px;
+                background-color: darkcyan;
+            }
+            50% {
+                width: 300px;
+                height: 300px;
+                background-color: crimson;
+            }
+            75% {
+                width: 50px;
+                height: 150px;
+                background-color: cornflowerblue;
+            }
+            100% {
+                width: 150px;
+                height: 150px;
+                background-color: greenyellow;
+            }
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex56_animation.html -->
+
+    <div id="box1" class="box small bgred"></div>
+    <div id="box2" class="box small bgyellow"></div>
+    <div id="box3" class="box small bggreen"></div>
+    <div id="box4" class="box small bgblue"></div>
+    <div id="box5" class="box small bgorange"></div>
+
+</body>
+</html>

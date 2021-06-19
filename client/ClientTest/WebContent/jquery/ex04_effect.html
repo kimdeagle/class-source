@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <style>
+
+        #box { width: 200px; height: 200px; border: 1px solid black; background-color: gold; }
+
+    </style>
+
+    <script>
+
+        //window.onload = function() {
+        //};
+
+        //jQuery("#btn1")
+        //$("#btn1")
+        //$ -> jQuery 별명
+
+        $(document).ready(function() {
+
+            //jQuery Effect Function
+            //1. hide(time), show(time), toggle(time)
+            // - ms or "slow", "fast"
+            //2. fadeOut(time), fadeIn(time), fadeToggle(time)
+            //3. slideUp(time), slideDown(time), slideToggle(time)
+            //4. animate() : 사용자 정의
+
+            $("#btn1").click(function() {
+                // $("#box").hide("slow");
+                // $("#box").fadeOut(1000);
+                // $("#box").slideUp(1000);
+
+                // $("#box").animate({
+                //     //익명 객체
+                //     //단위 생략하면 px
+                //     width: 400,
+                //     height: "400px",
+                //     opacity: 0
+                // });
+
+                // $("#box").animate({
+                //     width: "+=100",
+                //     "margin-left": "+=50"
+                //     // marginLeft: "+=50"
+                // }, 3000);
+
+                // $("#box").animate({
+                //     width: "toggle",
+                //     height: "toggle",
+                //     "font-size": "toggle"
+                // }, 1000);
+
+
+                $("#box").hide(3000);
+
+                // $(document.body)
+                setTimeout(function() {
+                    $("body").css("background-color", "black");
+                }, 3000);
+
+
+            });
+            
+            $("#btn2").click(function() {
+                // $("#box").show("fast");
+                // $("#box").fadeIn(1000);
+                // $("#box").slideDown(1000);
+
+                $("#box").hide(3000, function() {
+                    //콜백 함수(Callback) - 시스템이나 환경이 호출하는 함수
+                    // $("body").css("background-color", "black");
+                    location.href = "http://google.com"
+                });
+
+            });
+            
+            $("#btn3").click(function() {
+                // $("#box").toggle(2000);
+                // $("#box").fadeToggle(1000);
+                // $("#box").slideToggle(1000);
+
+                //대부분의 jQuery 함수는 대부분 객체 자신을 반환한다.
+
+                // var temp = $("#box").css("color", "white");
+                // var temp2 = temp.css("background-color", "gray");
+                // temp2.css("border-width", "10px");
+
+                //메서드 체인
+                // $("#box").css("color", "yellow")
+                //          .css("background-color", "tomato")
+                //          .css("border-width", "20px");
+
+                // $("#box").hide(2000)
+                //          .show(2000)
+                //          .slideUp(2000)
+                //          .slideDown(2000)
+                //          .animate({
+                //              width: "+=200px"
+                //          }, 1000);
+            
+                $("#box").stop();
+                         
+
+            });
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+    <!-- ex04_effect.html -->
+
+    <h1>jQuery Effect</h1>
+
+    <input type="button" value="확인1" id="btn1">
+    <input type="button" value="확인2" id="btn2">
+    <input type="button" value="확인3" id="btn3">
+
+    <hr>
+
+    <div id="box">상자</div>
+
+    나머지 내용물입니다.
+
+</body>
+</html>

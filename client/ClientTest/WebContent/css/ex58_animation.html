@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box {
+            border: 10px solid black;
+            width: 300px;
+            height: 800px;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        #ball {
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 100px;
+            top: 0px;
+        }
+
+        #box:hover #ball {
+            animation-name: keyBall;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes keyBall {
+            from { top: 0px; }
+            to { top: 700px; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex58_animation.html -->
+
+    <div id="box">
+        <div id="ball"></div>
+    </div>
+
+</body>
+</html>

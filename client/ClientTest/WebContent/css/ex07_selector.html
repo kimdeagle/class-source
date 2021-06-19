@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 1. 태그 선택자 */
+        /* h1 { color: blue; } */
+
+        /* 2. id 선택자 */
+        /* #one { color: orange; } */
+
+        /* class 선택자 */
+        /* .two { color: green; } */
+
+        /* 4. 그룹 선택자 */
+        /* #one, .two { font-size: 2em; } */
+
+        /* 5. 자식 선택자 */
+        /* #tbl1 > tbody > tr > td { color : green; } */
+
+        /* 6. 자손 선택자 */
+        #tbl1 td { color: hotpink; }
+
+    </style>
+</head>
+<body>
+    <!-- ex07_selector.html -->
+
+    <h1>주소록</h1>
+
+    <table border="1" width="500" id="tbl1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>성별</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>남자</td>
+            <td>서울시</td>
+        </tr>
+        <tr>
+            <td>아무개</td>
+            <td>25</td>
+            <td>남자</td>
+            <td>인천시</td>
+        </tr>
+        <tr>
+            <td>하하하</td>
+            <td>22</td>
+            <td class="two">여자</td>
+            <td>광주시</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>남자</td>
+            <td id="one">서울시</td>
+        </tr>
+        <tr>
+            <td>아무개</td>
+            <td>25</td>
+            <td>남자</td>
+            <td>인천시</td>
+        </tr>
+        <tr>
+            <td>하하하</td>
+            <td>22</td>
+            <td>여자</td>
+            <td>광주시</td>
+        </tr>
+        <tr>
+            <td class="two">홍길동</td>
+            <td>20</td>
+            <td>남자</td>
+            <td>서울시</td>
+        </tr>
+        <tr>
+            <td>아무개</td>
+            <td>25</td>
+            <td>남자</td>
+            <td>인천시</td>
+        </tr>
+        <tr>
+            <td>하하하</td>
+            <td class="two">22</td>
+            <td>여자</td>
+            <td>광주시</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>남자</td>
+            <td>서울시</td>
+        </tr>
+        <tr>
+            <td>아무개</td>
+            <td>25</td>
+            <td>남자</td>
+            <td>인천시</td>
+        </tr>
+        <tr>
+            <td>하하하</td>
+            <td>22</td>
+            <td>여자</td>
+            <td>광주시</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>남자</td>
+            <td>서울시</td>
+        </tr>
+        <tr>
+            <td>아무개</td>
+            <td>25</td>
+            <td>남자</td>
+            <td>인천시</td>
+        </tr>
+        <tr>
+            <td>하하하</td>
+            <td>22</td>
+            <td>여자</td>
+            <td>광주시</td>
+        </tr>
+    </table>
+
+    <h1>모임정보</h1>
+
+    <table border="1" width="500">
+        <thead>
+        <tr>
+            <th>제목</th>
+            <th>내용</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Java 스터디</td>
+            <td>Java 스터디를 모집합니다.</td>
+        </tr>
+        <tr>
+            <td>Java 프로젝트</td>
+            <td>토이 프로젝트 하실 분 모집합니다.</td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">문의사항 : hong@test.com</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

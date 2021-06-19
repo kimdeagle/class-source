@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex18_idcheck.html -->
+
+    <h1>아이디 중복검사</h1>
+
+    <form name="form1">
+        <fieldset>
+            <legend>중복검사</legend>
+            <input type="text" name="txtID">
+            <input type="button" value="검사하기">
+            <input type="button" value="사용하기" name="btnUse">
+            <input type="button" value="창닫기" name="btnClose">
+        </fieldset>
+    </form>
+
+    <script>
+        var txtID = window.document.form1.txtID;
+        var btnUse = window.document.form1.btnUse;
+        var btnClose = window.document.form1.btnClose;
+
+        btnClose.onclick = function() {
+            window.close();
+        };
+
+        btnUse.onclick = function() {
+            opener.document.form1.txtID.value = window.document.form1.txtID.value;
+            window.close();
+        };
+    </script>
+
+</body>
+</html>

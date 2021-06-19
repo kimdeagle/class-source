@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex37.html -->
+
+    <h1>테이블</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        var cell = document.getElementsByClassName("cell");
+        var index = 0;
+
+        // cell[0].bgColor = "gold";
+        cell[0].innerHTML = "<img src='../images/catty07.png' style='width:90px; height:90px'>";
+
+        window.onkeydown = function() {
+            if (event.keyCode == 37) { //왼쪽
+                index--;
+                if (index < 0) {
+                    // index = 0; //멈춤
+                    index = cell.length - 1; //순환
+                }
+                clear();
+                // cell[index].bgColor = "gold";
+                cell[index].innerHTML = "<img src='../images/catty07.png' style='width:90px; height:90px'>";
+            } else if (event.keyCode == 39) { //오른쪽
+                index++;
+                if (index >= cell.length) {
+                    // index = cell.length - 1; //멈춤
+                    index = 0; //순환
+                }
+                clear();
+                // cell[index].bgColor = "gold";
+                cell[index].innerHTML = "<img src='../images/catty07.png' style='width:90px; height:90px'>";
+            }
+        };
+
+        function clear() {
+            for (var i=0; i<cell.length; i++) {
+                // cell[i].bgColor = "transparent";
+                cell[i].innerHTML = "";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

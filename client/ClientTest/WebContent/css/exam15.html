@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 30px dashed #999;
+            width: 700px;
+            height: 700px;
+            margin: 50px auto;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .box div {
+            border: 15px solid #555;
+            color: white;
+            font-variant: small-caps;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px;
+            border-radius: 50px;
+            transform-origin: center bottom;
+        }
+        
+        .box .hour {
+            width: 50px;
+            height: 130px;
+            background-color: #FF6347;
+            position: absolute;
+            left: 325px;
+            top: 170px;
+            transition: all 36000s;
+            transition-timing-function: linear;
+        }
+        
+        .box .min {
+            width: 50px;
+            height: 200px;
+            background-color: #6495ED;
+            position: absolute;
+            left: 325px;
+            top: 100px;
+            transition: all 6000s;
+            transition-timing-function: linear;
+        }
+        
+        .box .sec {
+            width: 50px;
+            height: 270px;
+            background-color: #FFD700;
+            position: absolute;
+            left: 325px;
+            top: 30px;
+            transition: all 100s;
+            transition-timing-function: linear;
+        }
+
+        .box:hover .hour {
+            transform: rotate(36000deg);
+        }
+
+        .box:hover .min {
+            transform: rotate(36000deg);
+        }
+
+        .box:hover .sec {
+            transform: rotate(36000deg);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam15.html -->
+
+    <div class="box">
+        <div class="hour">Hour</div>
+        <div class="min">Min</div>
+        <div class="sec">Sec</div>
+    </div>
+
+</body>
+</html>

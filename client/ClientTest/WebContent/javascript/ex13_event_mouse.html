@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt1 {
+            width: 400px;
+            height: 300px;
+            resize: none;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex13_event_mouse.html -->
+
+    <h1>마우스 관련 이벤트</h1>
+
+    <form name="form1">
+        <textarea name="txt1" id="txt1" onmouseover="//f1();" onmouseout="//f2();"></textarea>
+        <hr>
+        <input type="button" value="버튼" onclick="console.log(event.clientX);">
+    </form>
+
+    <script>
+
+        /*
+        
+        마우스 관련 이벤트
+        - onmouseXXX
+        1. onmouseover : 해당 객체의 영역 위에 마우스 커서가 진입하는 순간
+        2. onmouseout : 해당 객체의 영역 위에서 마우스 커서가 빠져나가는 순간
+        3. onmousedown : 해당 객체의 영역 위에서 마우스 버튼을 누르는 순간
+        4. onmouseup :  해당 객체의 영역 위에서 마우스 버튼을 떼는 순간
+        5. onmousemove : 해당 객체의 영역 위에서 마우스 커서가 움직이는 순간
+
+        6. onclick : 마우스 이벤트X -> 마우스 버튼? 커서 좌표? 얻는 행동 절대!!! 하지 말 것!
+        
+        */
+
+        function f1() {
+            var now = new Date();
+            window.document.form1.txt1.value = "[" + now.toLocaleTimeString() + "]mouseover\n" + window.document.form1.txt1.value;
+        }
+        
+        function f2() {
+            var now = new Date();
+            window.document.form1.txt1.value = "[" + now.toLocaleTimeString() + "]mouseout\n" + window.document.form1.txt1.value;
+        }
+
+        // window.document.form1.txt1.onmousedown = function () {
+        //     var now = new Date();
+        //     window.document.form1.txt1.value = "[" + now.toLocaleTimeString() + "]mousedown\n" + window.document.form1.txt1.value;
+        // };
+
+        // window.document.form1.txt1.onmouseup = function () {
+        //     var now = new Date();
+        //     window.document.form1.txt1.value = "[" + now.toLocaleTimeString() + "]mouseup\n" + window.document.form1.txt1.value;
+        // };
+
+        window.document.form1.txt1.onmousedown = function() {
+            //어떤 버튼을 눌렀는지??
+            // - event 객체 제공
+            // - 1 : 왼쪽버튼
+            // - 2 : 오른쪽버튼
+            // - 4 : 휠버튼
+
+            //window.document.form1.txt1.value = event.buttons + "\n" + window.document.form1.txt1.value;
+
+            //if (event.buttons == 2) {
+            //    alert("오른쪽 버튼을 사용할 수 없습니다.");
+            //}
+
+
+            //마우스 커서 좌표
+            //1. x, y
+            // - 문서 좌측 상단을 기준점으로 한다.
+            // - 비표준(MS)
+
+            //2. clientX, clientY (가장 많이 쓰는 좌표)
+            // - 문서 좌측 상단을 기준점으로 한다.
+            // - 표준
+            // - CSS(position:absolute) 느낌
+
+            //3. screenX, screenY
+            // - 모니터 화면의 좌측 상단을 기준점으로 한다.
+            // - 표준
+
+            //4. offsetX, offsetY (자주 씀)
+            // - 이벤트를 발생한 객체의 좌측 상단을 기준점으로 한다.
+            // - 표준
+            // - CSS(position:relative) 느낌
+
+            // window.document.form1.txt1.value = event.x + "," + event.y + "\n" + window.document.form1.txt1.value;
+            // window.document.form1.txt1.value = event.clientX + "," + event.clientY + "\n" + window.document.form1.txt1.value;
+            // window.document.form1.txt1.value = event.screenX + "," + event.screenY + "\n" + window.document.form1.txt1.value;
+            // window.document.form1.txt1.value = event.offsetX + "," + event.offsetY + "\n" + window.document.form1.txt1.value;
+
+        };
+
+        // window.document.form1.txt1.onmousemove = function () {
+        //     window.document.form1.txt1.value = event.offsetX + "," + event.offsetY + "\n" + window.document.form1.txt1.value;
+        // };
+
+    </script>
+
+</body>
+</html>

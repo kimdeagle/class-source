@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 1px solid black;
+            width: 350px;
+            height: 200px;
+            margin: 15px;
+        }
+
+        #box1 {
+            /*
+            border-radius: 모서리를 둥글게(px, %)
+            범위 : 0px ~ 짧은축/2px
+            */
+            border-radius: 100px;
+            padding: 10px 80px;
+        }
+
+        #box2 {
+            /* 범위 : 0% ~ 50% */
+            border-radius: 50%;
+        }
+
+        #box3 {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+
+        #cat1 {
+            border-radius: 94px;
+        }
+
+        #cat2 {
+            border-radius: 50%;
+        }
+
+        #txt {
+            border: 1px solid #999;
+            background-color: white;
+            outline: none;
+            border-radius: 15px;
+            padding: 3px 10px;
+        }
+
+        /* #list img:hover {
+            border-radius: 50%;
+        } */
+
+        #list:hover img {
+            border-radius: 50%;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: separate;
+            border-radius: 10px;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            padding: 3px 10px;
+        }
+
+        #tbl1 tr:hover td {
+            border-radius: 10px;
+            background-color: #EEE;
+            box-shadow: 0px 3px 3px gray;
+        }
+
+        #tbl1 tr td:hover {
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex42_border.html -->
+
+    <div id="box1" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, totam velit nulla vero dolor eius accusantium voluptatum fugiat est modi, inventore, fugit sit aliquam numquam beatae voluptates natus pariatur consectetur?</div>
+    <div id="box2" class="box">Sit quis dignissimos est repudiandae minima reiciendis ipsum accusantium, reprehenderit ipsa eligendi harum officiis alias temporibus minus fuga quibusdam iusto tempora earum quisquam voluptas obcaecati, id quod soluta omnis. Minima?</div>
+    <div id="box3" class="box">Incidunt quidem ex similique harum eos dolor quia molestiae, voluptas neque alias dolores veritatis in laudantium tenetur enim adipisci temporibus aspernatur quisquam laboriosam ab praesentium doloremque natus! Vel, reprehenderit nisi!</div>
+
+    <hr>
+
+    <img src="../images/cat01.jpg" id="cat1">
+    <img src="../images/cat02.jpg" id="cat2">
+
+    <hr>
+
+    <input type="text" id="txt">
+
+    <hr>
+
+    <div id="list">
+        <img src="../images/dog01.jpg">
+        <img src="../images/dog02.jpg">
+        <img src="../images/dog03.jpg">
+        <img src="../images/dog04.jpg">
+        <img src="../images/dog05.jpg">
+    </div>
+
+    <h1>Table</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+</body>
+</html>

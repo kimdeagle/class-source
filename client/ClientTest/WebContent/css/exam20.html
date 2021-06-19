@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        #main .item {
+            border: 1px solid #999;
+            width: 350px;
+            height: 150px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+        #main h1, #main label {
+            font-variant: small-caps;
+        }
+
+        #main .item input[type=radio] {
+            display: none;
+        }
+
+        #main .item label {
+            display: block;
+            float: left;
+            width: 150px;
+            height: 130px;
+            background-color: #EEE;
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px;
+            cursor: pointer;
+        }
+
+        #main .item .disc {
+            float: left;
+            width: 200px;
+            height: 150px;
+            text-align: center;
+        }
+
+        #main .item .disc img {
+            width: 150px;
+            height: 150px;
+            transform: rotate(0deg);
+
+        }
+
+        #main .item > input[type=radio]:checked + label {
+            background-color: #FF6347;
+            color: white;
+        }
+
+        #main .item > input[type=radio]:checked + label + div > img {
+            animation-name: rotate;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- exam20.html -->
+
+    <div id="main">
+        <h1>Music</h1>
+        <div class="item">
+            <input type="radio" name="rb" id="rb1">
+            <label for="rb1">Play</label>
+            <div class="disc" id="disc1"><img src="../images/disc/lp01.png"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb2">
+            <label for="rb2">Play</label>
+            <div class="disc" id="disc2"><img src="../images/disc/lp02.png"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb3">
+            <label for="rb3">Play</label>
+            <div class="disc" id="disc3"><img src="../images/disc/lp03.png"></div>
+        </div>
+        <div class="item">
+            <input type="radio" name="rb" id="rb4">
+            <label for="rb4">Play</label>
+            <div class="disc" id="disc4"><img src="../images/disc/lp04.png"></div>
+        </div>
+    </div>
+
+</body>
+</html>

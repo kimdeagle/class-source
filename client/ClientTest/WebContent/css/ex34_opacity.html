@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        /*
+        
+        opacity, 불투명도
+        - 0~1
+        - 0 : 투명, 1 : 불투명
+
+        */
+
+        #box1 {
+            background-color: red;
+        }
+
+        #box2 {
+            background-color: yellowgreen;
+            margin-top: -90px;
+            margin-left: 60px;
+            opacity: .5;
+        }
+
+        #box3 {
+            background-color: blue;
+            margin-top: -90px;
+            margin-left: 120px;
+            opacity: .5;
+            /* visibility: hidden; */
+            /* display: none; */
+        }
+
+        #box4 {
+            border-width: 10px;
+            background-color: red;
+            opacity: .5; /* 요소의 모든것을 반투명(내용물, 테두리, 배경 등..) */
+        }
+
+        #box5 {
+            border-width: 10px;
+            background-color: rgba(255, 0, 0, .5);
+        }
+
+        #list {
+            border: 10px solid greenyellow;
+            width: 1250px;
+
+        }
+
+        #list img {
+            float: left;
+            opacity: .3;
+            cursor: pointer;
+        }
+
+        #list img:hover {
+            opacity: 1;
+        }
+
+        /*
+        
+        CSS1 ~ CSS2 : 완료
+        ~ CSS3
+        
+        */
+
+    </style>
+</head>
+<body>
+    <!-- ex34_opacity.html-->
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <hr>
+
+    <div id="box4" class="box">홍길동입니다. 반갑습니다. 반갑습니다. 반갑습니다. 반갑습니다.</div>
+    <div id="box5" class="box">홍길동입니다. 반갑습니다. 반갑습니다. 반갑습니다. 반갑습니다.</div>
+
+    <hr>
+
+    <h1>고양이</h1>
+    
+    <div id="list">
+        <img src="../images/cat01.jpg">
+        <img src="../images/cat02.jpg">
+        <img src="../images/cat03.jpg">
+        <img src="../images/cat04.jpg">
+        <img src="../images/cat05.jpg">
+        <div style="clear: both;"></div>
+    </div>
+
+</body>
+</html>

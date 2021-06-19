@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex10_list.html -->
+
+    <!-- 
+
+        List, 목록
+        1. <ol> + <li>
+            - <ol> : Ordered List, 순서가 있는 목록
+            - <li> : List Item, 항목
+        2. <ul> + <li>
+            - <ul> : Unordered List, 순서가 없는 목록
+            - <li> : List Item, 항목
+        3. <dl> + <dt> + <dd>
+            - <dl> : Definition List, 정의 목록
+            - <dt> : Definition Term, 용어
+            - <dd> : Definition Description, 용어 설명
+
+     -->
+
+     <h1>오늘의 할 일</h1>
+
+     <ol type="A">
+         <li>강아지 목욕시키기</li>
+         <li>
+             노트북 포맷하기
+             <ol type="a">
+                 <li>설치 USB 만들기</li>
+                 <li>USB로 부팅하기</li>
+                 <li>운영체제 설치하기</li>
+             </ol>
+        </li>
+         <li>JDK 설치하기</li>
+         <ol>
+             <li>JDK 다운로드</li>
+             <li>JDK 설치하기</li>
+         </ol>
+         <li>Visual Studio Code 다운받기</li>
+         <li>방청소하기</li>
+     </ol>
+
+
+     <h1>오늘의 할 일</h1>
+
+     <!-- ● -> bullet(불릿) : disc(기본값), circle(속빈원), square(사각형) -->
+     <ul type="square">
+         <li>강아지 목욕시키기</li>
+         <li>노트북 포맷하기</li>
+         <li>JDK 설치하기</li>
+         <li>Visual Studio Code 다운받기</li>
+         <li>방청소하기</li>
+     </ul>
+
+
+     <h1>오늘의 할 일</h1>
+
+     <ol>
+         <li>강아지 목욕시키기</li>
+         <li>노트북 포맷하기</li>
+         <li>JDK 설치하기</li>
+         <li>Visual Studio Code 다운받기</li>
+         <li>방청소하기</li>
+     </ol>
+
+     아래쪽 할일은 다음주까지 해도 되는 할일
+
+     <ol start="6">
+        <li>자바 정리하기</li>
+        <li>프로젝트 정리하기</li>
+        <li>오라클 정리하기</li>
+    </ol>
+
+
+    <h1>오늘의 할 일</h1>
+
+    <ol reversed start="10">
+        <li>강아지 목욕시키기</li>
+        <li>노트북 포맷하기</li>
+        <li>JDK 설치하기</li>
+        <li>Visual Studio Code 다운받기</li>
+        <li>방청소하기</li>
+    </ol>
+
+
+    <h1>자바 용어</h1>
+    
+    <dl>
+        <dt>클래스</dt>
+        <dd>클래스는 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ</dd>
+
+        <dt>메서드</dt>
+        <dd>메서드는 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ</dd>
+
+        <dt>생성자</dt>
+        <dd>생성자는 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ 어쩌구 저쩌구 ㅂㅈㅇㅂㅇ</dd>
+    </dl>
+
+    <hr>
+
+    <font size="5">&#128512;</font>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-1.12.4.js"></script>
+
+</head>
+<body>
+    <!-- ex02_selector.html -->
+
+    <h1>jQuery 함수</h1>
+
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <div id="box4" class="box">상자4</div>
+    <div id="box5" class="box">상자5</div>
+
+    <script>
+
+        //jQuery 함수
+        // - jQuery() 함수는 CSS 선택자를 사용해서 태그를 검색한다.
+        //1. 태그를 검색해서 반환한다.
+        //2. BOM or DOM 객체를 jQuery로 변환한다.
+        //3. jQuery() 함수의 결과는 항상 배열이다.
+        //4. jQuery() 결과에 jQuery 메서드를 적용하면 자동으로 내부 루프가 적용된다.
+
+        var btn1 = document.getElementById("btn1");
+
+        btn1.onclick = function() {
+
+            //5개의 <div> 검색 + 조작
+            // var list = document.getElementsByClassName("box");
+
+            // for (var i=0; i<list.length; i++) {
+            //     list[i].style.color = "blue";
+            // }
+
+            //jQuery() 함수는 CSS 선택자를 지원한다.
+            //1. 태그 선택자
+            var list = jQuery("div");
+            console.log(list); //jQuery 객체 반환
+            console.log(list.constructor);
+            console.log(list.length);
+
+            list.css("color", "orange"); //for문 구현
+
+            //2. class 선택자
+            var list = jQuery(".box");
+            list.text("Box"); //innerText
+
+            //3. id 선택자
+            var box1 = jQuery("#box1");
+            box1.css("color", "cornflowerblue");
+
+            //4. CSS 모든 선택자 지원
+            jQuery("div:nth-child(even)").css("font-weight", "bold");
+
+
+
+            var btn1_1 = document.all.btn1; //BOM
+            var btn1_2 = document.getElementById("btn1"); //DOM
+            var btn1_3 = jQuery("#btn1"); //jQuery
+
+            console.log(btn1_1 == btn1_2); //BOM == DOM
+            console.log(btn1_1 == btn1_3); //BOM != jQuery -> 타입(자료형)이 다르다.
+
+            //동일한 버튼을 찾았더라도..
+            //1. BOM(DOM) 객체는 jQuery 기능을 사용할 수 없고
+            //2. jQuery 객체는 BOM(DOM) 기능을 사용할 수 없다.
+            //btn1_1.value = "DOM";
+
+        };
+
+    </script>
+
+</body>
+</html>

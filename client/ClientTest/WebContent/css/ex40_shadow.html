@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        
+        그림자 효과
+        - 텍스트나 요소에 그림자 효과를 줄 수 있다.
+        - text-shadow: 인라인 태그 or 블럭 태그
+        - box-shadow: 블럭 태그
+                
+        */
+
+        #box1 {
+            /* text-shadow: h-shadow v-shadow blur color */
+            text-shadow: 3px 3px 2px #777;
+        }
+
+        #box2 {
+            background-color: #000;
+            color: white;
+            text-shadow: 2px 2px 1px #DDD;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            margin: 20px 0px;
+        }
+
+        #box4 {
+            /* text-shadow: 2px 2px 2px gray; */
+            box-shadow: 5px 5px 2px gray;
+        }
+
+        #box3:hover {
+            text-shadow: 2px 2px 2px gray;
+        }
+
+        #box5:hover {
+            box-shadow: 5px 5px 2px gray;
+        }
+
+        #btn {
+            border: 1px solid #CCC;
+            background-color: white;
+            padding: 5px 10px;
+            color: #555;
+            outline: none;
+        }
+
+        #btn:hover {
+            background-color: #EEE;
+            box-shadow: 2px 2px 2px #999;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex40_shadow.html -->
+
+    <div id="box1">HTML5 & CSS3</div>
+    <div id="box2">HTML5 & CSS3</div>
+    <div id="box3">HTML5 & CSS3</div>
+    
+    <hr>
+    
+    <div id="box4" class="box">HTML5 & CSS3</div>
+    <div id="box5" class="box">HTML5 & CSS3</div>
+    <div id="box6" class="box">HTML5 & CSS3</div>
+
+    <hr>
+
+    <input type="button" id="btn" value="click!">
+
+</body>
+</html>

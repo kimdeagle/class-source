@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #cat:hover img:nth-child(1) {
+            animation-name: key1;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes key1 {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(0px, 300px);
+            }
+            50% {
+                transform: translate(300px, 300px);
+            }
+            75% {
+                transform: translate(300px, 0px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        .btn {
+            border: 2px solid #999;
+            border-radius: 3px;
+            padding: 7px 20px;
+            background-color: white;
+        }
+
+        .btn:hover {
+            animation-name: keyBtn;
+            animation-duration: .2s;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+        }
+
+        @keyframes keyBtn {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(5px, 0px); }
+            50% { transform: translate(0px, 0px); }
+            75% { transform: translate(-5px, 0px); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex57_animation.html -->
+
+    <div id="cat">
+        <img src="../images/catty01.png">
+        <img src="../images/catty02.png">
+        <img src="../images/catty03.png">
+        <img src="../images/catty04.png">
+        <img src="../images/catty05.png">
+    </div>
+
+    <h1>버튼</h1>
+
+    <input type="button" value="글쓰기" class="btn">
+    <input type="button" value="삭제하기" class="btn">
+    <input type="button" value="로그인" class="btn">
+
+</body>
+</html>

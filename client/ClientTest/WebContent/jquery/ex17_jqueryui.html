@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <style>
+
+        body {
+            padding: 100px;
+
+        }
+        #a1 {
+            width: 400px;
+        }
+
+        * {
+            outline: none;
+        }
+
+        #p2 > div {
+            transition: all 1s linear;
+        }
+
+        #color {
+            margin-top: 50px;
+        }
+
+        #color > div {
+            width: 500px;
+            margin: 15px 0px;
+            height: 5px;
+        }
+
+        #color > div > span {
+            width: 18px;
+            height: 13px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- ex17_jqueryui.html -->
+
+    <h1>jQuery > Widgets(=Controls)</h1>
+
+    <h2>Accordion</h2>
+
+    <div id="a1">
+        <h3>Lorem, ipsum dolor.</h3>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium necessitatibus incidunt illo, consequuntur esse aspernatur voluptas itaque deleniti reprehenderit blanditiis praesentium veniam corrupti temporibus impedit laboriosam iusto, modi ullam consectetur aliquid, vel iure at cum! Voluptas id nulla optio explicabo dignissimos nobis, ea est? Deleniti quaerat, esse facilis tempore iure qui nemo a dolorem mollitia dolorum quae, incidunt totam optio non suscipit dignissimos ipsam eaque! A odio modi obcaecati reiciendis quas autem eligendi quaerat cumque ipsa nisi blanditiis, cupiditate sed, qui voluptate, maiores magnam perspiciatis voluptates voluptas fugit soluta ea corrupti voluptatibus ipsam! Reiciendis voluptatum repellendus provident totam alias nemo!</div>
+        <h3>Nihil, repudiandae mollitia?</h3>
+        <div>Deserunt veniam iste provident laborum perspiciatis veritatis maiores suscipit voluptas eveniet quas sequi sint, aspernatur nihil, ea commodi dignissimos. Magnam cum error laborum delectus corrupti expedita, autem neque eveniet dolore accusamus doloribus non impedit repudiandae, in amet dolores saepe? Aperiam non beatae vel, est nobis, quidem veniam voluptatibus a in, placeat laudantium officiis quo hic ut minima porro quis corrupti nesciunt iste consequatur? Ipsa, quaerat at optio sunt odio assumenda vero eius nesciunt! Nam, iste voluptatum! Nobis fuga, aliquid eligendi cupiditate ipsa rerum nulla corrupti assumenda. Molestias porro optio eligendi facere id odio iusto sequi quidem iste, dolore ad omnis?</div>
+        <h3>Deleniti, suscipit ratione?</h3>
+        <div>Hic quas, obcaecati labore ipsam iusto ut, repellendus esse maxime laboriosam voluptates ipsa reiciendis quod, optio dolore harum placeat similique quidem cum nobis voluptate minus laborum dicta voluptatibus tenetur. Maxime incidunt veniam nobis explicabo, architecto dolorum ex. Laboriosam dolorum quis officiis fugit placeat assumenda fuga laudantium unde iure fugiat sequi qui distinctio, inventore dolores at doloribus repellendus hic? Quam ut consequatur inventore, et veniam doloremque praesentium quis optio! Accusantium culpa officia hic in consequatur molestias quam blanditiis necessitatibus aliquid ratione ex nihil rem tempore ipsum, aliquam, omnis vel corporis dolorem voluptatibus ducimus quis. Saepe unde rem, doloribus hic ex est!</div>
+    </div>
+
+
+    <h2>Buttons</h2>
+
+    <input type="button" value="Save" id="btn1" class="btn">
+    <input type="button" value="Cancel" id="btn2" class="btn">
+    
+    <br><br>
+    
+    <div id="b1">
+        <input type="button" value="Save" id="btn3" class="btn">
+        <input type="button" value="Cancel" id="btn4" class="btn">
+    </div>
+
+    <br><br>
+
+    <a href="http://google.com" class="btn">Google</a>
+
+    <br><br>
+    <!-- 의도에 맞지 않는다. -->
+    <input type="text" class="btn">
+
+
+    <h2>Checkbox & Radio</h2>
+
+    <div id="c1">
+        <label for="cb1">Class</label>
+        <input type="checkbox" id="cb1" class="cb">
+        <label for="cb2">Method</label>
+        <input type="checkbox" id="cb2" class="cb">
+        <label for="cb3">Interface</label>
+        <input type="checkbox" id="cb3" class="cb">
+    </div>
+
+    <br><br>
+    
+    <div id="c2">
+        <label for="rb1">Class</label>
+        <input type="radio" id="rb1" class="rb" name="rb">
+        <label for="rb2">Method</label>
+        <input type="radio" id="rb2" class="rb" name="rb">
+        <label for="rb3">Interface</label>
+        <input type="radio" id="rb3" class="rb" name="rb">
+    </div>
+
+
+    <h2>Progressbar</h2>
+    
+    <div id="p1"></div>
+    <br>
+    <div id="p2"></div>
+    
+    <!-- HTML5 tag -->
+    <progress value=".3"></progress>
+
+
+    <h2>Datepicker</h2>
+
+    <input type="text" id="date1">
+    <br><br>
+    <div id="date2"></div>
+
+
+    <h2>Dialog</h2>
+
+    <input type="button" value="확인" id="btn5">
+    <div id="dialog">
+        안녕하세요. 홍길동입니다.
+    </div>
+
+
+    <h2>Select</h2>
+
+    <select id="sel1">
+        <option>맑음</option>
+        <option>흐림</option>
+        <option>눈</option>
+        <option>흐림 뒤 맑음</option>
+    </select>
+
+
+    <h2>Slider</h2>
+
+    <div id="slider1"></div>
+    <div id="slider1value"></div>
+
+
+    <div id="color">
+        <div id="slider2" title="빨강"></div>
+        <div id="slider3" title="초록"></div>
+        <div id="slider4" title="파랑"></div>
+    </div>
+
+    <br><br>
+
+    <div id="slider5" title="가격 범위를 선택하세요."></div>
+
+
+    <h2>Spinner</h2>
+
+    <input type="text" id="age" title="나이를 입력하세요.">
+
+
+    <h2>Tab</h2>
+
+    <div id="tab1">
+        <ul>
+            <li><a href="#page1">HTML</a></li>
+            <li><a href="#page2">CSS</a></li>
+            <li><a href="#page3">JavaScript</a></li>
+        </ul>
+        <div id="page1">
+            <h1>HTML</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, totam consectetur? Dolor maxime, ex doloremque, nostrum iusto provident nam nihil distinctio omnis temporibus eveniet ratione? Deleniti nulla voluptate veritatis repellendus nobis facilis perferendis quisquam, perspiciatis officia quam cumque nostrum totam delectus incidunt odio natus dolor a doloremque expedita. Quibusdam perferendis quisquam, impedit beatae sunt dolore praesentium exercitationem architecto expedita dolores illum repellat doloribus quidem, ex porro vel corrupti ipsa omnis asperiores, aspernatur dolor. Temporibus nam facere eveniet voluptatum, quas dolore accusamus quisquam nisi aliquam illum ab tempora natus, voluptatibus sed tempore ea culpa ad maiores. Aut voluptatum delectus maxime unde.
+
+                <hr>
+
+                <input type="button" value="CSS 보기" id="btnNext">
+            </p>
+        </div>
+        <div id="page2">
+            <h1>CSS</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis quia laboriosam nesciunt id delectus reiciendis nulla quos odio. Quibusdam, facilis excepturi? Et deserunt repellendus officia, quidem, porro ea fugit libero, magnam iste distinctio soluta quam? Fugiat mollitia impedit unde nulla perferendis aspernatur quod odio a quia, ut nostrum enim? Sint dolorum velit tenetur libero veniam, ab quod, ut, expedita quaerat dignissimos aspernatur molestiae qui! Et beatae itaque eligendi eveniet ducimus pariatur veniam a incidunt eius inventore fugiat quos voluptates nisi veritatis ratione consequatur quisquam id tenetur, nemo dolorum exercitationem magni doloremque corporis ut? Ullam maiores fugiat animi praesentium expedita. Facere.</p>
+        </div>
+        <div id="page3">
+            <h1>JavaScript</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem voluptates mollitia a nobis recusandae, aut distinctio sunt debitis atque vel voluptate optio perspiciatis ipsum voluptatibus deleniti odio vitae natus necessitatibus pariatur alias. Error distinctio soluta est vel incidunt eius similique iste ratione hic alias consequuntur architecto repellendus porro voluptatum magnam facere ad non, beatae, odio molestias! Quia qui deleniti harum! Vero porro quasi vitae ab aut! Expedita, impedit rerum quisquam, aspernatur ab nobis maxime adipisci quos id ex iure obcaecati magni reiciendis mollitia veniam asperiores fugiat nihil dolor voluptatibus beatae, facilis delectus iusto sequi omnis? Tenetur vero esse fugit reiciendis?</p>
+        </div>
+    </div>
+
+    <script>
+
+        $("#tab1").tabs({
+            //active 기억! -> 기본으로 열려있을 탭(0부터 시작)
+            // active: 2
+        });
+
+        $("#btnNext").click(function() {
+            $("#tab1").tabs({
+                active: 1
+            })
+        });
+
+
+        $("*[title]").tooltip({
+            track: true,
+            // show: {
+            //     effect: "explode"
+            // },
+            hide: {
+                effect: "explode"
+            }
+        });
+
+
+        $("#age").spinner({
+            min: 0,
+            max: 100,
+            step: 10
+        });
+
+
+        //멀티 슬라이더(엄지 버튼 2개)
+        $("#slider5").slider({
+            range: true,
+            min: 100000,
+            max: 1000000,
+            values: [200000, 500000],
+            step: 100000,
+            //slide(움직이는 동안), change(움직이고 난 뒤)
+            change: function(event, ui) {
+                console.log("최저가 :", ui.values[0]);
+                console.log("최고가 :", ui.values[1]);
+            }
+            
+        });
+
+
+        $("#color > div").slider({
+            min: 0,
+            max: 255,
+            value: 255,
+            slide: function(event, ui) {
+                var r = $("#slider2").slider("value");
+                var g = $("#slider3").slider("value");
+                var b = $("#slider4").slider("value");
+
+                //${변수} -> 형식문자열 같은 느낌(String.format) -> "" 대신 ``로 묶기
+                $("body").css("background-color", `rgb(${r}, ${g}, ${b})`);
+
+            }
+        });
+
+
+        $("#slider1").slider({
+            slide: function(event, ui) {
+                $("#slider1value").text(ui.value);
+            },
+            min: 0,
+            max: 1000,
+            step: 100
+        });
+
+
+        $("#sel1").selectmenu();
+        
+
+        $("#dialog").hide();
+
+        $("#btn5").click(function() {
+            // $("#dialog").show();
+
+            //대화 상자, Dialog Box
+            //1. modal
+            // - 자식창이 보일 때 부모창이 포커스를 가질 수 없는 상태
+            // - 자식의 업무가 끝나야 부모로 돌아갈 수 있다.
+            // - 부모 -> 자식 -> 부모 : 시퀀스 업무
+
+            //2. modeless
+            // - 자식창이 보여도 부모창이 포커스를 가질 수 있는 상태
+            // - 부모의 업무와 자식의 업무를 병행 가능
+            
+
+            $("#dialog").dialog({
+                title: "제목입니다.",
+                width: 300,
+                height: 250,
+                draggable: false,
+                resizable: false,
+                modal: true,
+                buttons: {
+                    // "text": function() {
+                    //     alert();
+                    // }
+                    "Save": function() {
+                        alert("저장 완료");
+                    },
+                    "Cancel": function() {
+                        $("#dialog").dialog("close");
+                    }
+                }
+
+            });
+        });
+
+
+        $("#date1, #date2").datepicker({
+            dateFormat: "yy-mm-dd",
+            // minDate: "2021-01-10",
+            // maxDate: "2021-01-29"
+            // minDate: "-5",
+            // maxDate: "+5"
+            minDate: "-1M -5D",
+            maxDate: "+1M +5D"
+        });
+
+
+        $("#p1").progressbar({
+            value: 30
+        });
+
+        $("#p2").progressbar();
+        $("#p2").click(function() {
+            $("#p2").progressbar({
+                value: 90
+            });
+        });
+
+
+        $(".cb, .rb").checkboxradio();
+        $("#c2").controlgroup();
+
+
+        $("#btn1").button();
+
+        $(".btn").button();
+        $("#b1").controlgroup();
+
+
+        $("#a1").accordion({
+            collapsible: true
+        });
+        
+    </script>
+
+</body>
+</html>

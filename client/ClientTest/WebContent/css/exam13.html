@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 1px solid black;
+            width: 1400px;
+            margin: 0 auto;
+        }
+
+        .innerbox {
+            border-bottom: 1px solid black;
+            width: 1400px;
+            height: 150px;
+            margin: 0px auto;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .innerbox:nth-child(5) {
+            border: 0;
+        }
+
+        .innerbox .ball {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            font-size: 4.5em;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50%;
+        }
+        
+        .box:hover .ball {
+            position: absolute;
+            left: 1300px;
+            bottom: 0px;
+            transform: rotate(3600deg);
+        }
+
+        .innerbox #ball1 {
+            background-color: #FF6347;
+            transition-property: all;
+            transition-duration: 7s;
+        }
+        
+        .innerbox #ball2 {
+            background-color: #FFD700;
+            transition-property: all;
+            transition-duration: 4s;
+        }
+        
+        .innerbox #ball3 {
+            background-color: #FFA500;
+            transition-property: all;
+            transition-duration: 5s;
+        }
+        
+        .innerbox #ball4 {
+            background-color: #ADFF2F;
+            transition-property: all;
+            transition-duration: 8s;
+        }
+        
+        .innerbox #ball5 {
+            background-color: #6495ED;
+            transition-property: all;
+            transition-duration: 4.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam13.html -->
+
+    <div class="box">
+        <div class="innerbox">
+            <div id="ball1" class="ball">A</div>
+        </div>
+        <div class="innerbox">
+            <div id="ball2" class="ball">B</div>
+        </div>
+        <div class="innerbox">
+            <div id="ball3" class="ball">C</div>
+        </div>
+        <div class="innerbox">
+            <div id="ball4" class="ball">D</div>
+        </div>
+        <div class="innerbox">
+            <div id="ball5" class="ball">E</div>
+        </div>
+    </div>
+
+</body>
+</html>

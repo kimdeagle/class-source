@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 910px;
+            height: 510px;
+
+            margin: 50px auto;
+        }
+        #tbl td {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <!-- exam35.html -->
+
+    <h1>발자국 클릭</h1>
+
+    <table id="tbl">
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        var tbl = document.getElementById("tbl");
+        var cell = document.getElementsByClassName("cell");
+
+        var color;
+
+        for (var i=0; i<cell.length; i++) {
+
+            cell[i].onclick = function () {
+
+                if (event.srcElement.nodeName == "IMG") {
+                    return;
+                }
+
+                clear();
+
+                if (event.srcElement.style.backgroundColor == "") {
+                    color = 200;
+                    event.srcElement.innerHTML = "<img src='../images/dog-foot.png'>";
+                    event.srcElement.style.backgroundColor = "rgb("+ color +", "+ color +", "+ color +")";
+                } else {
+                    color = parseInt(event.srcElement.style.backgroundColor.substr(4, 3)) - 30;
+                    event.srcElement.innerHTML = "<img src='../images/dog-foot.png'>";
+                    event.srcElement.style.backgroundColor = "rgb("+ color +", "+ color +", "+ color +")";
+                    console.log(event.srcElement.style.backgroundColor);
+                    if (color < 0) {
+                        event.srcElement.onclick = null;
+                    }
+                }
+
+            };
+
+        }
+
+        function clear() {
+            for (var i=0; i<cell.length; i++) {
+                cell[i].innerHTML = "";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

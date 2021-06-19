@@ -1,0 +1,260 @@
+웹 사이트 > 웹 응용 프로그램(Web Application)
+- 웹 서버(Web Server) <-> 웹 클라이언트(Web Client)
+- 서버 사이드 기술
+	- Servlet, JSP, Spring
+- 클라이언트 사이드 기술
+	- HTML, CSS, JavaScript
+
+
+HTML(Hyper Text Markup Language)
+- 하이퍼 텍스트 마크업 언어
+- Hyper Text : 링크
+- Markup Language : 태그(Tag)를 사용해서 문법을 표기하는 언어
+- 프로그래밍 언어(X) -> 표현 언어(O)
+- http://w3.org > The World Wide Web Consortium (W3C) > 웹 관련 기술 표준화 작업
+- HTML 1.0 ~ HTML 5
+- HTML 1.0 > HTML 2.0 > ... > HTML 4.01(***본격적으로 사용***) > XHTML 1.0 > HTML 5
+- HTML5 = HTML5 + CSS3 + JavaScript
+
+
+데이터베이스 서비스
+- 오라클(데이터베이스 서버) <-> 서비스 <-> SQL Developer(데이터베이스 클라이언트)
+
+웹 서비스
+- Apache Tomcat(웹 서버) <-> 서비스 <-> 브라우저(웹 클라이언트)
+
+브라우저(Web Browser)
+- 웹 서비스를 제공받기 위한 클라이언트 도구
+
+브라우저 종류
+- IE, IE Edge
+- Chrome : 수업용
+- FireFox
+- Safari
+- Opera
+- Whale
+
+HTML 개발 환경
+- 편집기 > 텍스트 편집기
+	1. 메모장
+	2. IDE : Eclipse(***), IntelliJ, Visual Studio 등
+	3. SublimeText, Atom, Brackets, Visual Studio Code(***) 등 //1번과 2번 사이 편집기(중간급)
+	4. 나모 웹에디터, 프론트 앤드, 드림위버 등...
+
+HTML 실행 환경
+- 브라우저(HTML 파싱 + 컴파일 + 실행 + 출력)
+
+HTML 실행 방법
+1. 로컬 실행(사용 금지)
+	- file:///D:/class/client/ClientTest/WebContent/hello.html
+2. 서버 실행(무조건 이방식으로 사용)
+	- http://localhost:8090/ClientTest/hello.html
+	
+HTML 파일 확장자
+- hello.html
+- hello.htm
+
+HTML 언어의 구성 요소
+1. 태그(Tag), 엘리먼트(Element)
+2. 속성(Attribute)
+3. 텍스트(PCDATA, Parsed Character Data)
+4. 엔티티(Entity)
+5. 주석(Comment)
+6. 선언문(Declaration)
+7. 외부 요소
+8. 기타
+
+HTML 대소문자 규칙
+- 대소문자 구분이 없다.
+- HTML 4.01 > 태그명, 속성명 > 대문자
+	ex) <HTML>, <BODY BGCOLOR='red'>
+- XHTML 1.0 > 태그명, 속성명 > 소문자
+	ex) <html>, <body bgcolor='red'>
+- HTML 5 > 태그명, 속성명 > 소문자
+	ex) <html>, <body bgcolor='red'>
+
+- 현 시점에선 대부분 소문자로 적는다.(관습)
+
+URL 표기
+- 영문자 + 숫자 + '_' + '-'
+- 공백 사용 금지
+- 자바의 식별자 규칙과 거의 비슷
+
+URL 대소문자 규칙
+- OS/서버에 따라 다르다. > 환경에 상관없이 url의 대소문자는 구분하자!!!
+- http://localhost:8090/clienttest/hello.html
+- Apache Tomcat : URL의 대소문자 구분하는 환경을 제공한다.
+
+
+HTML의 역사
+1. HTML 1.0 ~ HTML 4.01
+2. XHTML 1.0(문법을 엄격하게) -> XHTML 2.0(파토, 언어 하위 호환성X)
+3. HTML5(문법 재정비 + 기능 추가)
+
+
+브라우저의 역사
+1. Netscape Navigator
+2. Internet Explorer
+
+-> NN vs IE -> NN > IE
+-> NN(+JavaScript)
+
+-> 브라우저 1차 대전
+
+HTML(w3c) -> 실행 환경 -> 브라우저(Netscape or Microsoft)
+
+개발자 개발 -> HTML(100가지) -> 개발자 목적 충족 -> 기능 200가지 필요 -> 나머지 100가지를 브라우저 회사들이 만들기 시작
+NN : HTML(100가지) + NN(100가지)
+IE : HTML(100가지) + IE(120가지)
+
+개발자가 NN으로 개발 -> 200가지 -> 클라이언트(NN -> 200가지(O), IE -> 100가지(O), 100가지(X))
+1차 피해자 : 고객(웹서핑 유저)
+2차 피해자 : 개발자 -> 1개의 사이트 -> 2버전으로 개발(NN, IE)
+
+
+-> 브라우저 2차 전쟁(웹 표준화)
+IE vs (FireFox vs Opera vs Safari vs Chrome)
+
+
+브라우저 전쟁 -> 유튜브 검색
+
+
+
+클라이언트 측 프로그래밍(Client-side Programming)
+프론트앤드 프로그래밍(Front-end Programming)
+- 브라우저에서 동작하는 언어(기술)
+
+1. HTML
+	- 역할 : 브라우저에 출력할 내용을 만든다.(텍스트, 이미지, 동영상, 링크, 표, 목록 등..)
+	- 비교 : 워드 작업과 동일
+2. CSS
+	- 역할 : 1번 결과물 + 서식을 적용한다. >> 디자인을 담당하는 언어
+3. JavaScript
+	- 역할 : 1번 결과물(2번 결과물) + 프로그래밍 기능을 추가하는 언어(동적 기능 추가)
+	
+
+퍼블리셔(Publisher)
+- 보통 HTML + CSS 개발
+- 껍데기 만드는 사람
+- 디자인 감각 필요
+
+프론트앤드 개발자
+- HTML + CSS + JavaScript 개발
+- JavaScript 주요 개발(***)
+- HTML5 or NodeJS 이전엔 비주류 -> NodeJS + HTML5 -> 떠오르는 직군
+- HTML + CSS + JavaScript -> jQuery + BootStrap -> node.js + Framework(Angular or View or React)
+
+
+SGML -> HTML
+     -> XML
+     -> XHTML
+
+HTML 구성 요소 -> 태그
+- Tag, Element
+- 예약어를 <>로 묶어놓은 요소
+- HTML 문법을 구성하는 주된 요소
+- 문서의 골격을 만드는 역할(레이아웃) + 데이터(텍스트, 이미지)를 출력하는 역할
+
+HTML 태그 표현 방식
+1. <태그명></태그명>
+	- 쌍태그
+	- <태그명> : 시작 태그
+	- </태그명> : 끝 태그
+	- 영역을 가지는 태그(자바 {} 역할)
+	- ex) <html></html>, <head></head>, <body></body>
+	
+2. <태그명> or <태그명 />
+	- 단독태그, 빈태그(Empty Element)
+	- 영역을 가지지 않는 태그
+	- <태그명 /> : XHTML 1.0에서만 사용
+	- HTML5 : 둘 다 사용
+	- ex) <meta>
+
+
+HTML 태그의 내용물 형식(Content Type)
+- <시작태그>내용물</끝태그>
+1. 자식 태그들만 가지는 경우
+	- 내용물로 또 다른 태그가 오는 경우
+	- 텍스트가 올 수 없다.
+	- ex) <html>
+
+2. PCDATA(=문자열)
+	- 내용물로 텍스트만 오는 경우
+	- 자식 태그는 올 수 없다.
+	- ex) <title>
+
+3. Empty
+	- 내용물을 가지지 않는 경우
+	- 빈태그, 단독 태그
+	- ex) <meta>
+
+4. Mixed(혼합형)
+	- 1번 ~ 3번 모두 혼합
+	- 자식 태그와 문자열을 동시에 가질 수 있다.
+	- 대부분의 태그가 혼합형이다.
+	- ex) <body>
+	
+
+속성(Attribute)
+- 태그의 성질을 정의하는 역할
+- 속성(Attribute), 특성(Property), 객체(멤버변수), 레코드(컬럼)
+- 태그가 가지는 데이터의 한 종류
+
+
+HTML 태그가 가지는 데이터의 종류
+- 표시 방법이 다르다.
+1. PCDATA
+	- 데이터
+	- 무조건 화면에 출력하는 데이터로 사용한다.(*****)
+2. Attribute
+	- 데이터(CDATA)
+	- 화면에 출력이 안된다.
+	- 태그의 성질을 조절하는 데이터로 사용한다.
+	- 일종의 옵션
+
+
+속성 표기법
+	- <font color="red">Text</font>
+	- <시작태그 속성명="값"></끝태그>
+	- <단독태그 속성명="값">
+	
+	- <시작태그 속성명="값"></끝태그>
+	- <시작태그 속성명='값'></끝태그>
+	- <시작태그 속성명=값></끝태그> //사용금지(***) -> 나중에 문제 생김
+	
+	- <시작태그 속성명="값"  속성명="값" 속성명="값"></끝태그>
+
+
+PCDATA, 텍스트
+	- 태그가 직접 소유하고 있는 데이터(문자열)
+	- 화면에 출력되는 데이터
+	- 브라우저가 문법 검사를 하는 데이터
+
+Entity, 엔티티
+- 미리 정해져있는 표현을 브라우저와 약속된 표현으로 바꿔서 표현하는 요소
+- 해석하면 안되는(그대로 출력해야 하는) 문자들을 출력하는 역할
+- &표현;
+
+- 필수로 쓰이는 애들(********)
+- &nbsp;	//non-break space
+- &gt;		//greater than
+- &lt;		//less than
+
+- 선택
+- &amp;		//&
+- &quot;	//"
+- &copy;	//Copyright 특수문자
+- &#문자코드;
+
+
+주석, Comment
+- 다중라인 주석만 제공한다.
+- <!-- 주석입니다. -->
+
+
+
+
+
+
+
+

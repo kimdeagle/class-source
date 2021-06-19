@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Form 컨트롤은 CSS를 일부 적용하면 나머지 서식이 원래 모습으로 초기화되어 출력된다. */
+        /* #txt1 {
+            background-color: white;
+        } */
+
+        #txtSearch {
+            background-image: url(../images/hangame.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #txtSearch:focus {
+            /* background-repeat: repeat; */
+            /* background-position: right center; */
+            background-image: url();
+        }
+
+        #btnSearch {
+            background-image: url(../images/bullet01.png);
+            background-repeat: no-repeat;
+            background-position: 5px center;
+        }
+
+        .data {
+            background-color: white;
+        }
+
+        /* indicator */
+        .data:focus {
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex13_background.html -->
+
+    <!-- <input type="text" id="txt1">
+    <input type="text" id="txt2"> -->
+
+    <hr>
+
+    <h1>검색 사이트</h1>
+
+    <label>검색어 : </label>
+    <input type="text" id="txtSearch" size="30">
+    <input type="button" id="btnSearch" value="   검색하기">
+
+    <h1>데이터 입력</h1>
+
+    <!-- <div>
+    <label for="txt1">데이터 01 : </label>
+    <input type="text" class="data" id="txt1">
+    </div> -->
+
+    <!-- (div>(label[for=txt$]{데이터 $$ : })+(input#txt$.data))*20 -->
+    <div><label for="txt1">데이터 01 : </label><input type="text" id="txt1" class="data"></div>
+    <div><label for="txt2">데이터 02 : </label><input type="text" id="txt2" class="data"></div>
+    <div><label for="txt3">데이터 03 : </label><input type="text" id="txt3" class="data"></div>
+    <div><label for="txt4">데이터 04 : </label><input type="text" id="txt4" class="data"></div>
+    <div><label for="txt5">데이터 05 : </label><input type="text" id="txt5" class="data"></div>
+    <div><label for="txt6">데이터 06 : </label><input type="text" id="txt6" class="data"></div>
+    <div><label for="txt7">데이터 07 : </label><input type="text" id="txt7" class="data"></div>
+    <div><label for="txt8">데이터 08 : </label><input type="text" id="txt8" class="data"></div>
+    <div><label for="txt9">데이터 09 : </label><input type="text" id="txt9" class="data"></div>
+    <div><label for="txt10">데이터 10 : </label><input type="text" id="txt10" class="data"></div>
+    <div><label for="txt11">데이터 11 : </label><input type="text" id="txt11" class="data"></div>
+    <div><label for="txt12">데이터 12 : </label><input type="text" id="txt12" class="data"></div>
+    <div><label for="txt13">데이터 13 : </label><input type="text" id="txt13" class="data"></div>
+    <div><label for="txt14">데이터 14 : </label><input type="text" id="txt14" class="data"></div>
+    <div><label for="txt15">데이터 15 : </label><input type="text" id="txt15" class="data"></div>
+    <div><label for="txt16">데이터 16 : </label><input type="text" id="txt16" class="data"></div>
+    <div><label for="txt17">데이터 17 : </label><input type="text" id="txt17" class="data"></div>
+    <div><label for="txt18">데이터 18 : </label><input type="text" id="txt18" class="data"></div>
+    <div><label for="txt19">데이터 19 : </label><input type="text" id="txt19" class="data"></div>
+    <div><label for="txt20">데이터 20 : </label><input type="text" id="txt20" class="data"></div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body div {
+            width: 1300px;
+            margin-top: 100px;
+        }
+
+        body img {
+            display: block;
+            float: left;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam02.html -->
+
+    <div>
+        <img src="../images/cat01.jpg" name="cat1">
+        <img src="../images/cat02.jpg" name="cat2">
+        <img src="../images/cat03.jpg" name="cat3">
+        <img src="../images/cat04.jpg" name="cat4">
+        <img src="../images/cat05.jpg" name="cat5">
+    </div>
+
+    <script>
+
+        var cat1 = window.document.images["cat1"];
+        var cat2 = window.document.images["cat2"];
+        var cat3 = window.document.images["cat3"];
+        var cat4 = window.document.images["cat4"];
+        var cat5 = window.document.images["cat5"];
+
+        cat1.onmouseover = function() {
+            cat1.src = "../images/dog01.jpg";
+        };
+
+        cat1.onmouseout = function() {
+            cat1.src = "../images/cat01.jpg";
+        };
+
+        cat2.onmouseover = function() {
+            cat2.src = "../images/dog02.jpg";
+        };
+
+        cat2.onmouseout = function() {
+            cat2.src = "../images/cat02.jpg";
+        };
+
+        cat3.onmouseover = function() {
+            cat3.src = "../images/dog03.jpg";
+        };
+
+        cat3.onmouseout = function() {
+            cat3.src = "../images/cat03.jpg";
+        };
+
+        cat4.onmouseover = function() {
+            cat4.src = "../images/dog04.jpg";
+        };
+
+        cat4.onmouseout = function() {
+            cat4.src = "../images/cat04.jpg";
+        };
+
+        cat5.onmouseover = function() {
+            cat5.src = "../images/dog05.jpg";
+        };
+
+        cat5.onmouseout = function() {
+            cat5.src = "../images/cat05.jpg";
+        };
+
+    </script>
+
+</body>
+</html>

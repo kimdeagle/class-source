@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        input {
+            border: 1px solid black;
+            outline: none;
+            width: 150px;
+            height: 30px;
+            background-color: #999;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam04_check.html -->
+
+    <input type="button" value="서울시 강남구 역삼동" id="address1" name="address1">
+    <input type="button" value="서울시 강남구 대치동" id="address2" name="address2">
+    <input type="button" value="서울시 강남구 도곡동" id="address3" name="address3">
+
+    <script>
+
+        var address1 = window.document.all.address1;
+        var address2 = window.document.all.address2;
+        var address3 = window.document.all.address3;
+
+        address1.onclick = function() {
+            opener.document.all.zipcode.value = "06232";
+            opener.document.all.address1.value = address1.value;
+            window.close();
+
+            opener.document.all.address2.focus();
+        };
+        
+        address2.onclick = function() {
+            opener.document.all.zipcode.value = "06291";
+            opener.document.all.address1.value = address2.value;
+            window.close();
+    
+            opener.document.all.address2.focus();
+        }
+
+        address3.onclick = function() {
+            opener.document.all.zipcode.value = "06267";
+            opener.document.all.address1.value = address3.value;
+            window.close();
+    
+            opener.document.all.address2.focus();
+        }
+
+    </script>
+
+</body>
+</html>

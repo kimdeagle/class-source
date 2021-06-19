@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        fieldset {
+            width: 250px;
+        }
+
+        fieldset > div {
+            margin: 5px;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 400px;
+            margin: 20px;
+            margin-left: 2px;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 4px 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex33_content.html -->
+
+    <h1>테이블</h1>
+
+    <fieldset>
+        <legend>색상 입력</legend>
+        <div><label>색상 : <input type="color" id="txtColor"></label></div>
+        <div><label>이름 : <input type="text" id="txtName"></label></div>
+        <div><input type="button" value="추가하기" id="btnAdd"></div>
+    </fieldset>
+
+    <table id="tbl1">
+        <thead>
+            <tr>
+                <th>색상명</th>
+                <th>미리보기</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+            <tr>
+                <td>자주색</td>
+                <td bgcolor="#EC45AC">#EC45AC</td>
+            </tr>
+            <tr>
+                <td>풀색</td>
+                <td bgcolor="#ACEF12">#ACEF12</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        var txtColor = document.getElementById("txtColor");
+        var txtName = document.getElementById("txtName");
+        var btnAdd = document.getElementById("btnAdd");
+        var tbody1 = document.getElementById("tbody1");
+
+        //1. 버튼 클릭 -> 행 추가
+        //2. 추가 후 -> fieldset(색상, 이름) -> 초기화
+        //3. 색상명 입력 후 엔터 -> 행 추가 및 초기화
+
+        function f1() {
+            tbody1.innerHTML += "<tr><td>"+ txtName.value +"</td><td bgcolor='"+ txtColor.value +"'>"+ txtColor.value +"</td></tr>";
+            txtColor.value = "#000000";
+            txtName.value = "";
+        }
+
+        btnAdd.onclick = f1;
+
+        txtName.onkeydown = function() {
+            if (event.keyCode == 13) {
+                f1();
+            }
+        };
+
+        // btnAdd.onclick = function() {
+        //     tbody1.innerHTML += "<tr><td>"+ txtName.value +"</td><td bgcolor='"+ txtColor.value +"'>"+ txtColor.value +"</td></tr>";
+        //     txtColor.value = "#000000";
+        //     txtName.value = "";
+        // };
+
+        // txtName.onkeydown = function() {
+        //     if (event.keyCode == 13) {
+        //         tbody1.innerHTML += "<tr><td>"+ txtName.value +"</td><td bgcolor='"+ txtColor.value +"'>"+ txtColor.value +"</td></tr>";
+        //         txtColor.value = "#000000";
+        //         txtName.value = "";
+        //     }
+        // };
+
+
+    </script>
+
+</body>
+</html>

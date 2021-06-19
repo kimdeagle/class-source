@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            border: 1px solid #999;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        table th {
+            width: 120px;
+            height: 50px;
+            background-color: #ccc;
+        }
+
+        table td {
+            width: 470px;
+            height: 50px;
+            padding-left: 10px;
+        }
+
+        table th, table td {
+            border: 1px solid #999;
+        }
+
+        table input {
+            border: 1px solid #999;
+            outline: none;
+            font-weight: bold;
+        }
+
+        #zipcode {
+            width: 60px;
+            height: 25px;
+        }
+
+        #check {
+            height: 25px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #address1, #address2 {
+            width: 450px;
+            height: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam04.html -->
+
+    <h1>우편 번호 검색</h1>
+
+    <table>
+        <tr>
+            <th>우편번호</th>
+            <td>
+                <input type="text" id="zipcode" name="zipcode" readonly>
+                <input type="button" value="우편번호 검사하기" id="check" name="check">
+            </td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td>
+                <input type="text" id="address1" name="address1" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th>상세주소</th>
+            <td>
+                <input type="text" id="address2" name="address2">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        var zipcode = window.document.all.zipcode;
+        var check = window.document.all.check;
+        var address1 = window.document.all.address1;
+        var address2 = window.document.all.address2;
+
+        check.onclick = function() {
+            window.open("exam04_check.html", "check", "width=300, height=200");
+        };
+
+
+    </script>
+
+</body>
+</html>

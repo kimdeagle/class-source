@@ -1,0 +1,43 @@
+com.test.mvc > 필기.txt
+
+- 주제 선정 -> 구현
+- 복습 + 추가 구조(***)
+
+
+주소록 관리 프로그램(CRUDS)
+1. 주소록 쓰기
+2. 주소록 읽기
+3. 주소록 삭제하기
+4. 주소록 수정하기
+5. 주소록 검색하기
+
+
+
+MVC(Model View Controller)
+- 디자인 패턴(Design Pattern)
+- Model + Controller(+View)
+
+- 무조건 DB와 관련된 작업은 분리시킨다. -> Model에게 넘기기
+- 무조건 출력과 관련된 작업은 분리시킨다. -> View에게 넘기기
+
+
+
+파일 생성
+1. Main.java
+	- Controller + View 역할
+
+2. AddressDTO.java
+	- Model 역할
+	- 건내줄 값 1개일 때 -> 변수 사용
+	- 건내줄 값 2개 이상일 때 -> DTO 사용
+
+3. AddressDAO.java
+	- Model 역할
+
+4. DBUtil.java
+	- 재사용
+
+
+
+
+

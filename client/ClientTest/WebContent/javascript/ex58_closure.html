@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //내용이 모두 브라우저에 의해서 로딩된 직 후 발생하는 이벤트
+        window.onload = function() {
+            // alert(222);
+            var btn1 = document.getElementById("btn1");
+            // console.log(btn1);
+
+            var name = "홍길동"; //지역 변수 -> Closure 발생
+            var age = 20; //정상 소멸
+
+            btn1.onclick = function() {
+                // alert();
+
+                alert(name); //????????? 이상 -> 클로저
+
+            };
+
+        };
+
+        // document.onload = function() {
+
+        // };
+
+
+    </script>
+</head>
+<body>
+    <!-- ex58_closure.html -->
+
+    <input type="button" value="확인" id="btn1">
+
+    <script>
+
+        /*
+        
+        클로저, Closure
+        - 이벤트 모델에서 자주 사용됨
+        - 바깥쪽 지역 변수를 안쪽 함수(이벤트 함수)에서 사용할 수 있도록 바깥쪽 지역 변수의 수명이 다해도 끝까지 살려두는 현상
+        
+        */
+
+        function outer() {
+            
+            var a = 10; //지역 변수(outer)
+            console.log("a", a);
+
+            function inner() { //지역 함수(outer)
+               
+                var b = 20; //지역 변수(inner)
+                console.log("b", b);
+
+                //바깥쪽 영역의 자원은 안쪽 영역에서 사용 가능
+                console.log("a", a);
+
+            }
+
+            inner();
+
+        }
+
+        outer();
+
+        // alert(111);
+
+    </script>
+
+</body>
+</html>

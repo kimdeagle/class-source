@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        input {
+            border: 0;
+            outline: none;
+            width: 250px;
+            height: 250px;
+            display: block;
+            margin: 100px auto;
+            font-size: 10em;
+            text-align: center;
+            font-weight: bold;
+            color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam13.html -->
+
+    <h1>카운트 다운 + 페이지 이동</h1>
+
+    <input type="text" name="txt1" value="10">
+
+    <script>
+
+        var txt1 = document.all.txt1;
+
+        var n = 9;
+        var stopInterval;
+        var stopTimeout;
+
+        stopInterval = setInterval(function() {
+            txt1.value = n;
+            n--;
+        }, 1000);
+
+        stopTimeout = setTimeout(function() {
+            clearInterval(stopInterval);
+            location.href="http://google.com";
+        }, 10000);
+
+        
+        window.onkeydown = function() {
+            console.log(event.keyCode);
+            if (event.keyCode == 27) {
+                clearInterval(stopInterval);
+                clearTimeout(stopTimeout);
+                document.body.bgColor = "tomato";
+            }
+        };
+
+    </script>
+</body>
+</html>

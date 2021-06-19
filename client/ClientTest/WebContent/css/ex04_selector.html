@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+
+        1. 태그 선택자
+            - 태그명 {}
+
+        2. id 선택자
+            - identify : 문서내 id값이 유일해야 한다.(PK)
+            - 태그명#id {}
+            - *#id {}
+            - #id {} << 가장 많이 쓴다.
+
+        3. class 선택자
+            - class 속성으로 태그를 검색한다.
+            - 태그명.클래스명 {}
+
+        */
+
+        /* tag selector */
+        #title1 { color:gold; }
+        #div1 { color:cadetblue; }
+
+        /* id selector */
+        p.item { color:blue; }
+        
+        /* class selector */
+        .one { color:red; }
+
+        /* * { color:blue; } */
+
+    </style>
+</head>
+<body>
+    <h1>h1 태그입니다.</h1>
+    
+    <p class="item">p 태그입니다.</p>
+    <b class="one">b 태그입니다.</b>
+    <p class="item">p 태그입니다.</p>
+    <div id="div1">div 태그입니다.</div>
+    <b class="one">b 태그입니다.</b>
+    <div>div 태그입니다.</div>
+    <p class="item">p 태그입니다.</p>
+
+    <hr>
+    
+    <h1 id="title1">h1 태그입니다.</h1>
+
+    <div>div 태그입니다.</div>
+    <b>b 태그입니다.</b>
+    <p>p 태그입니다.</p>
+    <div class="one">div 태그입니다.</div>
+    <p>p 태그입니다.</p>
+    <div>div 태그입니다.</div>
+</body>
+</html>

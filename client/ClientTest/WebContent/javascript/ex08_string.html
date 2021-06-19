@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex08_string.html -->
+
+    <script>
+
+        //문자열 함수
+
+        var txt = "Hello~ Hong~";
+
+        //1. 문자열 길이(프로퍼티)
+        console.log(txt.length);
+
+        //2. 검색
+        // - indexOf()
+        // - lastIndexOf()
+        console.log(txt.indexOf("~"));
+        console.log(txt.indexOf("~", 6)); //시작위치 정하기 가능
+        console.log(txt.indexOf("!")); //없는경우 -1
+        console.log(txt.lastIndexOf("~"));
+
+        //3. 대소문자 변환
+        console.log(txt.toUpperCase());
+        console.log(txt.toLowerCase());
+
+        //4. 치환
+        // - replace(*****)
+        // - 처음 만나는 대상만 치환한다.(*****) -> 딱 1개만 바꾼다.
+        // - 모든 대상을 치환하고 싶으면 정규표현식을 사용한다. -> 나중에 수업 예정
+        console.log(txt.replace("Hong", "Lee"));
+        console.log(txt.replace("~", "!"));
+        console.log(txt.replace(/~/gi, "!"));
+
+        //5. 추출
+        // - substring
+        // - substr
+        // - charAt
+        // - charCodeAt
+        txt = "Hello~ Hong~";
+        console.clear();
+
+        console.log(txt.substring(2, 8)); //시작 위치, 끝 위치
+        console.log(txt.substring(2));
+
+        console.log(txt.substr(2, 3)); //시작 위치, 문자 개수
+        console.log(txt.substr(2));
+
+        console.log(txt.charAt(2)); //문자 추출
+        console.log(txt.charCodeAt(2)); //문자 코드 추출
+
+        console.log('A' > 'B');
+        console.log("홍길동" > "아무개");
+
+        //6. 공백 제거
+        // - trim()
+        var txt2 = "       하나     둘      ";
+        console.log("@" + txt2.trim() + "@");
+
+        //7. 검색
+        console.log(txt.startsWith("H"));
+        console.log(txt.endsWith("!"));
+
+        //8. split
+        var txt3 = "홍길동,아무개,하하하";
+        var temp = txt3.split(",");
+        console.log(temp[0]);
+        console.log(temp[1]);
+        console.log(temp[2]);
+
+        //HTML 서식 보조 함수 - 요즘은 안쓴다.
+        var txt4 = "홍길동";
+        console.log(txt4.bold()); //<b>홍길동</b>
+
+    </script>
+
+</body>
+</html>

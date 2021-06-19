@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 680px;
+            height: 136px;
+            border: 5px solid black;
+            margin: 10px auto;
+        }
+
+        .box .innerbox {
+            width: 126px;
+            height: 126px;
+            float: left;
+            border: 5px solid black;
+            overflow: hidden;
+        }
+
+        .box .innerbox img {
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+        
+        #box1 .innerbox img {
+            transform: translate(-126px, 0px);
+        }
+
+        #box1 .innerbox:hover img {
+            transform: translate(0px, 0px);
+        }
+
+        #box2 .innerbox img {
+            opacity: 0;
+        }
+
+        #box2 .innerbox:hover img {
+            opacity: 1;
+        }
+
+        #box3 .innerbox img {
+            transform: scale(0, 0);
+            opacity: 0;
+        }
+
+        #box3 .innerbox:hover img {
+            transform: scale(1, 1);
+            opacity: 1;
+        }
+        
+        #box4 .innerbox img {
+            transform: translate(0, -126px) scale(0, 0) rotate(0deg);
+            opacity: 0;
+        }
+
+        #box4 .innerbox:hover img {
+            transform: translate(0, 0) scale(1, 1) rotate(360deg);
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- exam12.html -->
+
+    <div class="box" id="box1">
+        <div class="innerbox"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    <div class="box" id="box2">
+        <div class="innerbox"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    <div class="box" id="box3">
+        <div class="innerbox"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+    <div class="box" id="box4">
+        <div class="innerbox"><img src="../images/rect_icon01.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon02.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon03.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon04.png" alt=""></div>
+        <div class="innerbox"><img src="../images/rect_icon05.png" alt=""></div>
+    </div>
+
+</body>
+</html>

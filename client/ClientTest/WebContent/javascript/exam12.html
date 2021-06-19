@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background-color: lightgray;
+        }
+
+        table th, table td {
+            border: 1px solid gray;
+            text-align: center;
+            height: 30px;
+        }
+
+        table tr td:nth-child(1) {
+            width: 40px;
+        }
+
+        table tr td:nth-child(2) {
+            width: 400px;
+        }
+
+        table tr td:nth-child(3) {
+            width: 40px;
+        }
+
+        table tr td input[type=text] {
+            width: 350px;
+            outline: none;
+            border: 1px solid gray;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam12.html -->
+
+    <h1>텍스트박스 입력 + 잠금</h1>
+
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>입력</th>
+            <th>잠금</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>
+                <input type="text" name="txt">
+            </td>
+            <td>
+                <input type="checkbox" name="check">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        // var txt1 = document.all.txt1;
+        // var c1 = document.all.c1;
+        // var txt2 = document.all.txt2;
+        // var c2 = document.all.c2;
+        // var txt3 = document.all.txt3;
+        // var c3 = document.all.c3;
+        // var txt4 = document.all.txt4;
+        // var c4 = document.all.c4;
+        // var txt5 = document.all.txt5;
+        // var c5 = document.all.c5;
+        // var txt6 = document.all.txt6;
+        // var c6 = document.all.c6;
+        // var txt7 = document.all.txt7;
+        // var c7 = document.all.c7;
+        // var txt8 = document.all.txt8;
+        // var c8 = document.all.c8;
+        // var txt9 = document.all.txt9;
+        // var c9 = document.all.c9;
+        // var txt10 = document.all.txt10;
+        // var c10 = document.all.c10;
+
+        var txt = document.all["txt"];
+        var check = document.all["check"];
+
+        for (let i=0; i<check.length; i++) {
+            check[i].onchange = function() {
+                if (check[i].checked) {
+                    txt[i].readOnly = true;
+                    txt[i].style.backgroundColor = "#eee";
+                    txt[i].style.cursor = "not-allowed";
+                } else {
+                    txt[i].readOnly = false;
+                    txt[i].style.backgroundColor = "white";
+                    txt[i].style.cursor = "unset";
+                }
+            };
+            txt[i].onkeydown = function() {
+                // console.log(event.keyCode);
+                if (event.keyCode == 13) {
+                    txt[i].readOnly = true;
+                    txt[i].style.backgroundColor = "#eee";
+                    txt[i].style.cursor = "not-allowed";
+                    check[i].checked = true;
+                }
+            };
+
+            txt[i].ondblclick = function() {
+                txt[i].readOnly = false;
+                txt[i].style.backgroundColor = "white";
+                txt[i].style.cursor = "unset";
+                check[i].checked = false;
+            };
+
+        }
+
+    </script>
+
+</body>
+</html>

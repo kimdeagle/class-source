@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 { border: 1px solid black; border-collapse: collapse; }
+        #tbl1 td { border: 1px solid black; padding: 10px 30px; }
+
+        #box1 { border: 1px solid black; padding: 50px; background-color: tomato; }
+        #box2 { border: 1px solid black; padding: 50px; background-color: gold; }
+        #box3 { border: 1px solid black; padding: 50px; background-color: cornflowerblue; }
+    </style>
+</head>
+<body>
+    <!-- ex35_event.html -->
+
+    <h1>테이블</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h1>테이블</h1>
+
+    <table border>
+        <tr>
+            <td>aaa</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h1>이벤트 버블링(Bubbling) vs 이벤트 터널링(Tunneling)(= 이벤트 캡쳐링(Capturing))</h1>
+
+    <div id="box1">할아버지
+        <div id="box2">아버지
+            <div id="box3">자식</div>
+        </div>
+    </div>
+
+    <script>
+
+        //m1 - 현재 상황에서 사용 불가
+        //var td = document.getElementsByTagName("td");
+
+        //m2
+        var tbl1 = document.getElementById("tbl1"); //<table id="tbl1">
+
+        //console.log(tbl1.children.length);
+
+        var tbody = tbl1.firstElementChild; //<tbody>
+
+        var tr = tbody.children;
+
+        //console.log(tr.length);
+
+        // for (var i=0; i<tr.length; i++) {
+        //     var td = tr[i].children;
+
+        //     for (var j=0; j<td.length; j++) {
+        //         // td[j].innerText = i * j;
+        //         td[j].onmouseover = function() {
+        //             event.srcElement.bgColor = "gold";
+        //         };
+        //         td[j].onmouseout = function() {
+        //             event.srcElement.bgColor = "transparent";
+        //         };
+        //     }
+        // }
+
+        for (var i=0; i<tr.length; i++) {
+            tr[i].onmouseover = function() {
+                // event.srcElement -> <td>
+                // event.srcElement.bgColor = "tomato";
+                event.srcElement.parentNode.bgColor = "tomato";
+            };
+            tr[i].onmouseout = function() {
+                // event.srcElement.bgColor = "transparent";
+                event.srcElement.parentNode.bgColor = "transparent";
+            };
+        }
+
+
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+
+        
+        //부모 태그에 걸어놓은 이벤트는 자식 영역에서도 발생한다.
+        box1.onclick = function() {
+            alert("할아버지");
+        };
+        
+        //부모 영역에서 이벤트가 발생해도 그 영역이 자식 영역과 겹치는 부분이면 event.srcElement는 자식 객체가 된다.
+        box2.onclick = function() {
+            alert("아버지");
+            event.cancelBubble = true;
+            // alert(event.srcElement.id);
+        };
+                
+        box3.onclick = function() {
+            alert("자식");
+            event.cancelBubble = true;
+            // alert(event.srcElement.id);
+        };
+
+        //터널링 -> 최상위 객체에서 최하위 객체로 이동
+        //버블링 -> 터널링 후 최하위 객체에서 최상위 객체로 이동
+        //event.srcElement -> 이벤트 발생했을 때 최하위 객체
+
+        </script>
+
+</body>
+</html>

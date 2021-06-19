@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .one {
+            color: coral;
+            font-family: '궁서체';
+        }
+
+        .two {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .three {
+            text-decoration: underline;
+            line-height: 2em;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex40_style.html -->
+
+    <input type="button" value="확인1" id="btn1">
+    <input type="button" value="확인2" id="btn2">
+    <input type="button" value="확인3" id="btn3">
+
+    <hr>
+
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quo voluptatibus hic sed ullam est deserunt ex necessitatibus ducimus illo quae dolores, architecto eveniet corporis ea. Ab iusto maxime doloribus eum suscipit repellendus animi, deserunt dignissimos debitis quod, voluptatem unde voluptatibus ipsam! Saepe eos repellendus perspiciatis libero dignissimos beatae corporis ut ab earum illo pariatur impedit sequi laborum, labore unde? Fugit est praesentium facilis porro odit! Saepe autem blanditiis obcaecati, repellat, accusantium, cupiditate fuga consectetur quas libero natus minima doloremque molestiae delectus! Possimus recusandae natus cupiditate minus, ratione aspernatur eos praesentium iste unde libero et est fugiat quae voluptate reiciendis. Magnam dignissimos voluptatum ex illo eveniet iusto quasi perferendis, amet ipsa ea, explicabo totam maxime consectetur, quidem dolorum nam neque fuga nostrum aspernatur facere tenetur! Nesciunt, nihil voluptatem sit exercitationem eveniet ipsa, nobis quos vero numquam est amet in voluptate ab fugiat dolorum corrupti quidem fugit ducimus harum sed explicabo magni natus voluptas? Culpa porro voluptatum voluptatem perspiciatis quisquam labore libero nisi maiores ea ut ad beatae possimus veniam officiis, laboriosam rem sed? Provident dolore adipisci tempora dicta at minima modi cum illum reprehenderit incidunt, rerum enim eius quidem officia aspernatur molestias voluptatum dolores temporibus expedita aliquam numquam nemo fugiat? Molestiae, repellat, vitae mollitia quasi nemo dicta expedita recusandae, cum ea soluta quaerat porro quod atque eveniet! Magnam minus deserunt, optio sapiente adipisci ex veritatis ducimus earum necessitatibus perferendis nihil, fuga quidem modi aperiam neque, nobis quo. Corrupti, odit saepe! Totam asperiores aliquam aspernatur deserunt ipsum? Voluptas, facere totam sit nemo, eligendi quae doloribus fuga id earum amet minima harum, placeat esse quia officiis? Tenetur esse voluptatem quisquam porro velit eveniet accusantium accusamus unde nostrum magni, perspiciatis consequuntur modi omnis corporis deserunt ipsum dolorem quidem fugit et quo voluptas doloribus? Dicta consequuntur quaerat vero cumque voluptate sed magni perferendis nulla?</p>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        var p1 = document.getElementById("p1");
+
+        btn1.onclick = function () {
+            //JavaScript -> CSS 조작
+
+            //1. CSS 속성을 하나씩 직접 제어
+            // p1.style.color = "tomato";
+            // p1.style.fontFamily = "바탕체";
+
+            //2. CSS 속성을 집합으로써 제어 > class 사용
+            
+            //BOM
+            // p1.className = "one";
+
+            //DOM
+            // p1.setAttribute("class", "two"); //<p id="p1" class="two">
+            
+            //3. CSS class를 여러개 제어 > 다중 class 제어
+            //<p class="one two">
+            
+            // p1.className = "one two";
+
+            //DOM
+            // - classList : class 집합
+            // - add(), remove(), toggle()
+
+            //class를 따로 따로 추가
+            // p1.classList.add("one");
+            //p1.classList.add("two");
+
+            p1.classList.toggle("one");
+
+        };
+
+        btn2.onclick = function () {
+            //p1.className = ""; //제거
+
+            //p1.classList.remove("one");
+
+            // p1.classList.add("two");
+            p1.classList.toggle("two");
+        };
+        
+        btn3.onclick = function () {
+            // p1.classList.add("three");
+            p1.classList.toggle("three");
+        };
+
+    </script>
+
+</body>
+</html>

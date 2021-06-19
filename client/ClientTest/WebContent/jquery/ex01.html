@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jQuery 설치 -->
+    <script src="js/jquery-1.12.4.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <!-- ex01.html -->
+
+    <h1>jQuery</h1>
+
+    <input type="button" value="확인" id="btn1">
+
+    <hr>
+
+
+
+    <script>
+
+        /*
+        
+        jQuery
+        - http://jquery.com
+        - 2006년
+        - JavaScript Library or Framework
+        - 라이브러리에 가깝다.
+        - JavaScript 기능 집합 -> 개발에 필요한 여러가지 기능을 미리 구현해서 제공 -> 메서드(함수) 제공
+        - 모든 문법은 JavaScript로 되어 있다.
+        - BOM -> DOM Level 3 -> (jQuery)
+        - 경량
+        - Supports CSS3 selectors
+        - Cross-Browser
+
+        jQuery 설치
+        - 로컬 설치 : <script src="jquery.js"> 참조
+        - CDN 설치 : 네트워크 상의 파일을 참조
+
+        
+        */
+
+        //버튼 검색 -> value 조작
+        //1. BOM - BOM 트리
+        var btn1 = document.all.btn1;
+        btn1.value = "BOM";
+
+        //2. DOM - getXXX 메서드 or DOM 트리(Axis)
+        var btn2 = document.getElementById("btn1");
+        btn2.setAttribute("value", "DOM");
+
+        //3. jQuery - jQuery 함수
+        var btn3 = jQuery("#btn1");
+        btn3.val("jQuery");
+
+
+    </script>
+
+</body>
+</html>

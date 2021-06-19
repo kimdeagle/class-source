@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heart {
+            width: 300px;
+            height: 300px;
+            background-image: url(../images/heart.png);
+            background-position: 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex44_style.html -->
+
+    <h1>배경 이미지 조작(CSS) - Sprite Image</h1>
+
+    <div id="heart"></div>
+    
+    <hr>
+
+    <select id="sel1">
+        <option value="0">100%</option>
+        <option value="-292">50%</option>
+        <option value="-584">0%</option>
+    </select>
+
+    <hr>
+
+    <input type="range" id="range1" min="-584" max="0" value="0" step="292">
+
+    <hr>
+
+    <input type="button" id="btn1" value="확인">
+
+    <script>
+
+        var heart = document.getElementById("heart");
+        var left = -292;
+
+        heart.onclick = function() {
+            // heart.style.backgroundPosition = "-292px 0px";
+            heart.style.backgroundPosition = left + "px 0px";
+            left += -292;
+            if (left < -(292*2)) {
+                left = 0;
+            }
+        };
+
+        var sel1 = document.getElementById("sel1");
+
+        sel1.onchange = function () {
+            heart.style.backgroundPosition = sel1.value + "px 0px";
+        };
+
+        var range1 = document.getElementById("range1");
+
+        range1.onchange = function() {
+            heart.style.backgroundPosition = range1.value + "px 0px";
+        };
+
+        var btn1 = document.getElementById("btn1");
+        var index = 0;
+
+        btn1.onclick = function () {
+            // for (var i=0; i<3; i++) {
+            //     heart.style.backgroundPosition = (i * -292) + "px 0px";
+            // }
+
+            var timer = setInterval(function() {
+                heart.style.backgroundPosition = (index * -292) + "px 0px";
+                index++;
+
+                if (index == 3) {
+                    index = 0;
+                }
+            }, 500);
+
+        };
+
+    </script>
+
+</body>
+</html>

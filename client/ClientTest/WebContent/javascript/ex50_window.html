@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex50_window.html -->
+
+    <script>
+
+        //window 객체의 전역 프로퍼티(멤버)
+
+        //향상된 for문
+        //1. for 요소 of 집합
+        //2. for 요소 in 집합
+        //3. for 요소 : 집합
+        //4. foreach(요소 in 집합)
+        //5. foreach(요소 : 집합)
+
+        //for 요소 of 집합
+        // - 집합 탐색 도구
+
+        //for 요소 in 집합
+        // - 객체의 프로퍼티 집합 탐색 도구
+
+        var list = [ 100, 200, 300, 400, 500 ];
+        
+        for (n of list) {
+            console.log(n);
+        }
+        console.clear();
+
+        for (n in list) {
+            console.log(n);
+        }
+        console.clear();
+
+
+        //자바 기준 표현
+        //1. window.멤버변수
+        //2. window.멤버메서드
+
+        //자바스크립트 기준 표현
+        //1. window.프로퍼티
+        //2. window.프로퍼티
+
+        //for (변수 in 객체)
+        // for (var p in window) {
+        //     console.log(p);
+        // }
+
+
+        //JavaScript
+        // -> 코드 영역(블럭)은 유일하게 함수만 만들 수 있다.
+        // -> 함수 밖의 영역은 전역, 함수 내의 영역은 지역
+
+        //전역 변수, Global Variable
+        // - 모든 전역 변수는 window 객체의 프로퍼티다.(*****)
+        var n1 = 100;
+        var n2 = 200;
+
+        console.log(window.n1);
+        console.log(window.n2);
+
+        //전역 함수
+        // - 모든 전역 함수는 window 객체의 프로퍼티다.(*****)
+        function m1() {
+            console.log("m1");
+
+            //지역 함수
+            function m2 () {
+                console.log("m2");
+            }
+
+            m2();
+        }
+        
+        m1();
+
+        window.m1();
+
+        console.clear();
+
+        for (var p in window) {
+            console.log(p);
+        }
+
+
+    </script>
+
+</body>
+</html>

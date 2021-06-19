@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+
+        /*
+        
+        transition, 전환
+        - 객체의 속성(상태값)이 변화(***)되는 과정을 시간 순서대로 보여주는 기술
+        - 수치형 속성값을 가지는 속성에 한해서 적용 가능(열거형 적용 불가)
+        
+        */
+
+        #box {
+            /* transition-property: width, height, font-size; */
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        #box:hover {
+            /* width: 500px;
+            height: 500px;
+            font-size: 10em; */
+
+            /* font-family: '궁서체'; */
+            /* background-color: cornflowerblue; */
+            /* border-width: 10px; */
+            /* padding: 50px; */
+            /* margin-left: 50px; */
+            /* border-radius: 50%; */
+            /* box-shadow: 10px 10px 5px #555; */
+            /* opacity: 0; */
+
+            /* transform: translate(100px, 0px); */
+            /* transform: scale(-1, 1); */
+            transform: rotate(360deg);
+        }
+
+        #cat img {
+            opacity: .2;
+            transition-property: opacity, top;
+            transition-duration: 1s;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        #cat img:hover {
+            opacity: 1;
+            top: -20px;
+
+        }
+
+        #cat2, #cat3 {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            transition: left 1s;
+        }
+
+        #cat1:hover + #cat2 {
+            left: 700px;
+        }
+
+        #box2:hover > #cat3 {
+            left: 700px;
+        }
+
+        #control > div {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        #control > #cat4 {
+            position: relative;
+            left: 300px;
+            top: -300px;
+            transition-property: left, top;
+            transition-duration: 1s;
+        }
+
+        #control > div:hover {
+            background-color: tomato;
+        }
+
+        #control > div:nth-child(1):hover ~ #cat4 {
+            top: -600px;
+        }
+
+        #control > div:nth-child(2):hover ~ #cat4 {
+            top: 0px;
+        }
+
+        #control > div:nth-child(3):hover ~ #cat4 {
+            left: 0px;
+        }
+
+        #control > div:nth-child(4):hover ~ #cat4 {
+            left: 600px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex50_transition.html -->
+
+    <div id="box" class="box small bgred">상자</div>
+
+    <h1>고양이</h1>
+
+    <div id="cat">
+        <img src="../images/catty01.png">
+        <img src="../images/catty02.png">
+        <img src="../images/catty03.png">
+        <img src="../images/catty04.png">
+        <img src="../images/catty05.png">
+    </div>
+
+    <hr>
+
+    <img src="../images/catty01.png" id="cat1">
+    <img src="../images/catty02.png" id="cat2">
+
+    <hr>
+
+    <div id="box2" class="">
+        <img src="../images/catty03.png" id="cat3">
+    </div>
+
+    <hr>
+
+    <div id="control">
+        <div>UP</div>
+        <div>DOWN</div>
+        <div>LEFT</div>
+        <div>RIGHT</div>
+        <img src="../images/catty04.png" id="cat4">
+    </div>
+
+</body>
+</html>

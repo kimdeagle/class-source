@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- src > config06.xml -->
+
+<!-- 스프링 관련 설정 -->
+<!-- docs > 5.2.1. Configuration metadata -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	
+		자바에서의 객체 -> Bean
+		
+		이 파일의 목적 : 스프링은 객체 생성을 도와준다. 사전에 객체에 대해 정의가 미리 되어 있어야지만 스프링을 통해서 객체를 생성받을 수 있다. 
+	
+	-->
+	<bean class="com.test.spring.di6.Student" id="s2"></bean>
+
+</beans>

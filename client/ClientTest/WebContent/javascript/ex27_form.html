@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex27_form.html -->
+
+    <h1>폼</h1>
+
+    <form name="form1">
+        <fieldset>
+            <legend>라디오 버튼</legend>
+
+            <div>
+                <h2>선호하는 언어를 선택하세요.</h2>
+                <label>
+                    <input type="radio" name="rb" value="Java">
+                    Java
+                </label>
+                <label>
+                    <input type="radio" name="rb" value="SQL">
+                    SQL
+                </label>
+                <label>
+                    <input type="radio" name="rb" value="HTML">
+                    HTML
+                </label>
+                <label>
+                    <input type="radio" name="rb" value="CSS">
+                    CSS
+                </label>
+                <hr>
+                <input type="button" value="확인" name="btn1">
+            </div>
+
+            <hr>
+
+            <div>
+                <h3>문서 배경색을 선택하세요.</h3>
+
+                <label>
+                    <input type="radio" name="rbColor" value="white" checked>
+                    흰색
+                </label>
+                <label>
+                    <input type="radio" name="rbColor" value="black">
+                    검정
+                </label>
+                <label>
+                    <input type="radio" name="rbColor" value="tomato">
+                    빨강
+                </label>
+                <label>
+                    <input type="radio" name="rbColor" value="cornflowerblue">
+                    파랑
+                </label>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>셀렉트 박스(단일선택, 다중선택)</legend>
+
+            <label>애완동물</label>
+            
+            <!-- <select name="sel1"> : 단일 선택 -->
+            <select name="sel1" multiple size="7">
+                <option value="1">강아지</option>
+                <option value="2">고양이</option>
+                <option value="3">병아리</option>
+                <option value="4">토끼</option>
+                <option value="5">거북이</option>
+            </select>
+            
+            <hr>
+            <input type="button" value="확인2" name="btn2">
+            <input type="button" value="확인3" name="btn3">
+            <input type="button" value="확인4" name="btn4">
+            <input type="button" value="확인5" name="btn5">
+            <input type="button" value="확인6" name="btn6">
+
+            <hr>
+
+            태어난 년도 : <select name="selYear">
+                            <!-- <option value="1900">1900년</option>
+                            ...
+                            <option value="2021">2021년</option> -->
+                          </select>
+
+            <hr>
+
+            배경색 : <select name="selColor"></select>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>HTML5</legend>
+
+            <input type="color" name="c1">
+            <input type="button" value="확인" name="btn7">
+
+            <hr>
+
+            <input type="range" name="r" min="0" max="255" value="255">
+            <br>
+            <input type="range" name="g" min="0" max="255" value="255">
+            <br>
+            <input type="range" name="b" min="0" max="255" value="255">
+
+        </fieldset>
+    </form>
+
+    <script>
+
+        var rb = document.form1.rb;
+        var btn1 = document.form1.btn1;
+        
+        var rbColor = document.form1.rbColor;
+
+        var sel1 = document.form1.sel1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+        var btn4 = document.form1.btn4;
+        var btn5 = document.form1.btn5;
+        var btn6 = document.form1.btn6;
+
+        var selYear = document.form1.selYear;
+
+        var selColor = document.form1.selColor;
+
+        var c1 = document.form1.c1;
+        var btn7 = document.form1.btn7;
+
+        var r = document.form1.r;
+        var g = document.form1.g;
+        var b = document.form1.b;
+
+
+        btn1.onclick = function() {
+
+            //체크박스, 라디오버튼
+            // - value 속성을 정의하지 않으면 자동으로 "on"이라는 값이 들어있다.
+
+            //Uncaught TypeError: Cannot read property 'rb' of undefined
+            // alert(rb.value);
+
+            // for (var i=0; i<rb.length; i++) {
+            //     if (rb[i].checked) {
+            //         alert(rb[i].value);
+            //     }
+            // }
+
+            rb[3].checked = true;
+
+        };
+
+        //JavaScript 변수 선언문
+        //1. var : 블럭(함수)
+        //2. var(X) : 사용 금지
+        //3. const : 상수 선언
+        //4. let : 변수 선언. 블럭(함수, 제어문) -> 자바와 유사
+
+        for (let i=0; i<rbColor.length; i++) {
+            rbColor[i].onchange = function() {
+                //alert("클릭");
+                //누구를 클릭?
+                //alert(i); //-> var i가 왜 4가 나오는지?? -> 변수 호이스팅 때문입니다.
+
+                //1. 2015년 이전 해결 방법
+                //2. ES6(2015년) 이후 해결 방법
+
+                //alert(event.srcElement.value);
+                
+                document.body.bgColor = event.srcElement.value;
+
+                //document.body.bgColor = rbColor[i].value; //let 변수 사용시
+
+            };
+        }
+
+        btn2.onclick = function() {
+            //선택한 option?
+            alert(sel1.value); //읽기
+            //sel1.value = 3; //쓰기
+        };
+
+        btn3.onclick = function() {
+            //alert(sel1.selectedIndex); //<option>의 index반환
+            sel1.selectedIndex = 0;
+
+            //셀렉트박스 > 선택항목제어
+            //1. value
+            //2. selectedIndex
+        };
+
+        btn4.onclick = function() {
+            //<option> 동적 생성
+            var op = new Option(); //<option> 태그 생성
+            op.value = 6; //<option value="6">
+            op.text = "햄스터"; //<option value="6">햄스터</option>
+
+            //중복값 제어
+            var flag = false;
+            for (var i=0; i<sel1.options.length; i++) {
+                //alert(sel1.options[i].text);
+                if (sel1.options[i].text == "햄스터") {
+                    flag = true;
+                    break;
+                }
+            }
+
+            //부모-자식 연결
+            if (!flag) {
+                sel1.options.add(op);
+            }
+
+        };
+
+        for (var i=1900; i<=2021; i++) {
+            var op = new Option();
+            op.value = i;
+            op.text = i + "년";
+            selYear.options.add(op);
+
+        }
+        // selYear.selectedIndex = ??; //1990이 몇번째인지?
+        selYear.value = 1990;
+
+
+        btn5.onclick = function() {
+            //집합 -> index 조작 -> Shift 주의!
+            
+            //<option> 삭제
+            // sel1.options.remove(index);
+            // sel1.options.remove(3);
+
+            sel1.options.remove(sel1.selectedIndex);
+
+        };
+
+        
+        var color = [ "white", "black", "tomato", "gold", "cornflowerblue" ];
+        var colorName = [ "흰색", "검정", "빨강", "노랑", "파랑" ];
+
+        for(var i=0; i<color.length; i++) {
+            
+            var op = new Option(colorName[i], color[i]);
+
+            selColor.options.add(op);
+            // color[i]
+        }
+
+        selColor.onchange = function() {
+            document.bgColor = selColor.value;
+        };
+
+        // //향상된 for문(ES6)
+        // for (var c of color) {
+        //     console.log(c);
+        // }
+
+        //향상된 for문(ES6) -> 메서드 형식
+        // color.forEach(function(item, index) {
+        //     console.log(item);
+        // });
+
+        //Modern JavaScript (= ES6)
+
+        btn6.onclick = function() {
+            //선택한 모든 애완동물 확인?
+            for (var i=0; i<sel1.options.length; i++) {
+                // alert(sel1.options[i].selected);
+                if (sel1.options[i].selected) {
+                    console.log(sel1.options[i].text, sel1.options[i].value);
+                }
+            }
+        };
+
+        btn7.onclick = function() {
+            //alert(c1.value);
+            document.body.bgColor = c1.value;
+        };
+
+        r.onchange = function() {
+            //r.value, g.value, b.value
+            document.body.style.backgroundColor = "rgb(" + r.value + "," + g.value + "," + b.value + ")";
+        };
+
+        g.onchange = function() {
+            //r.value, g.value, b.value
+            document.body.style.backgroundColor = "rgb(" + r.value + "," + g.value + "," + b.value + ")";
+        };
+
+        b.onchange = function() {
+            //r.value, g.value, b.value
+            document.body.style.backgroundColor = "rgb(" + r.value + "," + g.value + "," + b.value + ")";
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 500px;
+            height: 500px;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 5em;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex31_content.html -->
+
+    <h1>게시판 <small>글쓰기</small></h1>
+
+    <div id="filelist">
+        <div>
+            <input type="button" value="첨부파일 추가하기" id="btnAdd">
+        </div>
+        <hr>
+        <div>
+            <label>첨부파일 : </label>
+            <input type="file">
+        </div>
+        <div id="filesublist"></div>
+    </div>
+
+    <h1>테이블</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <script>
+
+        var btnAdd = document.getElementById("btnAdd");
+        var filelist = document.getElementById("filelist");
+        var filesublist = document.getElementById("filesublist");
+
+        btnAdd.onclick = function() {
+            filesublist.innerHTML += "<div><label>첨부파일 : </label><input type=\"file\"></div>";
+        };
+
+
+        var td = document.getElementsByTagName("td");
+        // console.log(td.length);
+
+        for (var i=0; i<td.length; i++) {
+            td[i].onmousedown = function() {
+                //alert();
+                // -> i 사용 금지 -> 변수 호이스팅 발생
+                // -> event.srcElement    or     let 변수
+
+                //alert(event.srcElement.bgColor); //빈 문자열
+
+                // if (event.srcElement.bgColor == "") {
+                //     event.srcElement.bgColor = "tomato";
+                // } else {
+                //     event.srcElement.bgColor = "";
+                // }
+
+                // event.srcElement.innerText = "O";
+                event.srcElement.innerHTML = "<img src='../images/catty01.png' style='width:100px; height:100px; display:block;'>";
+
+            };
+            // td[i].onmouseout = function() {
+            //     event.srcElement.bgColor = "transparent";
+            // };
+            
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

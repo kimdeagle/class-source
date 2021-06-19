@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex18_window.html -->
+
+    <h1>window 객체</h1>
+
+    <form name="form1">
+        <fieldset>
+            <legend>자식창 제어하기</legend>
+            <input type="button" value="자식창 열기" name="btn1">
+            <input type="button" value="자식창 닫기" name="btn2">
+        </fieldset>
+        <fieldset>
+            <legend>자식창 내부 제어하기</legend>
+            <input type="text" name="txt1">
+            <input type="button" value="자식창 내부 접근하기" name="btn3">
+        </fieldset>
+        <fieldset>
+            <legend>아이디 중복 검사</legend>
+            <input type="text" name="txtID">
+            <input type="button" value="중복검사" name="btn4">
+        </fieldset>
+    </form>
+
+    <script>
+
+        var btn1 = window.document.form1.btn1;
+        var btn2 = window.document.form1.btn2;
+        var btn3 = window.document.form1.btn3;
+        var btn4 = window.document.form1.btn4;
+
+        var txt1 = window.document.form1.txt1;
+        var txtID = window.document.form1.txtID;
+
+        var child;
+
+        //window 객체
+        // - BOM 최상위 객체
+        // - 브라우저 창에 대한 참조 > 창을 제어 or 창 정보 제공
+        
+        btn1.onclick = function() {
+            
+            //새창 열기, 자식창 열기
+            //number window.open(URL, Name, Options);
+            // - URL : 새창 페이지 주소
+            // - Name : 새창(자식창) 식별자, 중복 창 허용(O, X)
+            // - Options : 새창 제어 옵션
+
+            //child
+            // - window 객체
+            // - 자식창의 window 참조 객체
+            child = window.open("ex18_child.html", "child", "width=500, height=400");
+            // alert(child);
+
+        };
+
+        // window.open("ex18_child.html", "child", "width=400, height=300");
+
+        btn2.onclick = function() {
+
+            //열린 자식창 닫기
+            child.close();
+            
+            //부모 창이 닫힌다.
+            //window.close();
+
+        };
+
+        btn3.onclick = function() {
+
+            //자식창 > 텍스트박스 접근
+            child.document.form1.txt1.value = "부모가 접근했습니다.";
+            // child.document.form1.btn1.value = "버튼";
+
+        };
+
+        btn4.onclick = function() {
+            window.open("ex18_idcheck.html", "idcheck", "width=450, height=200");
+        };
+
+    </script>
+
+</body>
+</html>

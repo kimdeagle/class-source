@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h2, fieldset, #check {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        form fieldset {
+            margin: 10px auto;
+        }
+
+        input[type=text] {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam11.html -->
+
+    <h1>텍스트 박스 복사하기</h1>
+
+    <form name="order">
+        <h2>주문하기</h2>
+        <fieldset>
+            <legend>주문하시는 분</legend>
+            <div>
+                이름 :
+                <input type="text" name="name1">
+            </div>
+            <div>
+                주소 :
+                <input type="text" name="address1">
+            </div>
+        </fieldset>
+        <div id="check">
+            <label>
+                <input type="checkbox" name="check">
+                주문하시는분과 정보가 동일합니다.
+            </label>
+        </div>
+        <fieldset>
+            <legend>받으시는 분</legend>
+            <div>
+                이름 :
+                <input type="text" name="name2">
+            </div>
+            <div>
+                주소 :
+                <input type="text" name="address2">
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+
+        var name1 = document.order.name1;
+        var address1 = document.order.address1;
+        var check = document.order.check;
+        var name2 = document.order.name2;
+        var address2 = document.order.address2;
+
+        check.onchange = function() {
+           if (check.checked) {
+               name2.value = name1.value;
+               address2.value = address1.value;
+           } else {
+               name2.value = "";
+               address2.value = "";
+               name2.focus();
+           }
+        };
+
+    </script>
+
+</body>
+</html>

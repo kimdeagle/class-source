@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex29_DOM.html -->
+
+    <form name="form1">
+        <h1 id="title">DOM</h1>
+        <div>
+            <input type="text" name="txt1" id="txt1" class="txt">
+            <input type="text" name="txt2" id="txt2" class="txt">
+            <input type="text" name="txt3" id="txt3" class="txt">
+        </div>
+    </form>
+
+    <script>
+
+        /*
+        
+        1. BOM
+            a. 검색 도구 제공 > BOM 트리 구조(window, document, form, link, image 등)
+                              > 일부 태그 접근 O, 일부 태그 접근 X
+            b. 조작 도구 제공 > HTML 속성 > JavaScript 프로퍼티로 제공
+                ex) <input type="text" name="txt1" size="10">
+                    document.form1.txt1.size = 30;
+            c. 조작 도구가 HTML 속성에 기반(제한)
+            d. 태그 동적 추가/삭제 불가능(<option>만 가능)
+            e. CSS 조작 불가능
+
+        2. DOM
+            a. 검색 도구 제공 > 문서 트리 기반(현재 HTML 소스를 기반)
+                              > 모든 태그에 접근 가능
+            b. 조작 도구 제공 > BOM + 확장
+            c. 태그 동적 추가/삭제 가능
+            d. CSS 조작 가능
+        
+        */
+
+        //DOM 태그 검색 도구
+
+        //1. id 검색(***********************)
+        // - object getElementById("id")
+        // - 유일한 태그를 찾겠다.
+        // - 계층 구조를 고려할 필요가 없다. > 유일한 식별자
+
+        //2. class 검색(******************)
+        // - array getElementsByClassName("class")
+        // - 같은 class명을 갖는 모든 태그를 찾겠다.
+
+        //3. name 검색(최근)
+        // - BOM에서 사용하던 식별자 name을 지원하기 위해 추가된 도구
+        // - array getElementsByName("name")
+
+        //4. 태그명 검색
+        // - 태그명으로 태그를 찾겠다.
+        // - array getElementsByTagName("tagName")
+        
+
+        var txt1 = document.form1.txt1; //BOM(name="txt1")
+        var txt2 = document.getElementById("txt2"); //DOM(id="txt2")
+        
+        txt1.value = "BOM";
+        txt2.value = "DOM";
+
+        var txt1_1 = document.form1.txt1;
+        var txt1_2 = document.getElementById("txt1");
+
+        console.log(txt1_1 == txt1_2);
+        console.log(txt1_1 === txt1_2);
+
+        //BOM으로 검색하나 DOM으로 검색하나 찾은 결과는 동일하다. -> BOM + DOM 호환
+
+        var h1 = document.getElementById("title");
+        h1.align = "center";
+
+        //JavaScript
+        // - 진짜 배열
+        // - 유사 배열
+        
+        var txt = document.getElementsByClassName("txt");
+        // alert(txt.length);
+
+        for (var i=0; i<txt.length; i++) {
+            txt[i].value = i;
+        }
+
+        for (var t of txt) {
+            t.value = "향상된 for문";
+        }
+
+        //유사배열이라 forEach (X)
+        // txt.forEach(function(item, index) {
+        //     item.value = index;
+        // });
+
+        document.form1.txt1.value = "100";
+        document.getElementsByName("txt2")[0].value = "200";
+
+        txt = document.getElementsByTagName("input");
+
+        for (var i=0; i<txt.length; i++) {
+            txt[i].value = "확인";
+        }
+
+    </script>
+
+</body>
+</html>

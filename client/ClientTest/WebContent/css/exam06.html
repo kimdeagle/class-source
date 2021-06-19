@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            margin: 0;
+            background-color: #B3C5DC;
+        }
+
+        .box {
+            width: 900px;
+            height: 1500px;
+            margin: 0 auto;
+        }
+
+        .box::after {
+            content: "";
+            display: none;
+            clear: both;
+        }
+
+        .left {
+            width: 250px;
+            height: 1500px;
+            background-color: #344F71;
+            float: left;
+            
+        }
+
+        .right {
+            width: 650px;
+            height: 1500px;
+            background-color: #FFFEFF;
+            float: left;
+
+        }
+
+        .box .left .picture {
+            width: 150px;
+            height: 150px;
+            border: 5px dashed #B8C2BA;
+            background-color: #718493;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .box .left .picture img {
+            width: 128px;
+            height: 128px;
+            margin-top: 10px;
+        }
+
+        .box .left .name {
+            width: 250px;
+            text-align: center;
+            font-size: 27px;
+            font-family: 'Arial Black';
+            font-weight: bold;
+            color: #F7F7F7;
+            letter-spacing: -1px;
+        }
+
+        .box .left .intro {
+            width: 190px;
+            text-align: left;
+            font-size: 14px;
+            font-family: 'Malgun Gothic';
+            color: #F7F7F7;
+            margin-top: 15px;
+            margin-left: 28px;
+        }
+
+        .box .left .birth, .box .left .email, .box .left .phone, .box .left .address {
+            width: 230px;
+            text-align: left;
+            font-style: italic;
+            font-size: 14px;
+            font-family: 'Malgun Gothic';
+            font-weight: bold;
+            color: #F7F7F7;
+            border-bottom: 1px solid #F7F7F7;
+            padding-left: 25px;
+            padding-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .box .left .birth {
+            margin-top: 120px;
+        }
+
+        .box .right .title {
+            width: 650px;
+            margin-top: 41px;
+            margin-left: 20px;
+            font-variant: small-caps;
+            color: #666666;
+        }
+
+        .box .right .title span {
+            font-size: 22.4px;
+            color: #888888;
+        }
+
+        .box .right .content {
+            margin-top: 22px;
+            margin-bottom: -2px;
+        }
+
+        .box .right .content h2 {
+            border-left: 10px solid #5D728D;
+            margin-left: 20px;
+            padding-left: 15px;
+            color: #666666;
+        }
+
+        .box .right .content li {
+            width: 550px;
+            color: #888888;
+            font-size: 14px;
+            margin-left: 20px;
+            text-align: justify;
+        }
+
+        .box .right .footer {
+            width: 610px;
+            border-top: 1px dashed #AEB8C6;
+            font-size: 14px;
+            color: #888888;
+            margin: 71px auto;
+            padding-top: 10px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam06.html -->
+
+    <div class="box">
+        <div class="left">
+            <div class="picture"><img src="../images/man_03.png"></div>
+            <div class="name">Hong Gil Dong</div>
+            <div class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, id nobis saepe natus iste doloremque!</div>
+            <div class="birth">♨ 1995-05-25</div>
+            <div class="email">▣ hong@gmail.com</div>
+            <div class="phone">☎ 010-5874-5984</div>
+            <div class="address">♬ Teheran-ro, Gangnam-gu, Seoul, Republic of Korea</div>
+        </div>
+
+        <div class="right">
+
+            <div class="title"><h1>Resume <span>Lorem ipsum dolor sit.</span></h1></div>
+
+            <div class="content">
+                <h2>Lorem, ipsum.</h2>
+                <ul>
+                    <li>2019.02.22 - 2019.03.04</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur distinctio commodi eveniet asperiores illum in ut praesentium, nam architecto quas similique. Natus cupiditate quisquam, placeat modi corporis voluptates porro reiciendis!</li>
+                    <li>Officia, et, pariatur minima officiis iusto, accusamus eligendi tempore adipisci alias quos esse porro ab non architecto expedita omnis libero magnam sed similique illo perferendis quae sapiente amet. Optio, mollitia.</li>
+                    <li>Facilis, tempora laboriosam aliquid debitis, laudantium, natus rerum ipsa voluptatibus molestiae distinctio provident eveniet impedit harum itaque. Veniam, explicabo dicta aliquam, reprehenderit saepe quas dignissimos placeat enim perspiciatis repellendus harum?</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, reiciendis, voluptate, provident hic beatae dolores quo quam est nostrum quidem obcaecati illo soluta exercitationem molestiae ipsa non esse recusandae quia!</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <h2>Eum, imp dolor sit amet.</h2>
+                <ul>
+                    <li>2019.03.20 - 2019.04.11</li>
+                    <li>Rerum adipisci perspiciatis ipsa sequi rem minus eligendi hic provident error modi! Repudiandae commodi, nulla expedita pariatur neque ab dolor earum nobis adipisci aperiam nisi inventore debitis officiis sunt eaque?</li>
+                    <li>Quibusdam fugit temporibus aliquid odit in dolore maxime nisi quae id, accusantium, ea maiores distinctio magnam? Vel, harum ducimus sapiente voluptatem natus corrupti laborum animi labore veritatis. Veniam, libero. Nemo!</li>
+                    <li>Sed aliquam harum, ducimus numquam illo, est culpa atque quisquam eveniet aperiam tempore voluptate, consequatur dolor fuga quod nesciunt sapiente quas minima cum? At aut ducimus minus ad, adipisci saepe!</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <h2>Sint, excepturi? aliquam</h2>
+                <ul>
+                    <li>Iste voluptatem aperiam, sint nostrum odit facilis? Est esse fugit aspernatur ex molestiae, nam voluptatem accusamus numquam officia quas beatae autem illum nesciunt vitae totam quae sunt, optio explicabo eos!</li>
+                    <li>Illum nostrum voluptate, nam, obcaecati error, et nemo animi consectetur commodi tempora dolorem. Nostrum nobis vero at, modi quas harum voluptates voluptatem possimus molestias, et velit mollitia quasi earum molestiae!</li>
+                </ul>
+            </div>
+
+            <div class="footer">©Copyright 2019 hong.com All rights reserved.</div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex21_history.html -->
+
+    <h1>history</h1>
+
+    <form name="form1">
+        <input type="button" value="뒤로가기" name="btnBack">
+        <input type="button" value="앞으로가기" name="btnForward">
+    </form>
+
+    <script>
+
+        var btnBack = window.document.form1.btnBack;
+        var btnForward = window.document.form1.btnForward;
+
+        //history
+        // - window 객체의 자식
+        // - 브라우저의 방문 기록 탐색
+        // - 뒤로가기, 앞으로가기
+        // - back(), forward(), go()
+
+        //ex21 -> 구글 -> 네이버 -> ex21 -> 쿠팡
+
+        btnBack.onclick = function() {
+            // window.history.back();
+            window.history.go(-2);
+        };
+
+        btnForward.onclick = function() {
+            window.history.forward();
+        };
+
+    </script>
+
+</body>
+</html>

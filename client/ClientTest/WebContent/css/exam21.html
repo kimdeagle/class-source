@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: #8FD3DC;
+        }
+
+        h1 {
+            width: 600px;
+            margin: 30px auto;
+            font-variant: small-caps;
+            font-size: 3em;
+            color: #444;
+        }
+
+        h1 span {
+            font-size: 0.8em;
+            margin-right: -5px;
+        }
+
+        .box {
+            width: 600px;
+            margin: 0 auto;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .box .tape {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            /* opacity: .5; */
+        }
+
+        .box #tapehole1 {
+            position: absolute;
+            left: 125px;
+            top: 120px;
+            width: 81px;
+            height: 81px;
+            
+        }
+
+        .box #tapehole2 {
+            position: absolute;
+            left: 362px;
+            top: 120px;
+            width: 81px;
+            height: 81px;
+        }
+
+        .box .tapeline {
+            width: 135px;
+            height: 63px;
+            position: absolute;
+            left: 215px;
+            top: 126px;
+            padding: 0;
+            border: 2px solid #444;
+            overflow: hidden;
+        }
+
+        .box .tapeline img {
+            width: 180px;
+            position: absolute;
+            left: -30px;
+            top: 0px;
+
+        }
+
+        .box .tapehole {
+            animation-name: tapehole;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes tapehole {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .box .tapeline img {
+            animation-name: tapeline;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+
+        @keyframes tapeline {
+            from {
+                position: absolute;
+                left: -45px;
+                /* top: 0px; */
+            }
+            to {
+                position: absolute;
+                left: 0px;
+                /* top: 0px; */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- exam21.html -->
+
+    <h1><span>🎧</span> Music</h1>
+
+    <div class="box">
+        <div class="tape"><img src="../images/tape/tape.png"></div>
+        <div class="tapeline"><img src="../images/tape/tapeline.png"></div>
+        <div id="tapehole1" class="tapehole"><img src="../images/tape/tapehole.png"></div>
+        <div id="tapehole2" class="tapehole"><img src="../images/tape/tapehole.png"></div>
+    </div>
+
+</body>
+</html>

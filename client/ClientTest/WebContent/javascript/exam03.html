@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        table {
+            border: 1px solid #A9A9A9;
+            border-collapse: collapse;
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        table td {
+            border: 1px solid #A9A9A9;
+        }
+
+        table td:nth-child(1) {
+            width: 150px;
+        }
+
+        table td:nth-child(2) {
+            width: 450px;
+        }
+
+        table tr td a {
+            border: 1px solid #A9A9A9;
+            border-radius: 5px;
+            background-color: #EEEEEE;
+            width: 140px;
+            height: 25px;
+            text-align: center;
+            margin: 10px;
+            padding: 5px;
+            font-weight: bold;
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+
+        table tr td img {
+            display: block;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam03.html -->
+
+    <table>
+        <tr>
+            <td>
+                <a href="#" name="dog1">강아지1</a>
+                <a href="#" name="dog2">강아지2</a>
+                <a href="#" name="dog3">강아지3</a>
+                <a href="#" name="dog4">강아지4</a>
+                <a href="#" name="dog5">강아지5</a>
+            </td>
+            <td>
+                <img src="../images/dog01.jpg" name="dog">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        var dog1 = window.document.links["dog1"];
+        var dog2 = window.document.links["dog2"];
+        var dog3 = window.document.links["dog3"];
+        var dog4 = window.document.links["dog4"];
+        var dog5 = window.document.links["dog5"];
+
+        var dog = window.document.images["dog"];
+
+        dog1.onmouseover = function() {
+            dog.src="../images/dog01.jpg";
+        };
+
+        dog1.onclick = function() {
+            window.open("../images/dog01_big.jpg", "dog1", "width=1600, height=1200, target=_blank");
+        }
+        
+        dog2.onmouseover = function() {
+            dog.src="../images/dog02.jpg";
+        };
+
+        dog2.onclick = function() {
+            window.open("../images/dog02_big.jpg", "dog2", "width=1600, height=1200, target=_blank");
+        }
+
+        dog3.onmouseover = function() {
+            dog.src="../images/dog03.jpg";
+        };
+
+        dog3.onclick = function() {
+            window.open("../images/dog03_big.jpg", "dog3", "width=1600, height=1200, target=_blank");
+        }
+
+        dog4.onmouseover = function() {
+            dog.src="../images/dog04.jpg";
+        };
+
+        dog4.onclick = function() {
+            window.open("../images/dog04_big.jpg", "dog4", "width=1600, height=1200, target=_blank");
+        }
+
+        dog5.onmouseover = function() {
+            dog.src="../images/dog05.jpg";
+        };
+
+        dog5.onclick = function() {
+            window.open("../images/dog05_big.jpg", "dog5", "width=1600, height=1200, target=_blank");
+        }
+
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<Install & Setting>
+
+https://spring.io
+Projects > Spring Tools 4 > 하단 Spring Tool Suite 3 wiki > 3.9.11 (full distribution on Eclipse 4.14) > OS 맞게 Download
+
+새 워크스페이스
+D:\class\spring 폴더 생성
+
+STS = 이클립스(+추가기능)
+
+preferences > encoding, server, font
+
+프로젝트 생성 > Java Project > "SpringBegin"
+패키지 생성 > com.test.spring > 파일 생성 > Ex01.java
+
+
+<수업 필기>
+
+스프링 프레임 워크, Spring Framework
+- https://spring.io
+- Spring 1.0 ~ 5.X.X
+- Spring 4.X.X ~ 5.X.X -> 주력
+
+- 스프링 프레임워크는 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크다.
+- 경량 프레임워크(EJB에 비해서)
+- 프레임워크(틀 -> 작업 환경 제공)
+	a. 개발자들의 행동을 정형화(제한 -> 규칙)
+	b. 많은 기능을 제공
+	c. 장점 : 개발자의 실력 차이가 많이 줄어든다. > 팀작업 장점 > 대형화 프로젝트에 적합.
+	d. 단점 : 틀 때문에 자유도가 낮다. > 단점이라고 볼 정도는 아니다.
+- 2004년 출시
+- 전자 정부 표준 프레임워크 : 정부 주도 > 개발 환경 통일 > Spring
+
+
+STS, Spring Tools Suite
+1. 이클립스 + 스프링 관련 라이브러리(*.jar) + 환경 설정 파일 작업
+2. 이클립스 + 플러그인(STS)
+3. STS(이클립스 + 플러그인(STS))
+
+
+스프링 프레임워크 구성 요소
+1. 의존성 주입 지원(DI, IoC)
+2. 관점 지향 프로그래밍 지원(AOP)
+3. Spring MVC 지원
+4. 레이아웃 지원(Tiles)
+5. 데이터베이스 프레임워크 지원
+	a. JDBC 연동
+	b. Spring JDBC 지원
+	c. MyBatis 지원
+
+1. 의존성 주입 지원(DI, IoC)
+
+DI, Dependency Injection
+- 스프링 DI
+- 디자인 패턴 중 하나
+- 프로그래밍에서 구성 요소간 의존 관계가 소스 내부가 아닌 외부 환경에 의해서 정의되게 하는 디자인 패턴
+
+- 패키지 생성 > com.test.spring.di1
+- 파일 생성 > Ex01.java
+- 파일 생성 > SpringDAO.java
+
+- 패키지 생성 > com.test.spring.di2
+- 파일 생성 > Ex02.java
+- 파일 생성 > SpringDAO.java
+
+- 패키지 생성 > com.test.spring.di3
+- 파일 생성 > Ex03.java
+- 파일 생성 > SpringDAO.java
+- 파일 생성 > FileDAO.java
+- 파일 생성 > DBDAO.java
+- 파일 복사 > DBUtil.java
+
+- 패키지 생성 > com.test.spring.di6
+- 파일 생성 > Ex06.java
+- 파일 생성 > SpringDAO.java
+
+파일 다운로드(https://repo.spring.io/release/org/springframework/spring/3.2.9.RELEASE/)
+spring-framework-3.2.9.RELEASE-dist.zip > libs 폴더 내에 있는 *.jar 모두 복사 > lib 붙여넣기 > build path
+spring-framework-3.2.9.RELEASE-docs.zip
+
+src > 새로 만들기 > other > xml > config06.xml
+
+추가jar 폴더 내 3개도 lib에 붙여넣기 > build path
+
+
+2. 관점 지향 프로그래밍 지원(AOP)
+AOP, Aspect Oriented Programming
+- 관점 지향 프로그래밍
+- 하나의 서블릿(JSP) -> 모든 업무(주 업무 + 보조 업무(연관O, 연관X)) -> 주 업무와 보조 업무를 물리적으로 분리 시키자!! -> 따로 관리
+
+AOP 용어
+1. Core Concern
+	- 주 업무
+	- 주 관심사
+
+2. Cross-Cutting Concern
+	- 보조 업무
+	- 횡단 관심사
+	- 인증(보안) 처리, 예외처리, 로깅, 트랜잭션, 반복 보조 업무 등..
+
+3. Advice
+	- 보조 업무가 주 업무의 실행 중 어느 시점에 개입이 되야하는지를 결정하는 규칙
+	a. Before
+		- 주 업무 실행 전에 보조 업무 실행
+	b. After
+		- 주 업무 실행 후에 보조 업무 실행
+	c. Around
+		- 주 업무 실행 전과 후에 보조 업무 실행(Before + After)
+	d. After-returning
+		- 주 업무 실행 후에 주 업무 반환값을 보조 업무에게 전달하고 실행
+		- 주 업무와 밀접하게 연계되는 보조 업무(유기적인 결합)
+	e. After-throwing
+		- 주 업무 실행 중 예외 발생하면 보조 업무 실행(catch 느낌 유사 but, 역할 상이)
+
+4. Join Point
+
+
+5. Point Cut
+
+
+6. Aspect
+
+
+7. Weaving
+
+
+8. Proxy
+
+
+
+업무
+- 콘솔 기반 + AOP 적용 + DI 적용 => 메모장
+
+주업무
+1. 메모 쓰기
+2. 메모 읽기
+3. 메모 수정
+4. 메모 삭제
+
+보조업무
+1. 로그 기록
+2. 인증 처리
+
+파일
+1. 패키지 : com.test.spring.aop
+2. 클래스
+	a. Main.java		//메인 클래스
+	b. Memo.java		//주 업무 객체
+	c. IMemo.java		//주 업무 인터페이스
+	d. Logger.java		//보조 업무 객체
+	e. Auth.java		//보조 업무 객체
+	f. memo.xml			//스프링 설정 파일(<bean> + DI + AOP)
+
+추가 라이브러리
+- aopalliance-1.0.jar
+- aspectjweaver-1.6.10.jar
+
+
+AOP가 적용된 프로젝트 업무 구현 순서
+1. 주 업무 구현
+2. 보조 업무 구현
+3. XML 설정
+
+
+
+
+
+
+
+

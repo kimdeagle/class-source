@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <style>
+        #box { border: 1px solid black; width: 100px; height: 100px; background-color: gold; }
+        .helper { border: 1px dotted black; }
+    </style>
+
+</head>
+<body>
+    <!-- ex14_jqueryui.html -->
+
+    <h1>Resizable</h1>
+
+    <div id="box"></div>
+
+    <div><img src="../images/cat01.jpg" id="cat"></div>
+
+    <script>
+
+        $(document).ready(function() {
+            $("#box").resizable({
+            maxWidth: 500,
+            maxHeight: 400,
+            minWidth: 100,
+            minHeight: 100,
+            grid: [50, 50],
+            animate: true,
+            helper: "helper",
+            aspectRatio: true
+            });
+
+            $("#cat").resizable({
+            // aspectRatio: true
+            alsoResize: "#box"
+            });
+        });
+        
+
+    </script>
+
+</body>
+</html>

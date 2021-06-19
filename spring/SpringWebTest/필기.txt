@@ -1,0 +1,115 @@
+Dynamic Web Project
+
+1. Java Resources
+	a. src
+		- 자바 소스 폴더
+	b. Libraries
+		- 참조 *.jar
+		- Apache Tomcat
+		- JRE
+
+2. WebContent
+	a. WEB-INF
+		- 설정 폴더
+			1. lib
+				- 참조 *.jar
+			2. views
+				- MVC 구현 -> View
+
+
+Spring MVC Project
+
+1. src/main/java
+	- 소스 폴더(자바 파일 저장)
+	- 여태까지 사용하던 src 폴더와 동일
+	- 업무 클래스 저장
+
+2. src/main/resources
+	- 소스 폴더(자바 파일 저장)
+	- 자바 파일이 아닌 나머지 파일을 넣는 폴더
+	- 환경 설정(*.xml 등)
+
+3. src/test/java
+	- 소스 폴더(자바 파일 저장)
+	- 테스트용 자바 폴더
+	- JUnit용
+
+4. src/test/resources
+	- 소스 폴더(자바 파일 저장)
+	- 테스트용 리소스 폴더
+	- JUnit용
+
+5. JRE System Library
+	- JRE jar
+
+6. Maven Dependencies
+	- 메이븐 > 빌드 도구 > 프로젝트 생성 ~ 출시 관리 툴
+	- 프로젝트에 필요한 여러가지 *.jar 관리하는 기능
+
+7. src
+	- 소스 루트 폴더
+	
+8. src > main > webapp
+	- WebContent 폴더와 동일한 폴더
+
+9. src > main > webapp > resources
+	- 정적 웹 자원 넣는 곳
+	- css, js, image 등을 넣는 전용 폴더
+	
+10. src > main > webapp > WEB-INF
+	a. classes
+		- 자바 소스 컴파일 결과물
+	b. spring
+		- 모든 스프링 설정
+			1. root-context.xml
+				- 스프링 전반에 관련된 설정
+			2. appServlet
+				a. servlet-context.xml
+					- 웹에 관련된 설정
+					- 클라이언트의 요청/응답에 관련된 설정
+	c. view
+		- 뷰 폴더
+	d. web.xml
+		- 기존 동일
+
+11. pom.xml
+	- Project Object Model
+	- 메이븐 설정 파일
+		a. JRC : 1.6 -> 1.8
+		b. Spring : 3.1.1 -> 4.3.8
+
+
+폼 페이지 -> 처리 페이지
+- Ex05Controller.java + ex05.jsp : 폼 페이지
+- Ex05OkControllaer.java + ex05ok.jsp : 처리 페이지
+
+폼 페이지 -> 처리 페이지
+- Ex06Controller.java
+- ex06.jsp
+- ex06ok.jsp
+
+<기존>
+페이지 1장 : 서블릿 1개 + JSP 1개
+페이지 2장 : 서블릿 2개 + JSP 2개
+페이지 3장 : 서블릿 3개 + JSP 3개
+...
+
+<Spring>
+페이지 1장 : 컨트롤러 1개 + JSP 1개
+페이지 2장 : 컨트롤러 1개 + JSP 2개
+페이지 3장 : 컨트롤러 1개 + JSP 3개
+...
+
+
+- Ex07Controller.java
+- SpringDTO.java
+- ex07.jsp
+- ex07ok.jsp
+
+
+
+
+
+
+
+

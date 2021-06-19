@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .one {
+            font-size: 3em;
+            color: tomato;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex16_attribute.html -->
+
+    <h1>JavaScript를 사용해서 HTML의 Attribute 제어하기</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <hr>
+        <input type="button" value="확인" name="btn1">
+    </form>
+    
+    <script>
+
+        var btn1 = window.document.form1.btn1;
+        var txt1 = window.document.form1.txt1;
+
+        //버튼 클릭 -> 텍스트박스 조작
+        btn1.onclick = function() {
+            
+            //attribute 조작
+            //1. HTML 태그가 가지는 속성은 JavaScript에도 동일한 이름으로 제공된다.
+            // - JavaScript가 HTML의 경험을 살리기 위해 일부러 동일한 이름으로 프로퍼티 제공
+            //2. HTML 태그의 속성은 JavaScript 객체의 프로퍼티(Property)로 제공된다.
+            //3. 대부분의 프로퍼티는 입출력이 가능하다.(setter, getter)
+            //4. HTML 태그의 속성이 두단어 이상으로 조합 -> 캐멀 표기법으로 제공한다.
+
+            // alert(txt1.size);
+            // txt1.size = 50;
+            // txt1.size += 1;
+
+            //속성값 유형에 따라..
+            //1. HTML(숫자) -> JavaScript(숫자)
+            // txt1.size = 100;
+
+            //2. HTML(열거형) -> JavaScript(문자열)
+            //ex. <p align="center">
+            //p.align = "right";
+
+            //3. HTML(문자열) -> JavaScript(문자열)
+            // txt1.title = "반드시 입력하세요.";
+
+            //4. HTML(색상) -> JavaScript(문자열)
+            //<body bgcolor="yellow">
+            //bgColor >> 캐멀 표기법
+            // window.document.body.bgColor = "gold";
+
+            //5. HTML(플래그) -> JavaScript(true or false)
+            //<input type="text" readonly, disabled>
+            // txt1.readOnly = true;
+            
+            // if (txt1.readOnly) {
+            //     txt1.readOnly = false;
+            //     window.document.body.bgColor = "#FFF";
+            // } else {
+            //     txt1.readOnly = true;
+            //     window.document.body.bgColor = "#DDD";
+            // }
+
+            //<input type="text" value="">
+            // alert(txt1.value);
+            // txt1.value = "하하하";
+
+            // if (isNaN(txt1.value)) {
+            //     alert("나이는 숫자만 입력해주세요.");
+            // } else {
+            //     alert("올바르게 입력했습니다.");
+            // }
+
+            // txt1.placeholder = "나이를 입력하세요."; (안내문)
+
+            // txt1.name = "txt2"; //가능. but, 사용 금지!! -> 식별자 수정 금지!!!!
+            // txt1.type = "checkbox"; //권장 안함(그냥 쓰지 말 것)
+
+            //class 키워드 예약어 -> 사용중
+            //className 이라고 해야 한다.
+
+            //boolean
+            // - null, undefined, "", 0 -> false
+            // - 100, "ooo" -> true
+            if(txt1.className) {
+                txt1.className = "";
+            } else {
+                txt1.className = "one";
+            }
+
+        };
+
+    </script>
+
+</body>
+</html>

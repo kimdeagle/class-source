@@ -1,0 +1,245 @@
+JSP, Java Server Pages
+- Servlet 다음 버전
+
+서블릿 장점
+- 자바 기반(자바의 수많은 기능을 웹 페이지 제작하는데 적용할 수 있다.)
+
+서블릿 단점
+- HTML, CSS, JavaScript 작성이 힘들다. > 문자열 처리
+
+JSP 장점
+- HTML, CSS, JavaScript 작성이 쉽다.
+- HTML 기반
+
+JSP 단점
+- 자바 작업에 대한 환경이 조금 열약하다.(서블릿에 비해..)
+
+
+JSP 기본 요소
+1. JSP 지시자, 지시어, 선언문, JSP Directive
+2. 스크립트 요소, Scripting Elements
+3. 액션 태그, Action Tags
+
+
+1. JSP 지시자, 지시어, 선언문, JSP Directive
+- <%@ %>
+- JSP 페이지를 실행하기 위해 JSP 컨테이너(톰캣)에게 해당 JSP를 처리하기 위한 여러가지 환경 설정
+- page 지시자
+- include 지시자
+- taglib 지시자
+
+2. 스크립트 요소, Scripting Elements
+- <% %>
+- 자바 구문을 사용할 수 있게 하는 요소(= 서블릿 환경과 유사한 환경을 제공)
+- Scriptlet
+- Expression
+- Declaration
+
+3. 액션 태그, Action Tags
+- <jsp:XXX>, <c:XXX>
+- 프로그래밍 기능이 있는 태그. <c:if>
+- JSP 기본 액션 태그
+- JSTL 확장 액션 태그
+- 사용자 커스텀 액션 태그
+
+
+1. JSP 지시자, 지시어, 선언문, JSP Directive
+
+page 지시자
+- <%@ page 속성="값" 속성="값" 속성="값" ... %>
+- JSP 페이지 상단부에 기재
+- 1개 이상 작성이 가능하다.
+- 톰캣에게 현재 JSP 페이지의 상태를 알려주는 역할
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+    a. language="java"
+    - JSP 페이지에서 사용할 서버 프로그래밍 언어 지정
+    
+    b. contentType="text/html; charset=UTF-8"
+    - JSP 페이지 컨텐츠 기술
+    - 현재 페이지는 text/html 포맷의 데이터이고,
+    - 문자셋은 UTF-8로 되어있다.
+    - text/html : MIME 타입(파일의 종류를 나타내는 열거형)
+    - 톰캣이 UTF-8로 JSP 페이지를 읽는다.
+    
+    c. pageEncoding="UTF-8"
+    - 브라우저에게 돌려줄 페이지의 인코딩 방식 지정
+
+	d. errorPage
+	- JSP 실행 중 에러가 발생하면 보여줄 페이지
+
+<%@page %> : FM
+<%@ page %> : 이클립스가 띄어쓰기를 함
+
+include 지시자
+- <%@include file="URL" %>
+- 특정 JSP(HTML, text 등) 페이지를 현재 JSP 페이지 일부에 삽입하는 기능
+- 조각 페이지 : 한 페이지 이상에서 반복되는 내용을 재사용하는 용도
+- <iframe> 유사
+
+taglib 지시자
+- 액션 태그와 같이 수업
+
+
+2. 스크립트 요소, Scripting Elements
+
+Scriptlet, 스크립틀릿
+- <% %>
+- 이 영역은 자바 영역이다.
+- HTML 문서 안에 자바 코드를 작성할 수 있다.
+- 사용 빈도 높음
+- 비즈니스 코드 작성(데이터 처리, JDBC, 동적 HTML/CSS/JavaScript 조작)
+
+Expression, 표현식
+- <%= 값 %>
+- 값: 상수, 변수, 메서드 반환값 등..
+- 해당 위치에 값을 출력한다.(HTML 소스로 출력한다.)
+
+Declaration, 선언부
+- <%! %>
+- 해당 JSP 페이지에서 사용할 클래스 멤버 변수와 멤버 메서드를 만드는 영역
+- 메서드 선언할 때 주로 사용 > 빈도 낮음 > 대체 방법이 따로 있다.
+
+
+
+JSP 내장 객체, JSP Implicit Object
+- 개발자가 직접 생성하지 않아도 JSP가 미리 만들어서 제공하는 객체
+- 톰캣이 생성한다.
+- 예약어로 접근한다. (!!필 수 로 외 우 기!!)
+- request, response, session, pageContext //*****
+- out, application //***
+- config, page, exception //*
+
+- request, session, pageContext, application
+	- 내부에 사용자 데이터를 저장할 수 있는 공간을 가지고 있다.
+	- 입출력 : setAttribute(key, value), getAttribute(key) 
+
+
+request 객체가 하는 일
+클라이언트	-> 요청 ->	웹서버
+(브라우저)				(아파치톰캣)
+
+response 객체가 하는 일
+클라이언트	<- 응답 <-	웹서버
+(브라우저)				(아파치톰캣)
+
+
+1. request 객체
+	a. 클라이언트가 서버로 전송한 데이터를 가져오기
+		- getParameter(key)
+		- getParameterValues(key)
+	
+		- ex05_form.jsp -> 사용자가 데이터를 입력 + 서버로 전송하는 페이지
+		- ex05_ok.jsp -> 사용자가 보낸 데이터를 수신하는 페이지
+		
+		- 여태 수업했던 모든 컨트롤 전송 + 수신
+		
+		- ex06_form.jsp //전송
+		- ex06_ok.jsp //수신
+		
+		- ex07_form.jsp
+		- ex07_ok.jsp
+		
+	b. 클라이언트가 서버로 전송한 데이터의 인코딩 처리
+		- POST + 한글 -> UTF-8 변환
+		- setCharacterEncoding("UTF-8")
+	
+	c. 클라이언트가 서버로 전송할 때 관련된 정보 가져오기
+		- ex08_request_header.jsp
+
+
+2.  response 객체
+	- HTTP 요청에 대한 응답 정보를 제어하는 객체
+		a. 돌려줄 HTML 페이지 제작 > response.getWriter() > PrintWriter 객체 > HTML 페이지 제작 > 브라우저에게 전달
+			- 서블릿에서 사용 O
+			- JSP에서 사용 X
+		b. 돌려줄 HTML 페이지 인코딩 설정 > response.setCharacterEncoding("UTF-8")
+			- 서블릿에서 사용 O
+			- JSP에서 사용 X
+		c. 페이지 이동하기(***)
+			- ex09_one.jsp
+			- ex09_two.jsp
+
+
+3. pageContext
+	- 페이지 실행에 필요한 컨텍스트 정보를 저장한 객체
+	- forward() 메서드 : 데이터 전달과 함께 페이지 이동에 사용
+	- ex10_one.jsp
+	- ex10_two.jsp
+
+
+4. out
+	- 응답 페이지 작성을 위한 출력 스트림 객체
+	- 서블릿의 PrintWriter 객체와 동일한 역할
+	- ex11_out.jsp
+
+
+5. application
+	- 애플리케이션 컨텍스트 정보를 저장한 객체
+	- 서버와 관련된 몇가지 정보를 제공
+	- ex12_application.jsp
+
+
+6. session(***********************************************)
+	- 클라이언트 세션 정보를 저장한 객체
+	- ex13_session.jsp
+	- ex14_session.jsp
+	
+	- ex16_session.jsp
+	- ex16_set.jsp
+	- ex16_del.jsp
+	- ex16_reset.jsp
+	- ex16_interval.jsp
+
+
+7. pageContext, request, session, application
+	- 데이터 저장 기능 제공
+	- ex15_one.jsp
+	- ex15_two.jsp
+	- ex15_three.jsp
+
+
+
+EL, Expression Language
+- 표현식 언어
+- <%= %> 기능을 대신하기 위해 만들어진 언어
+- HTML 소스에 출력하는 역할
+- ${속성명}
+- 일반적인 자바 데이터 출력이 불가능하고, pageContext/request/session/application 객체 내의 저장소 요소만 출력 가능
+- ex17_el.jsp
+
+
+액션 태그
+- JSP 기본 액션 태그 //추가 설정 없이 바로 사용 가능
+- JSTL 확장 액션 태그 //jstl-1.2.jar 참조 사용 가능
+- 사용자 커스텀 액션 태그 //직접 모든 구현 -> 수업X
+
+
+파일 업로드
+- ex19_file_form.jsp
+- ex19_file_ok.jsp
+
+-WebContent > WEB-INF > lib > cos.jar 복사
+
+
+JSP를 사용해서 사이트 구조를 만드는 방식
+1. JSP Model 1
+2. JSP Model 2 -> MVC 방식 ***************************************
+
+Servlet -> JSP -> Servlet + JSP = MVC 구현
+
+MVC - Controller(비즈니스 구현 + 순서 제어)
+MVC - Model(데이터 관련 업무)
+MVC - View(출력 업무)
+
+View 페이지를 직접 접근할 수 없도록 WEB-INF 하위에서 관리한다.(********)
+
+*.jar > Class 압축파일
+*.war > Web Site 압축파일
+
+
+
+
+

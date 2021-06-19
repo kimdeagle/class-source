@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box1, #box2 {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+        }
+
+        #box1 {
+            background-color: chartreuse;
+        }
+
+        #box2 {
+            background-color: crimson;
+            transition: all 1s linear;
+        }
+
+        #tbl1 {
+            /* border: 1px solid black; */
+            /* border-collapse: collapse; */
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 1000px;
+            height: 1000px;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            transition: all 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex47_style.html -->
+
+    <h1>Transform</h1>
+
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <div id="box1"></div>
+    
+    <h1>Transition</h1>
+
+    <input type="button" value="확인" id="btn2">
+    <hr>
+    <div id="box2"></div>
+
+    <h1>Table</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+
+        var d = 0;
+        var timer;
+
+        btn1.onclick = function () {
+            timer = setInterval(function() {
+                box1.style.transform = "rotate("+ d +"deg)";
+                d++;
+                if (d > 360) {
+                    clearInterval(timer);
+                }
+            }, 1000/360);
+        };
+
+        btn2.onclick = function () {
+            box2.style.transform = "rotate(360deg)";
+        };
+
+        //-----------tbl1------------
+
+        //모든 <td>
+        //1. document.getElementsByTagName("td");
+        //2. tbl1.firstElementChild.children -> tr.children -> td
+
+        // var cell = new Array();
+        var cell = [];
+        var tbl1 = document.getElementById("tbl1");
+
+        //cell배열에 td 넣기
+        for (var i=0; i<tbl1.firstElementChild.children.length; i++) {
+            for (var j=0; j<tbl1.firstElementChild.children[i].children.length; j++) {
+                cell.push(tbl1.firstElementChild.children[i].children[j]); //<td>
+            }
+        }
+
+        // alert(cell.length);
+
+        /*
+        for (var i=0; i<cell.length; i++) {
+            
+            //onmouseover = onmouseenter
+            cell[i].onmouseenter = function() {
+                event.srcElement.style.backgroundColor = "tomato";
+            };
+
+            //onmouseout = onmouseleave
+            cell[i].onmouseleave = function() {
+                //window.event -> 
+                //event.srcElement : 이벤트 발생 객체
+                //event.srcElement.style.backgroundColor = "transparent";
+                
+                var temp = event.srcElement;
+
+                setTimeout(function() {
+                    // event.srcElement.style.backgroundColor = "transparent";
+                    temp.style.backgroundColor = "transparent";
+                }, 1000);
+            };
+        }
+        */
+
+        for (var i=0; i<cell.length; i++) {
+
+            //var d = 0; //1개
+            //let d = 0; //100개
+
+            // cell[i].onmouseenter = function() {
+            //     event.srcElement.style.backgroundColor = "cornflowerblue";
+            //     event.srcElement.style.transform = "rotate("+ d +"deg)";
+            // };
+
+            //<td date-xxx="사용자 정의 데이터">
+            // cell[i].dataset["degree"] = 0;
+            cell[i].dataset["distance"] = 0;
+
+            cell[i].onmouseenter = function () {
+
+                // event.srcElement.dataset["degree"] = parseInt(event.srcElement.dataset["degree"]) + 30;
+                // event.srcElement.style.transform = "rotate("+ event.srcElement.dataset["degree"] +"deg)";
+
+                event.srcElement.style.backgroundColor = "cornflowerblue";
+                event.srcElement.dataset["distance"] = parseInt(event.srcElement.dataset["distance"]) - 30;
+                event.srcElement.style.transform = "translate(0px, "+ event.srcElement.dataset["distance"] +"px)";
+            };
+
+        }
+
+    </script>
+
+</body>
+</html>

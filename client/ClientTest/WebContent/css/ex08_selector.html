@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        1. 태그 선택자
+        2. id 선택자
+        3. class 선택자
+        4. 그룹 선택자
+        5. 자식 선택자
+        6. 자손 선택자
+        7. 인접 형제 선택자
+        8. 형제 선택자
+        */
+
+        /*
+
+        7. 인접 형제 선택자, Adjacent Sibling Selector
+            - 형제 선택자 + 선택자 {}
+
+        */
+        
+        /* b + p { color: red; } */
+
+        /* 
+        
+        8. 형제 선택자, Sibling Selector
+            - 형제선택자 ~ 선택자 {}
+
+        */
+
+        p ~ p { color: blue; }
+
+    </style>
+</head>
+<body>
+    <!-- ex08_selector.html -->
+
+    <p>p 태그입니다.1</p>
+    <div>div 태그입니다.</div>
+    <p>p 태그입니다.2</p>
+    <span>span 태그입니다.</span>
+    <p>p 태그입니다.3</p>
+    <div>div 태그입니다.</div>
+    <p>p 태그입니다.4</p>
+    <b>b 태그입니다.</b>
+    <p>p 태그입니다.5</p>
+
+</body>
+</html>

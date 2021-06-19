@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex06_local.html -->
+
+    <script>
+
+        //JavaScript
+        //1. 전역 변수, Global Variable
+        //2. 지역 변수, Local Variable
+
+        //전역 변수
+        // - 페이지내에서 전역
+        var n1 = 100; //전역 변수
+
+        function f1() {
+            //지역 변수
+            // - 함수내에서 선언
+            // - 함수를 지역으로 인식 O
+            // - 제어문은 지역으로 인식 X
+
+            var n2 = 200; //지역 변수
+            console.log("n2", n2);
+
+            if (n2 > 0) {
+                var n3 = 300; //지역 변수
+                console.log("n3", n3);
+            }
+
+            console.log("n3", n3); //error? -> 가능O
+        }
+        
+        f1();
+        
+        // console.log("n2", n2);
+        // console.log("n3", n3);
+
+
+        function f2() {
+            var n4 = 400;
+
+            //var 키워드를 생략하면 해당 변수는 자동으로 전역 변수로 정의된다.(*************)
+            // - 가독성이 너무 나쁨
+            n5 = 500; //사용 금지 -> 지역 변수(X) -> 전역 변수(O)
+
+            console.log("n4", n4);
+            console.log("n5", n5);
+        }
+        
+        f2();
+        
+        // console.log("n4", n4);
+        console.log("n5", n5); //실행O
+
+    </script>
+
+    <h1>변수</h1>
+
+    <script>
+
+        console.log(n1);
+
+    </script>
+
+</body>
+</html>

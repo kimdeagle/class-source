@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 1000px;
+            border: 1px solid gray;
+            padding: 10px;
+            margin: 100px auto;
+            min-height: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam18.html -->
+
+    <h1>숫자키 이벤트 + 이미지 동적 생성</h1>
+
+    <div id="box"></div>
+
+    <script>
+
+        var box = document.getElementById("box");
+
+        window.onkeydown = function() {
+            //48(0) ~ 57(9)
+            // console.log(event.keyCode);
+
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                box.innerHTML += "<img src='../images/"+ (event.keyCode-48) +".png'>";
+            } else if (event.keyCode >= 96 && event.keyCode <= 105) {
+                box.innerHTML += "<img src='../images/"+ (event.keyCode-96) +".png'>";
+            }
+
+        };
+
+    </script>
+</body>
+</html>

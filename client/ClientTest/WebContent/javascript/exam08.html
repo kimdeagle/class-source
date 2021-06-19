@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            /* border: 1px solid black; */
+            width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .box .icon {
+            border: 10px solid #aaa;
+            margin: 10px;
+        }
+
+        .box input {
+            outline: none;
+            border: 10px solid #aaa;
+            width: 230px;
+            height: 70px;
+            font-size: 1.7em;
+            font-weight: bold;
+            margin: 10px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam08.html -->
+
+    <div class="box">
+        <h1>Pattern Lock</h1>
+        
+        <img src="../images/rect_icon01.png" data-num="1" class="icon" name="icon">
+        <img src="../images/rect_icon02.png" data-num="2" class="icon" name="icon">
+        <img src="../images/rect_icon03.png" data-num="3" class="icon" name="icon">
+        <img src="../images/rect_icon04.png" data-num="4" class="icon" name="icon">
+        <img src="../images/rect_icon05.png" data-num="5" class="icon" name="icon">
+        <img src="../images/rect_icon06.png" data-num="6" class="icon" name="icon">
+        <img src="../images/rect_icon07.png" data-num="7" class="icon" name="icon">
+        <img src="../images/rect_icon08.png" data-num="8" class="icon" name="icon">
+        <img src="../images/rect_icon09.png" data-num="9" class="icon" name="icon">
+     
+        <input type="button" value="RESET" name="reset">
+        <input type="button" value="INPUT" name="input">
+
+    </div>
+
+    <script>
+
+        var icon = window.document.all.icon;
+        var inputCheck = "";
+
+        for (var i=0; i<icon.length; i++) {
+            icon[i].onmouseover = function() {
+                event.srcElement.src="../images/rect_icon10.png";
+                inputCheck += event.srcElement.dataset["num"];
+            };
+
+        }
+
+        window.document.all.input.onclick = function() {
+            if (inputCheck == "14789") {
+                window.location.href="http://google.com";
+            } else {
+                alert("error!");
+                window.location.href="exam08.html";
+            }
+        };
+
+        window.document.all.reset.onclick = function() {
+            window.location.href="exam08.html";
+        };
+
+    </script>
+
+</body>
+</html>

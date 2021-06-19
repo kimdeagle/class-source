@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        
+        - 동일한 선택자가 2번 이상 정의 가능하다.
+        - 동일한 선택자가 같은 속성을 적용하면 마지막이 적용된다. > 속성 충돌 > 재정의
+        - 동일한 선택자가 있어도, 속성 충돌이 발생하지 않으면 모두 적용된다.
+
+        */
+
+        /* 안좋은 코드
+        div { color: blue; font-style: italic; }
+        div { color: red; }
+        */
+
+        /*
+        
+        선택자 우선 순위
+        - 서로 다른 선택자가 동일한 태그를 선택했을 때 > 동일한 속성 적용 > 속성 충돌 > 어떤 선택자의 속성을 적용할지..?
+        - 점수 계산 : 선택자를 구성하는 모든 요소들을 가지고 점수 산정 > 점수가 가장 높은 선택자가 적용
+        1. 태그 선택자 : 개당 1점
+        2. class 선택자 : 개당 10점
+        3. id 선택자 : 개당 100점
+        
+        */
+
+        /* .box { color: palegreen; }
+        #box1 { color: palevioletred; }
+        div { color: orange; } */
+
+        /* body > blockquote > div { color: red; }
+        blockquote > div { color: yellow; }
+        div { color: orange; } */
+
+        /* blockquote#parent > div#box1 { color: green; }
+        div#box1.box { color: red; }
+        div { color: yellow; } */
+
+        /* .box { color: red; }
+        .item { font-size: 2em; } */
+
+        .box.item.aaa.bbb.ccc.ddd.eee.fff.ggg.hhh.iii.jjj { color: red; }
+
+        #box1 { color: blue; }
+
+    </style>
+</head>
+<body>
+    <!-- ex10_selector.html -->
+
+    <blockquote id="parent">
+        <div id="box1" class="box item aaa bbb ccc ddd eee fff ggg hhh iii jjj">상자입니다.</div>
+    </blockquote>
+
+</body>
+</html>

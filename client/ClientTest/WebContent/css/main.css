@@ -1,0 +1,70 @@
+/* main.css */
+
+.txt {
+    border: 1px solid #777;
+    background-color: white;
+    padding: 4px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    color: tomato;
+}
+
+.box {
+    border: 1px solid black;
+}
+
+.box.large {
+    width: 500px;
+    height: 500px;
+}
+
+.box.middle {
+    width: 300px;
+    height: 300px;
+}
+
+.box.small {
+    width: 150px;
+    height: 150px;
+}
+
+.fgblack {
+    color: black;
+}
+
+.fgwhite {
+    color: white;
+}
+
+.bgblack {
+    background-color: black;
+}
+
+.bgwhite {
+    background-color: white;
+}
+
+.bgred {
+    background-color: tomato;
+}
+
+.bgblue {
+    background-color: cornflowerblue;
+}
+
+.bgyellow {
+    background-color: gold;
+}
+
+.bgorange {
+    background-color: orange;
+}
+
+.bggreen {
+    background-color: palegreen;
+}

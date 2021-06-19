@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            transition: all 1s;
+        }
+        #menu {
+            width: 680px;
+            height: 136px;
+            /* border: 1px solid black; */
+            margin: 0px auto;
+            transform: translate(0px, -110px);
+        }
+        #menu img {
+            border: 5px solid white;
+            float: left;
+            cursor: pointer;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex49_style.html -->
+
+    <header>
+        <nav id="menu">
+            <img src="../images/rect_icon01.png" class="item" data-index="0">
+            <img src="../images/rect_icon02.png" class="item" data-index="1">
+            <img src="../images/rect_icon03.png" class="item" data-index="2">
+            <img src="../images/rect_icon04.png" class="item" data-index="3">
+            <img src="../images/rect_icon05.png" class="item" data-index="4">
+        </nav>
+    </header>
+    <section>
+
+    </section>
+
+    <script>
+
+        var item = document.getElementsByClassName("item");
+        var color = [ "#A67F62", "#BE4F3B", "#E7C758", "#666666", "#63AFD1" ];
+
+        for (var i=0; i<item.length; i++) {
+            item[i].onclick = function () {
+
+                //이전 요소 찾기? -> 모든 요소 초기화
+                for (var j=0; j<item.length; j++) {
+                    if (item[j] != event.srcElement) {
+                        item[j].style.transform = "translate(0px, 0px)";
+                    }
+                }
+
+                var m = event.srcElement;
+
+                if (m.style.transform == "translate(0px, 90px)") {
+                    m.style.transform = "translate(0px, 0px)";
+                    document.body.style.backgroundColor = "white";
+                } else {
+                    m.style.transform = "translate(0px, 90px)";
+                    document.body.style.backgroundColor = color[m.dataset["index"]];
+                }
+            };
+        }
+
+    </script>
+</body>
+</html>

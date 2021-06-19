@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex12_event.html -->
+
+    <h1>Event</h1>
+
+    <form name="form1">
+        <input type="button" value="버튼1" name="btn1" onclick="console.log('버튼1클릭');">
+        <input type="button" value="버튼2" name="btn2" onmouseover="console.log('버튼2');">
+        <input type="button" value="버튼3" name="btn3" onmouseout="console.log('버튼3');">
+        <input type="button" value="버튼4" name="btn4">
+        <input type="button" value="버튼5" name="btn5">
+        <input type="button" value="버튼6" name="btn6">
+    </form>
+
+    <script>
+
+        /*
+        
+        이벤트, Event
+        - 사용자(사람)와 상호 작용을 하면서 마우스(키보드, 터치, 펜 등)를 조작하면 그에 대한 반응을 정의하는 모델
+
+        BOM 기반의 이벤트 처리 방식
+        1. 정적 방식
+            - 이벤트가 발생할 태그에 onXXX 속성을 미리 정의한다.
+            - onXXX 속성 : 이벤트 핸들러(Event Handler) > 사건이 발생하면 일을 처리하는 담당자
+
+        2. 동적 방식
+            - JavaScript 영역에서 이벤트를 매핑하는 방식
+            - window.document.form1.btn4.onclick = 함수명;
+            - window.document.form1.btn4.onclick = function() {};
+        
+        //실명 함수
+        function f1() {
+
+        }
+
+        //익명 함수
+        function () {
+
+        }
+
+        
+        */
+
+        //함수의 이름을 넣는다.
+        //재사용성 높음
+        window.document.form1.btn4.onclick = f4;
+
+        function f4() {
+            console.log('버튼4');
+        }
+
+        //window.document.form1.btn5.onclick = f4;
+
+        //익명 함수를 정의하여 넣는다.
+        //가독성 높음
+        window.document.form1.btn5.onclick = function () { console.log("버튼5"); };
+
+        
+
+    </script>
+
+</body>
+</html>

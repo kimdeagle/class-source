@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 5px 15px;
+            margin: 5px;
+        }
+
+        #n7 {
+            border: 5px solid cornflowerblue;
+        }
+
+        .check {
+            border: 5px solid tomato;
+        }
+
+        button > i {
+            font-size: 5em;
+            color: cornflowerblue;
+        }
+
+    </style>
+
+</head>
+<body class="blue">
+    <!-- ex08_traversing.html -->
+
+    <div id="n1" class="blue">
+        할아버지
+        <div id="n2">
+            큰아버지
+            <div id="n5">사촌</div>
+        </div>
+        <div id="n3">
+            아버지
+            <div id="n6">형</div>
+            <div id="n7">
+                나
+                <div id="n10">첫째 <span>자식</span></div>
+                <div id="n11">
+                    둘째 자식
+                    <div id="n13"><span class="test">손자</span></div>
+                    <div id="n14">손자</div>
+                </div>
+                <div id="n12">셋<span class="test">째</span> 자식</div>
+            </div>
+            <div id="n8">동생</div>
+        </div>
+        <div id="n4">
+            작은아버지
+            <div id="n9">사촌</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <input type="button" value="확인" id="btn1">
+
+    <script>
+
+        $("#btn1").click(function() {
+
+            //Axis 검색
+            //1. 자식
+            //2. 부모
+            //3. 형제
+
+            //childNodes, children
+            
+            //자식 노드들
+            // $("#n7").children().addClass("check");
+
+            // $("#n7").children().eq(0).addClass("check"); //첫째
+            // $("#n7").children().eq(-1).addClass("check"); //막내
+            
+            // $("#n7").children().first().addClass("check"); //첫째
+            // $("#n7").children().last().addClass("check"); //막내
+
+            //손자 노드들
+            // $("#n7").children().children().addClass("check");
+
+            //내 자손 중 -> <span>
+            // $("#n7").find("span").addClass("check");
+            
+            //지역 검색(나 기준)
+            // $("#n7").find(".test").addClass("check");
+
+            //전역 검색
+            // $(".test").addClass("check");
+
+            
+            //DOM : parentNode, parentElement
+
+            // $("#n7").parent().addClass("check");
+            // $("#n7").parents().addClass("check");
+
+            //부모 검색
+            // $("#n7").parents(".blue").addClass("check");
+
+            //형제
+            //DOM : previousSibling, nextSibling
+            // $("#n7").prev().addClass("check");
+            // $("#n7").next().addClass("check");
+
+            // $("#n7").prev().prev().addClass("check");
+            // $("#n7").next().next().addClass("check");
+
+            // $("#n7").prevAll().addClass("check");
+            // $("#n7").nextALl().addClass("check");
+
+            $("#n7").siblings().addClass("check");
+
+
+        });
+
+    </script>
+
+</body>
+</html>

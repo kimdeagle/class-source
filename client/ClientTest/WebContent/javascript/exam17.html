@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+        #box {
+            width: 660px;
+            /* height: 150px; */
+            border: 1px solid gray;
+            padding: 20px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        #box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #control {
+            width: 700px;
+            margin: 0px auto;
+        }
+
+        #control input {
+            width: 120px;
+            height: 50px;
+            border: 1px solid gray;
+            outline: none;
+            font-weight: bold;
+            font-size: 1em;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        #control input:disabled {
+            color: black;
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+
+        #box img {
+            width: 95px;
+            height: 140px;
+            display: block;
+            float: left;
+        }
+
+        #box span {
+            font-size: 10em;
+            font-weight: bold;
+            height: 200px;
+            display: block;
+            float: left;
+            margin-top: -60px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- exam17.html -->
+
+    <h1>스톱워치(이미지버전)</h1>
+
+    <div id="box">
+        <img src="../images/0.png" name="min1">
+        <img src="../images/0.png" name="min2">
+        <span>:</span>
+        <img src="../images/0.png" name="sec1">
+        <img src="../images/0.png" name="sec2">
+        <span>:</span>
+        <img src="../images/0.png" name="millisec1">
+        <img src="../images/0.png" name="millisec2">
+    </div>
+
+    <div id="control">
+        <input type="button" value="시작" name="btnStart">
+        <input type="button" value="멈춤" name="btnStop" disabled>
+        <input type="button" value="종료" name="btnEnd" disabled>
+    </div>
+
+    <script>
+
+        var min1 = document.all.min1;
+        var min2 = document.all.min2;
+        var sec1 = document.all.sec1;
+        var sec2 = document.all.sec2;
+        var millisec1 = document.all.millisec1;
+        var millisec2 = document.all.millisec2;
+
+        var btnStart = document.all.btnStart;
+        var btnStop = document.all.btnStop;
+        var btnEnd = document.all.btnEnd;
+
+        var a = 1;
+        var b = 1;
+        var c = 1;
+        var d = 1;
+        var e = 1;
+        var f = 1;
+
+        var stop;
+        var end;
+
+        btnStart.onclick = function() {
+            btnStart.disabled = true;
+            btnStop.disabled = false;
+            btnEnd.disabled = false;
+
+
+            stop = setInterval(function() {
+                if (a == 10) {
+                    a = 0;
+                    if (b == 10) {
+                        b = 0;
+                        if (c == 10) {
+                            c = 0;
+                            if (d == 6) {
+                                d = 0;
+                                if (e == 10) {
+                                    e = 0;
+                                    min1.src = "../images/"+ f +".png";
+                                    f++;
+                                }
+                                min2.src = "../images/"+ e +".png";
+                                e++;
+                            }
+                            sec1.src = "../images/"+ d +".png";
+                            d++;
+                        }
+                        sec2.src = "../images/"+ c +".png";
+                        c++;
+                    }
+                    millisec1.src = "../images/"+ b +".png";
+                    b++;
+                }
+                millisec2.src = "../images/"+ a +".png";
+                a++;
+            }, 10);
+        };
+
+        btnStop.onclick = function() {
+            clearInterval(stop);
+            btnStart.disabled = false;
+            btnStop.disabled = true;
+        };
+
+        btnEnd.onclick = function() {
+            btnStart.disabled = false;
+            btnStop.disabled = true;
+            btnEnd.disabled = true;
+            a = 1;
+            b = 1;
+            c = 1;
+            d = 1;
+            e = 1;
+            f = 1;
+            min1.src = "../images/0.png";
+            min2.src = "../images/0.png";
+            sec1.src = "../images/0.png";
+            sec2.src = "../images/0.png";
+            millisec1.src = "../images/0.png";
+            millisec2.src = "../images/0.png";
+        };
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex20_location.html -->
+
+    <h1>location</h1>
+
+    <form name="form1">
+        <input type="button" value="확인" name="btn1">
+
+        <fieldset>
+            <legend>페이지 이동하기</legend>
+            <input type="text" name="txtUrl" size="50">
+            <input type="button" value="이동하기" name="btnMove">
+        </fieldset>
+    </form>
+
+    <script>
+
+        //location 객체
+        // - window 객체의 자식
+        // - 현재 창의 URL과 관련된 정보/행동 제공
+
+        var btn1 = window.document.form1.btn1;
+
+        var txtUrl = window.document.form1.txtUrl;
+        var btnMove = window.document.form1.btnMove;
+
+        btn1.onclick = function() {
+
+            console.log(window.location.href); //http://127.0.0.1:5500/javascript/ex20_location.html         ***************************
+            console.log(window.location.host); //127.0.0.1:5500
+            console.log(window.location.hostname); //127.0.0.1
+            console.log(window.location.port); //5500
+            console.log(window.location.protocol); //http:
+
+            //JavaScript를 사용해서 페이지 이동하기(*******************)
+            // window.location.href = "http://google.com";
+            // window.location.assign("http://naver.com");
+
+            // window.location.reload(); //새로고침(F5)
+            // window.location.href = "ex20_location.html"; //새로고침(F5)
+
+        };
+
+        btnMove.onclick = function() {
+
+            //유효성 검사
+            // console.log(txtUrl.value == null);
+            // console.log(txtUrl.value == "");
+            // console.log(txtUrl.value == undefined);
+
+            if (txtUrl.value != "") {
+                if (txtUrl.value.startsWith("http://") || txtUrl.value.startsWith("https://")) {
+                    window.location.href = txtUrl.value;
+                } else {
+                    alert("올바른 형식의 URL을 입력하세요.");
+                    txtUrl.focus();
+                }
+            } else {
+                alert("반드시 주소를 입력하세요.");
+                txtUrl.focus();
+            }
+
+        };
+
+        //키 이벤트
+        // -> window 객체 -> 전역 이벤트
+
+        window.onkeydown = function() {
+            console.log(event.keyCode); //찍어보기
+
+            if (event.keyCode == 71) { //키보드에서 G입력
+                window.location.href = "http://google.com";
+            } else if (event.keyCode == "N".charCodeAt(0)) {
+                window.location.href = "http://naver.com";
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>

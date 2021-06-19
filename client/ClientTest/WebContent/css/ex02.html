@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* CSS 영역 */
+
+        div {
+            color:red;
+        }
+
+    </style>
+
+    <!-- 외부 CSS 적용하는 방법 -->
+    <link rel="stylesheet" href="ex02.css">
+
+</head>
+<body>
+    <!-- ex02.html -->
+
+    <!-- 
+
+        HTML 문서에 CSS를 적용하는 방법
+
+        1. Inline Style Sheet
+            - 인라인 스타일 시트
+            - HTML 태그에 직접 style 속성을 사용해서 CSS를 지정하는 방법
+            - style="CSS 구문"
+            - 장점 : 가독성이 높다.
+            - 단점 : 재사용성이 너무 떨어진다.(재사용 능력 없음)
+            - 적용 범위 : 태그 1개
+
+        2. Embeded Style Sheet
+            - 내부 스타일 시트
+            - 페이지 상단에 <style> 태그를 사용해서 CSS를 지정하는 방법
+            - 장점 : CSS 구문을 재사용 할 수 있다.(일괄 적용)
+            - 단점 : 가독성이 낮다.
+            - 적용 범위 : 현재 페이지
+
+        3. External Style Sheet
+            - 외부 스타일 시트
+            - 별도의 CSS 파일(*.css)을 사용해서 CSS를 지정하는 방법
+            - 장점 : 재사용이 가장 높다.(모든 페이지 적용)
+            - 단점 : 가독성이 가장 낮다. 관리가 힘들다.
+            - 적용 범위 : 모든 페이지(사이트 전역)
+
+     -->
+
+    <h1>CSS</h1>
+
+    <ul>
+        <li>CSS 적용하는 방법</li>
+        <li style="color:red;">선택자의 종류</li>
+        <li>속성과 속성값</li>
+    </ul>
+
+    <div>안녕하세요.</div>
+    <div>홍길동입니다.</div>
+    <div>반갑습니다.</div>
+
+    <p>하나입니다.</p>
+    <p>둘입니다.</p>
+    <p>셋입니다.</p>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #puma {
+            width: 512px;
+            height: 256px;
+            background-image: url(../images/puma.png);
+            background-repeat: no-repeat;
+            /* background-size: 100% 100%; */
+        }
+    </style>
+</head>
+<body>
+    <!-- ex45_style.html -->
+
+    <h1>배경 이미지</h1>
+
+    <div id="puma"></div>
+
+    <script>
+
+        var puma = document.getElementById("puma");
+        var n1 = 0; //x축
+        var n2 = 0; //y축
+        var timer = 0;
+
+        puma.onclick = function () {
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    n1 -= 512;
+    
+                    if (n1 < -(512 * 3)) {
+                        n1 = 0;
+                        n2 -= 256;
+                        if (n2 < -256) {
+                            n2 = 0;
+                        }
+                    }
+                    puma.style.backgroundPosition = n1 + "px " + n2 + "px";
+                }, 80);
+            } else {
+                clearInterval(timer);
+                timer = 0;
+            }
+        };
+
+    </script>
+
+</body>
+</html>

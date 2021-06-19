@@ -1,0 +1,46 @@
+주소록
+- JSP Model 1
+- Oracle 11g
+- jQuery + Bootstrap
+- EL + JSTL
+- Apache Tomcat v8.5
+- JDK 1.8
+
+기능
+- CRUD 구현
+- 주소록 쓰기
+- 주소록 목록보기(읽기)
+- 주소록 수정하기
+- 주소록 삭제하기
+
+DB
+- tblAddress
+- 번호(PK), 이름, 나이, 주소, 성별, 연락처
+
+
+리소스 생성
+- css, fonts, js, inc 복사
+
+-WebContent > address : 루트 폴더(***)
+						- list.jsp
+						- add.jsp, addok.jsp
+						- edit.jsp editok.jsp
+						- del.jsp delok.jsp
+						- template.jsp //템플릿 페이지
+
+-WebContent > address > inc > asset.jsp //조각페이지(라이브러리 참조)
+-WebContent > address > inc > header.jsp, footer.jsp //조각페이지
+-WebContent > address > css > address.css //전역 CSS 파일
+-WebContent > address > js > address.js //전역 JavaScript 파일
+-WebContent > address > images
+
+
+
+
+
+
+
+
+
+
+

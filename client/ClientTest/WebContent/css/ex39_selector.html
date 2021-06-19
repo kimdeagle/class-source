@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            margin-bottom: 300px;
+        }
+
+        /*
+        
+        입력 폼 관련 선택자
+        1. :focus
+        2. :enabled
+        3. :disabled
+        4. :checked
+        5. :required
+        6. :read-only
+        7. :optional
+        
+        */
+
+        input {
+            border: 1px solid #999;
+            background-color: white;
+            outline: none;
+        }
+
+        /* input:focus { background-color: palegreen; } */
+        /* input:enabled { background-color: palegreen; } */
+        /* input:disabled { background-color: palevioletred; cursor: not-allowed; } */
+        /* input:required { background-color: palegreen; } */
+        /* input:read-only { cursor: not-allowed; } */
+        /* input:optional { background-color: rebeccapurple; } */
+        
+        /* 체크박스, 라디오버튼, 셀렉트박스 등.. : CSS 적용이 거의 안되는 태그들 */
+        /* input[type=checkbox]:checked, input[type=radio]:checked { */
+            /* width: 50px;
+            height: 50px; */
+            /* background-color: yellow; */
+
+        /* } */
+
+
+        input.cat + img {
+            opacity: .3;
+        }
+
+        input.cat:checked + img {
+            opacity: 1;
+        }
+
+        #cb1 + label + div {
+            visibility: hidden;
+        }
+        
+        #cb1:checked + label + div {
+            visibility: visible;
+        }
+
+
+        .item {
+            border: 1px solid #CCC;
+            width: 200px;
+            font-size: 14px;
+            color: #444;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .item > input[type=checkbox] {
+            display: none;
+        }
+
+        .item > label {
+            display: block;
+            background-color: #EEE;
+            padding: 5px;
+            font-weight: bold;
+            font-variant: small-caps;
+            cursor: pointer;
+            border-bottom: 1px solid #CCC;
+            color: #444;
+        }
+        
+        .item > div {
+            padding: 10px;
+        }
+        
+        .item > input[type=checkbox]:checked + label + div {
+            display: none;
+        }
+        
+        .item > input[type=checkbox]:checked + label {
+            color: #CCC;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex39_selector.html -->
+
+    <h1>입력 폼</h1>
+
+    <form>
+        <input type="text" required><br>
+        <input type="text" disabled><br>
+        <input type="text" required><br>
+        <input type="text" readonly><br>
+        <input type="text"><br>
+        <input type="text" disabled><br>
+        <input type="text"><br>
+        <input type="text" required><br>
+        <input type="text"><br>
+        <input type="text" readonly><br>
+    </form>
+
+    <hr>
+
+    <h1>체크박스 + 라디오 버튼</h1>
+
+    <form>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="radio" name="rb">
+        <input type="radio" name="rb">
+        <input type="radio" name="rb">
+    </form>
+
+    <hr>
+
+    <h1>고양이</h1>
+
+    <form>
+        
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty01.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty02.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty03.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty04.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty05.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty06.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty07.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty08.png">
+        </div>
+
+        <div>
+            <input type="checkbox" class="cat">
+            <img src="../images/catty09.png">
+        </div>
+
+    </form>
+
+    <hr>
+
+    <div>
+
+        <input type="checkbox" id="cb1" style="display: none;">
+        <label for="cb1">클래스</label>
+        <div>클래스가 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구</div>
+
+    </div>
+
+    <h1>자바</h1>
+
+    <div class="item">
+        <input type="checkbox" class="cb" id="cb2">
+        <label for="cb2">Class</label>
+        <div>
+            Class Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident obcaecati, nisi facilis non veritatis esse maiores officiis quam quas est quasi culpa ipsam deserunt reiciendis placeat itaque illo nostrum at!
+        </div>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" class="cb" id="cb3">
+        <label for="cb3">Method</label>
+        <div>
+            Method Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident obcaecati, nisi facilis non veritatis esse maiores officiis quam quas est quasi culpa ipsam deserunt reiciendis placeat itaque illo nostrum at!
+        </div>
+    </div>
+
+    <div class="item">
+        <input type="checkbox" class="cb" id="cb4">
+        <label for="cb4">Interface</label>
+        <div>
+            Interface Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident obcaecati, nisi facilis non veritatis esse maiores officiis quam quas est quasi culpa ipsam deserunt reiciendis placeat itaque illo nostrum at!
+        </div>
+    </div>
+
+</body>
+</html>

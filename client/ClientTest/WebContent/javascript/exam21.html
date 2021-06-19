@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 { border: 1px solid black; border-collapse: collapse; margin: 50px auto; }
+        #tbl1 td {border: 1px solid black; width: 126px; height: 126px; }
+        #tbl1 td img { display: block; }
+    </style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <!-- exam21.html -->
+
+    <h1>테이블 + 집합 이벤트 + innerHTML</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        var cell = document.getElementsByClassName("cell");
+
+        for (var i=0; i<cell.length; i++) {
+            cell[i].onmousedown = function() {
+                if (event.srcElement.innerHTML == "") {
+                    if (event.buttons == 1) {
+                        event.srcElement.innerHTML = "<img src='../images/rect_icon01.png'>";
+                    } else if (event.buttons == 2) {
+                        event.srcElement.innerHTML = "<img src='../images/rect_icon02.png'>";
+                    }
+                }
+            };
+        }
+
+    </script>
+
+</body>
+</html>

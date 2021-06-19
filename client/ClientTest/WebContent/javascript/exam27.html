@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- exam27.html -->
+
+    <h1>마우스 + 이미지 이동</h1>
+
+    <img src="../images/face01.png" style="width: 128px; height: 128px; position: absolute; left: 800px; top: 300px;" id="img1">
+
+    <script>
+        
+        var img1 = document.getElementById("img1");
+
+        img1.onmouseover = function () {
+
+            var x = img1.style.left;
+            // console.log(event.clientX);
+            // console.log(x);
+
+            if (event.clientX < parseInt(x) + 64) {
+                img1.style.left = parseInt(img1.style.left) + 50 + "px";
+            }
+
+            if (event.clientX > parseInt(x) + 64) {
+                img1.style.left = parseInt(img1.style.left) - 50 + "px";
+            }
+        };
+
+    </script>
+
+</body>
+</html>

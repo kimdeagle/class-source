@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex22_html5.html -->
+
+    <h1>Form 관련</h1>
+
+    <form method="POST" action="ex22_ok.jsp">
+
+        <h2>라벨 + 안내메시지 : placeholder(텍스트, 암호, 다중라인 텍스트)</h2>
+        
+        <div>
+            이름 : <input type="text">
+        </div>
+
+        <div>
+            <label for="txt1">이름 : </label><input type="text" id="txt1">
+        </div>
+
+        <!-- 라벨 없이 사용 -->
+        <div>
+            <input type="text" value="이름을 입력하세요." onfocus="this.value='';">
+        </div>
+
+        <div>
+            <input type="password" value="암호를 입력하세요.">
+        </div>
+
+        <div>
+            <input type="text" placeholder="이름을 입력하세요.">
+        </div>
+
+        <div>
+            <input type="password" placeholder="암호를 입력하세요.">
+        </div>
+
+        <div>
+            <textarea cols="50" rows="5" placeholder="자기소개를 입력하세요."></textarea>
+        </div>
+
+        <hr>
+
+        <h2>입력값 체크(유효성 검사 - 필수 입력값) - required</h2>
+
+        <h3>로그인</h3>
+        <!-- 다른 예제할 때 불편해서 value 넣었음 -->
+        <div><input type="text" placeholder="아이디" required value="1"></div>
+        <div><input type="password" placeholder="패스워드" required value="1"></div>
+        <div><input type="submit" value="로그인"></div>
+
+        <hr>
+
+        <h2>의미 강조 태그들 > Semantic Web(시멘틱 웹)</h2>
+
+        URL : <input type="text">
+        <br>
+        URL : <input type="url">
+
+        <hr>
+
+        Email : <input type="email">
+
+        <hr>
+
+        숫자 : <input type="number" min="0" max="100" step="10">
+
+        <hr>
+
+        범위 : <input type="range" min="20" max="80" onchange="document.getElementById('rtxt').value = this.value;">
+        <input type="text" id="rtxt">
+
+        <hr>
+
+        색상 : <input type="color" onchange="document.getElementById('ctxt').value=this.value; document.body.bgColor=this.value;">
+        <input type="text" id="ctxt">
+
+        <hr>
+
+        날짜 시간 :
+        <input type="date">
+        <br>
+        <input type="month">
+        <br>
+        <input type="week">
+        <br>
+        <input type="time">
+        <br>
+        <input type="datetime"> <!-- 지원하는 브라우저 아직까지 없다. -->
+        <br>
+        <input type="datetime-local">
+
+        <hr>
+
+        <h2>목록</h2>
+
+        사원명 :
+        <select>
+            <option>직접 입력</option>
+            <option>홍길동</option>
+            <option>아무개</option>
+            <option>하하하</option>
+        </select>
+        <input type="text" size="3">
+
+        <hr>
+
+        사원명 : <input type="text" size="4" list="datalist1">
+        <datalist id="datalist1">
+            <option value="홍길동"></option>
+            <option value="아무개"></option>
+            <option value="하하하"></option>
+        </datalist>
+
+        <hr>
+
+        <h2>진행률</h2>
+        
+        <progress></progress><br>
+        <progress value="0"></progress><br>
+        <progress value="0.5"></progress><br>
+        <progress value="1"></progress><br>
+        <progress max="100" value="66"></progress><br>
+
+        <h2>수치</h2>
+
+        <meter></meter><br>
+        <meter value="0"></meter><br>
+        <meter value="0.5"></meter><br>
+        <meter value="1"></meter><br>
+        <meter min="-100" max="100" value="-55"></meter><br>
+        <meter min="0" max="100" value="20" low="30" high="80"></meter><br>
+        <meter min="0" max="100" value="50" low="30" high="80"></meter><br>
+        <meter min="0" max="100" value="100" low="30" high="80"></meter><br>
+
+        <hr>
+
+        <details>
+            <summary>JavaScript?</summary>
+            <p>자바스크립트는 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 </p>
+        </details>
+
+        <hr>
+
+        <!-- form 태그 내부 영역 표시 -->
+        <fieldset>
+            <legend align="center">로그인</legend>
+            <div>아이디 : <input type="text" size="5"></div>
+            <div>암호 : <input type="text" size="5"></div>
+        </fieldset>
+
+        <hr>
+
+        <marquee scrollamount="20" behavior="slide">속보입니다. 남부 지역에 태풍이 어쩌구 저쩌구..</marquee>
+
+        <hr>
+        <input type="submit" value="보내기">
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </form>
+
+</body>
+</html>

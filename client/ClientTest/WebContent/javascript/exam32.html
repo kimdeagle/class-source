@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            /* transition: all .5s; */
+        }
+
+        #btnStart {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- exam32.html -->
+
+    <h1>고양이 움직이기 (Path)</h1>
+
+    <img src="../images/catty01.png" id="cat">
+    <input type="button" value="시작" id="btnStart">
+
+    <script>
+
+        var cat = document.getElementById("cat");
+        var btnStart = document.getElementById("btnStart");
+
+        var pathX = [];
+        var pathY = [];
+
+        var index = 0;
+        var i = 0;
+
+        var timer = 0;
+
+        window.onmousemove = function() {
+            if (event.ctrlKey) {
+                pathX[index] = event.clientX;
+                pathY[index] = event.clientY;
+                index++;
+            }
+        };
+
+        btnStart.onclick = function() {
+            timer = setInterval(function() {
+                if (i == index) {
+                    clearInterval(timer);
+                    pathX = [];
+                    pathY = [];
+                    index = 0;
+                    i = 0;
+                    timer = 0;
+                }
+
+                cat.style.left = pathX[i] - 64 + "px";
+                cat.style.top = pathY[i] - 64 + "px";
+                i++;
+
+            }, 10);
+            
+        };
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex28_timer.html -->
+
+    <h1>Timer</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <hr>
+        <input type="button" value="확인1" name="btn1">
+        
+        <hr>
+
+        <input type="text" name="txt2">
+        <hr>
+        <input type="button" value="시작" name="btnStart">
+        <input type="button" value="멈춤" name="btnStop">
+
+    </form>
+
+    <script>
+
+        var txt1 = document.form1.txt1;
+        var btn1 = document.form1.btn1;
+        
+        var txt2 = document.form1.txt2;
+        var btnStart = document.form1.btnStart;
+        var btnStop = document.form1.btnStop;
+
+        var n = 1;
+
+        btn1.onclick = function() {
+            //JavaScript Timer
+            // - 정해진 시간에 미리 준비해둔 코드를 실행하는 도구
+
+            //1. setTimeout()
+            // - 정해진 시간이 지나면 코드 호출 -> 종료
+            //2. setInterval()
+            // - 정해진 시간이 될 때마다 코드 호출 -> 반복
+
+            //JavaScript는 함수를 데이터처럼 취급할 수 있다. -> 함수 포인터
+            // - 함수를 변수에 대입할 수 있다.
+            // - 함수를 매개변수에 전달할 수 있다.
+
+            //setTimeout(함수, 시간);
+            // - 시간 단위 : ms
+
+            // setTimeout(function() { alert("따르릉") }, 3000);
+            // setTimeout(function() {
+            //     document.body.bgColor = "gold";
+            // }, 1500);
+
+            // setInterval(function() { console.log(new Date()); }, 1000);
+            // setInterval(function() {
+            //     var now = new Date();
+            //     txt1.value = now.toLocaleTimeString();
+            // }, 1000);
+
+            // setInterval(function() {
+            //     txt1.value = n;
+            //     n++;
+            // }, 1000);
+
+            // setInterval(function() {
+            //     txt1.size++;
+            // }, 1000);
+
+            
+        };
+        
+        // setTimeout(function() {
+        //     txt1.disabled = true;
+        //     btn1.disabled = true;
+        // }, 3000);
+
+        //10초뒤에 다른 페이지로 이동합니다.
+        // setTimeout(function() { location.href="http://google.com" }, 3000);
+
+        //setInterval() -> clearInterval()
+        //setTimeout() -> clearTimeout()
+
+        var timer = 0;
+        btnStart.onclick = function() {
+            if (timer == 0) {
+                timer = setInterval(function() {
+                    txt2.value = n;
+                    n++;
+                }, 100);
+            }
+            console.log(timer);
+        };
+
+        btnStop.onclick = function() {
+            clearInterval(timer);
+            timer = 0;
+        };
+
+    </script>
+</body>
+</html>

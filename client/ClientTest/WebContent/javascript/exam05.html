@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box {
+            width: 550px;
+            height: 140px;
+            border: 1px solid #ccc;
+            margin: 100px auto 10px auto;
+        }
+
+        #box img {
+            display: block;
+            float: left;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        #txt {
+            display: block;
+            width: 550px;
+            border: 0px;
+            outline: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam05.html -->
+
+    <div id="box">
+        <img src="../images/img01.jpg" name="img1">
+        <img src="../images/img02.jpg" name="img2">
+        <img src="../images/img03.jpg" name="img3">
+    </div>
+
+    <input type="text" name="txt" id="txt">
+
+    <script>
+
+        var img1 = window.document.all.img1;
+        var img2 = window.document.all.img2;
+        var img3 = window.document.all.img3;
+        var txt = window.document.all.txt;
+
+        img1.onmouseover = function() {
+            img1.src="../images/img04.jpg";
+            txt.value="'스키'타는 사람이 '당근'으로 변했습니다.";
+        };
+
+        img1.onmouseout = function() {
+            img1.src="../images/img01.jpg";
+            txt.value="";
+        }
+
+        img2.onmouseover = function() {
+            img2.src="../images/img05.jpg";
+            txt.value="'해바라기'가 '피망'으로 변했습니다.";
+        };
+
+        img2.onmouseout = function() {
+            img2.src="../images/img02.jpg";
+            txt.value="";
+        }
+
+        img3.onmouseover = function() {
+            img3.src="../images/img06.jpg";
+            txt.value="'나무'가 '개'가 됐습니다.";
+        };
+
+        img3.onmouseout = function() {
+            img3.src="../images/img03.jpg";
+            txt.value="";
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { background-color: gray; }
+        
+        #scope {
+            border: 10px solid black;
+            width: 700px;
+            height: 700px;
+            margin: 50px auto;
+            border-radius: 50%;
+            position: relative;
+            left: 0px;
+            top: 0px;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        #scope #hcrosshair {
+            width: 700px;
+            height: 3px;
+            background-color: salmon;
+            position: absolute;
+            left: 0px;
+            top: 348.5px;
+        }
+
+        #scope #vcrosshair {
+            width: 3px;
+            height: 700px;
+            background-color: salmon;
+            position: absolute;
+            left: 348.5px;
+            top: 0px;
+        }
+
+        img {
+            position: absolute;
+            left: -200px;
+            top: 286px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam42.html -->
+
+    <div id="scope">
+        <div id="hcrosshair"></div>
+        <div id="vcrosshair"></div>
+    </div>
+
+    <script>
+
+        var scope = document.getElementById("scope");
+        var hcrosshair = document.getElementById("hcrosshair");
+        var vcrosshair = document.getElementById("vcrosshair");
+
+        var img;
+        var timer2;
+        
+        var timer = setInterval(function() {
+            if (scope.childElementCount == 3) {
+                scope.removeChild(scope.children[2]);
+            }
+            img = document.createElement("img");
+            img.setAttribute("src", "../images/catty0"+ parseInt(Math.random() * 9 + 1) +".png");
+            img.style.transition = "all 10ms linear";
+            scope.appendChild(img);
+            img = scope.children[2];
+            
+            var n = -200;
+
+            timer2 = setInterval(function() {
+                img.style.left = n + "px";
+                n += 10;
+                // console.log(img.style.left);
+                if (n > 1000) {
+                    clearInterval(timer2);
+                }
+            }, parseInt(Math.random() * 9) + 10);
+
+        }, 3000);
+
+        scope.onclick = function() {
+            if (scope.children.length == 3) {
+                if (parseInt(img.style.left) >= 224 && parseInt(img.style.left) <= 350) {
+                    scope.style.backgroundColor = "red";
+                    clearInterval(timer);
+                    clearInterval(timer2);
+                } else {
+                    scope.style.backgroundColor = "red";
+                    setTimeout(function() {
+                        scope.style.backgroundColor = "white";
+                    }, 100);
+                }
+            }
+        };
+
+        
+
+
+    </script>
+
+</body>
+</html>

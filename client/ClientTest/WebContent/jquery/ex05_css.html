@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one { font-size: 3em; color: coral; }
+        .two { font-style: italic; text-decoration: underline; }
+    </style>
+
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <!-- ex05_css.html -->
+
+    <h1>jQuery + CSS</h1>
+
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <div id="box">상자</div>
+
+    <script>
+
+        $("#btn1").click(function() {
+        //     //CSS 조작
+        //     // -> css() 함수
+        //     $("#box")
+        //         .css("border", "1px solid black")
+        //         .css("background-color", "gold")
+        //         .css("width", 300)
+        //         .css("height", "300px");
+        // });
+
+            // $("#box").css({
+            //     "border": "1px solid black",
+            //     "background-color": "gold",
+            //     "width": "300",
+            //     "height": "300px"
+            // });
+
+            // $("#box").addClass("one");
+            // $("#box").addClass("two");
+
+            // $("#box")
+            //     .addClass("one")
+            //     .addClass("two");
+
+            // $("#box")
+            //     .addClass("one two");
+
+            // $("#box")
+            //     .removeClass("one");
+
+            $("#box").toggleClass("one");
+
+
+
+        });
+
+    </script>
+
+</body>
+</html>

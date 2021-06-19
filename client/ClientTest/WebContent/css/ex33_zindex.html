@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        /*
+        
+        - position: static인 요소는 나머지(absolute, relative, fixed) 요소보다 항상 아래 출력된다.(밑에 깔린다.)
+        - position(absolute, relative, fixed)요소들은 z-index 값을 가질 수 있다.(z축의 좌표 지정이 가능하다.) -> 기본값 0 -> z-index값이 동일하면 코딩 순서에 의해 출력된다.
+
+        */
+
+        #box1 {
+            background-color: red;
+        }
+
+        #box2 {
+            background-color: yellowgreen;
+            position: relative;
+            left: 60px;
+            top: -60px;
+            z-index: 1;
+        }
+
+        #box2:hover {
+            z-index: 3;
+        }
+
+        #box3 {
+            background-color: blue;
+            position: absolute;
+            left: 140px;
+            top: 140px;
+            z-index: 2;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex33_zindex.html -->
+
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+</body>
+</html>

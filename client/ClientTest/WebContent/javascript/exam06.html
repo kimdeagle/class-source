@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        div #txtID {
+            width: 100px;
+            height: 20px;
+            outline: none;
+        }
+
+        div #check {
+            border: 0px;
+            outline: none;
+            width: 200px;
+            height: 20px;
+            font-weight: bold;
+            color: orangered;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- exam06.html -->
+
+    
+    <div>
+        <h1>아이디 유효성 검사</h1>
+        <span>아이디 : </span>
+        <input type="text" id="txtID" name="txtID">
+        <input type="text" id="check" name="check" readonly>
+    </div>
+
+    <script>
+
+        var txtID = window.document.all.txtID;
+        var check = window.document.all.check;
+
+        txtID.onkeyup = function() {
+            if (txtID.value.length == 0) {
+                check.value = "";
+            } else if (txtID.value.length < 5) {
+                check.value = "아이디가 너무 짧습니다.";
+            } else if (txtID.value.length > 10) {
+                check.value = "아이디가 너무 깁니다.";
+            } else {
+                check.value = "아이디가 적합합니다.";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

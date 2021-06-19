@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        
+        정렬, Alignment
+        - 인라인 태그와 블럭 태그의 수평 정렬
+        
+        1. 인라인 태그
+            - 내용물의 정렬을 할 수 없다.(내용물과 공간의 크기가 동일하기 때문 -> 움직일 여백이 없다.)
+            - 인라인 태그 스스로는 부모인 블럭 태그에 의해 정렬이 가능하다.(text-align)
+
+        2. 블럭 태그
+            - 내용물을 정렬할 수 있다.(너비와 내용물의 크기하고 무관 -> 여백 존재 -> 수평 정렬 가능)
+            - 블럭 태그의 자식으로 블럭 태그가 있을 때 그 자식 블럭 태그를 수평 정렬할 수 없다.(********)
+            - 부모 태그에 의해서 수평 정렬 할 수 없다.(text-align(X) ******)
+            - 블럭 태그는 수평 정렬의 개념이 없다.(************************ -> width: 100%)
+            - 블럭 태그 스스로 수평 정렬이 가능하다. -> width + margin 사용
+
+        CSS의 수평 정렬
+        - 결론 : 블럭 태그가 자식인 인라인 태그를 정렬하는 것을 말한다.(***********)
+
+        */
+
+        /* text-align : 수평 정렬. 태그 자체를 정렬하는 것이 아니라, 태그의 내용물을 정렬(*******) */
+        #box {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        /* 현재 상태를 설명하시오.?? > 인라인 태그의 영역은 내용물의 크기와 동일하다. */
+        #span1 {
+            background-color: gold;
+            /* text-align: center; */
+        }
+
+        
+        #box2 {
+            border: 1px solid black;
+            /* text-align: center; */
+        }
+
+        #box3 {
+            border: 1px solid red;
+            width: 150px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex30_align.html -->
+
+    <h1>인라인 태그</h1>
+    <div id="box">
+        <span id="span1">인라인 태그</span>
+    </div>
+
+    <h1>블럭 태그</h1>
+    <div id="box2">
+        <div id="box3">블럭 태그</div>
+    </div>
+
+</body>
+</html>

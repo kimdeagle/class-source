@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        fieldset {
+            margin-bottom: 30px;
+            border: 1px solid #AAA;
+            padding: 20px;
+        }
+
+        fieldset > div {
+            margin-bottom: 10px;
+        }
+
+
+        #tbl {
+            border: 1px solid #CCC;
+            border-collapse: collapse;
+        }
+
+        #tbl th, #tbl td {
+            border: 1px solid #CCC;
+            padding: 5px 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex26_form.html -->
+
+    <h1>폼 + 하위 태그 제어(***)</h1>
+
+    <form name="form1">
+
+        <fieldset>
+            <legend>텍스트 박스</legend>
+            <div>
+                <label for="txtName">이름: </label>
+                <input type="text" name="txtName" id="txtName">
+            </div>
+            <div>
+                <label>
+                    나이:
+                    <input type="text" name="txtAge">
+                </label>
+            </div>
+            <div>
+                <input type="button" value="확인" name="btn1">
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>체크박스</legend>
+            <input type="checkbox" name="cb1">
+            <input type="button" value="확인" name="btn2">
+
+            <hr>
+
+            <h2>이용 약관</h2>
+
+            <div style="border: 1px solid black; width: 500px; height: 200px; overflow: auto;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis illum blanditiis, iusto rerum velit sit ratione natus quia adipisci accusantium! Maxime, temporibus? Quis sed velit expedita odit cupiditate fugiat, nesciunt molestiae dolorum labore rem beatae quo a quod ducimus numquam dolor quibusdam! Voluptatibus eum, libero rerum delectus alias corporis? A dolores voluptatibus obcaecati expedita corrupti voluptates facilis. Ipsum suscipit optio corrupti necessitatibus perferendis eum quam. Saepe officiis unde cum maiores libero alias rem porro quia cumque. Modi quae saepe placeat id! Necessitatibus nulla minima pariatur eum, saepe a quisquam delectus at totam et error doloremque! Alias, perspiciatis inventore? Minima culpa impedit quibusdam velit sit temporibus, fugiat similique quo sapiente perspiciatis maxime! Blanditiis eveniet maiores ab distinctio quia, excepturi obcaecati saepe necessitatibus exercitationem quae enim quibusdam laboriosam voluptate cumque, laudantium similique nemo, repellendus sint officiis tempora. Ipsam fugiat quo repellendus repellat quia autem, ipsa, perspiciatis nostrum illum molestiae doloribus fugit, eveniet sequi enim. Culpa inventore repellendus quam est numquam consectetur possimus consequuntur nostrum. Animi qui a necessitatibus soluta quisquam, eligendi amet! Neque sequi temporibus quaerat vero quam. Error nemo dolor vero in, impedit, itaque nostrum a facilis esse porro corrupti! Unde a hic, delectus quia mollitia, quibusdam ullam quod incidunt exercitationem, natus earum! Cupiditate nihil eaque ea sed vitae vel ratione nobis, tenetur, et eum aliquam dolores blanditiis assumenda. Ducimus delectus magnam, dolore cumque voluptas, excepturi sed doloribus autem in perspiciatis consequatur error et ea at possimus, dolor eligendi laboriosam non cupiditate? Eaque consectetur quo magni iusto voluptatem est cum atque consequatur, ea pariatur aspernatur assumenda quod esse deleniti, optio, voluptatum aliquam. Ab voluptatum repellendus ullam voluptatem dolorem totam quisquam error minima deserunt blanditiis odio, natus impedit numquam culpa et architecto praesentium autem dolor. Earum itaque, reiciendis ipsum, nam voluptas porro officiis culpa voluptate sequi reprehenderit illum blanditiis, hic quasi vel.</div>
+
+            <input type="checkbox" name="cbAgree" id="cbAgree">
+            <label for="cbAgree">약관에 동의합니다.</label>
+            <hr>
+            <input type="button" value="다음 단계로" name="btnNext" onclick="location.href='next.html';" disabled>
+
+            <hr>
+
+            <table id="tbl">
+                <tr>
+                    <th><input type="checkbox" name="cbAll"></th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="cbItem"></td>
+                    <td>제목입니다.</td>
+                    <td>홍길동</td>
+                    <td>2021-01-18</td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+    </form>
+
+    <script>
+
+        var txtName = document.form1.txtName;
+        var txtAge = document.form1.txtAge;
+        var btn1 = document.form1.btn1;
+
+        var cb1 = document.form1.cb1;
+        var btn2 = document.form1.btn2;
+
+        var cbAgree = document.form1.cbAgree;
+        var btnNext = document.form1.btnNext;
+
+
+        var cbAll = document.form1.cbAll; //태그 1개 -> 단일 객체
+        var cbItem = document.form1.cbItem; //태그 20개 -> 배열
+
+        //alert(cbItem.length);
+
+
+        btn1.onclick = function() {
+
+            // txtName.size = 50;
+            // txtName.value = "홍길동";
+            // txtName.readOnly = true;
+
+            //텍스트박스 + JavaScript -> 유효성 검사
+
+            //*** 유효성 검사는 잘못된 부분을 찾는것이 편하다.
+
+            //이름
+            // - 필수값
+            // - 2~5자 이내
+            // - 한글
+
+            if (txtName.value.trim() == "") {
+                alert("이름을 반드시 입력하세요.");
+                txtName.focus();
+                return; //빈 리턴문 -> 메소드 종료하는 용도
+            }
+
+
+            if (txtName.value.trim().length < 2 || txtName.value.trim().length > 5) {
+                alert("이름은 2~5자 이내로 입력하세요.");
+                
+                //1.
+                //txtName.focus();
+                
+                //2.
+                //txtName.value = ""; //텍스트 박스값 지우기
+                //txtName.focus();
+
+                //3.
+                txtName.select();
+
+                return;
+            }
+
+            for (var i=0; i<txtName.value.trim().length; i++) {
+                var c = txtName.value.trim().charAt(i);
+                //alert(c);
+                if (c < '가' || c > '힣') {
+                    alert("이름은 한글로 입력하세요.");
+                    txtName.select();
+                    return;
+                }
+            }
+
+
+            //나이
+            // - 필수값
+            // - 숫자(형식)
+            // - 범위
+            if (txtAge.value.trim() == "") {
+                alert("나이를 반드시 입력하세요.");
+                txtAge.focus();
+                return;
+            }
+
+            if (isNaN(txtAge.value)) {
+                alert("나이는 숫자로 입력하세요.");
+                txtAge.select();
+                return;
+            }
+
+            if (txtAge.value < 19 || txtAge.value > 60) {
+                alert("나이는 19세 이상 60세 이하로 입력하세요.");
+                txtAge.select();
+                return;
+            }
+            
+
+
+            alert("성공!!!"); //서버로 전송하는 업무
+
+        };
+
+
+
+        //체크박스 + JavaScript
+        // - value
+        // - checked
+        // - onclick
+        // - onchange
+
+        btn2.onclick = function() {
+            
+            //alert(cb1.checked); //체크박스의 현재 상태
+            //cb1.checked = false;
+            cb1.checked = !cb1.checked;
+
+        };
+
+        // cb1.onclick = function() {
+        //     console.log(cb1.checked);
+        // };
+
+        //컨트롤의 값이 변화할때 발생하는 이벤트
+        // -> 텍스트박스, 라디오버튼, 체크박스, 셀렉트박스 등에 정의되어 있는 이벤트
+        cb1.onchange = function() {
+            console.log(cb1.checked);
+        };
+
+
+        cbAgree.onchange = function() {
+            //alert(cbAgree.checked);
+            if (cbAgree.checked) {
+                //약관 동의O
+                btnNext.disabled = false;
+            } else {
+                btnNext.disabled = true;
+            }
+        };
+
+
+
+        cbAll.onchange = function() {
+
+            // if (cbAll.checked) {
+            //     for (var i=0; i<cbItem.length; i++) {
+            //         cbItem[i].checked = true;
+            //     }
+            // } else {
+            //     for (var i=0; i<cbItem.length; i++) {
+            //         cbItem[i].checked = false;
+            //     }
+            // }
+
+
+            for (var i=0; i<cbItem.length; i++) {
+                cbItem[i].checked = cbAll.checked;
+            }
+        };
+
+
+    </script>
+
+</body>
+</html>
